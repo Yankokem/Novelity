@@ -21,3 +21,4 @@ C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.
 C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.MyRentals.resources
 C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Login.resources
 C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Signup.resources
+C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Plan.resources

@@ -16,5 +16,11 @@
     <Compile Update="Pages\MyRentals.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Login\Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Signup-Success.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
