@@ -12,14 +12,16 @@ namespace Novelity
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // Close the entire application
         }
 
         private void signupBtn_Click(object sender, EventArgs e)
         {
-            Signup signupForm = new Signup(this); // Pass the current Login form
+            Signup signupForm = new Signup(this);
             signupForm.Show();
-            this.Hide(); // Hide the Login form
+            this.Hide();
         }
+
+        public Form GetLoginForm() => this; // Helper to identify Login form
     }
 }

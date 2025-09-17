@@ -40,7 +40,7 @@
             label11 = new Label();
             textBox3 = new TextBox();
             pictureBox2 = new PictureBox();
-            button1 = new Button();
+            signupBtn = new Button();
             label6 = new Label();
             label4 = new Label();
             textBox2 = new TextBox();
@@ -99,7 +99,7 @@
             panel2.Controls.Add(label11);
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(signupBtn);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(textBox2);
@@ -189,18 +189,19 @@
             pictureBox2.TabIndex = 16;
             pictureBox2.TabStop = false;
             // 
-            // button1
+            // signupBtn
             // 
-            button1.BackColor = Color.FromArgb(127, 23, 52);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Transparent;
-            button1.Location = new Point(103, 386);
-            button1.Name = "button1";
-            button1.Size = new Size(122, 33);
-            button1.TabIndex = 11;
-            button1.Text = "Next";
-            button1.UseVisualStyleBackColor = false;
+            signupBtn.BackColor = Color.FromArgb(127, 23, 52);
+            signupBtn.FlatStyle = FlatStyle.Flat;
+            signupBtn.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            signupBtn.ForeColor = Color.Transparent;
+            signupBtn.Location = new Point(103, 386);
+            signupBtn.Name = "signupBtn";
+            signupBtn.Size = new Size(122, 33);
+            signupBtn.TabIndex = 11;
+            signupBtn.Text = "Next";
+            signupBtn.UseVisualStyleBackColor = false;
+            signupBtn.Click += signupBtn_Click_1;
             // 
             // label6
             // 
@@ -317,7 +318,7 @@
         private Label label4;
         private TextBox textBox2;
         private PictureBox pictureBox2;
-        private Button button1;
+        private Button signupBtn;
         private Label label10;
         private Label label11;
         private TextBox textBox3;

@@ -3,15 +3,15 @@ using System.Windows.Forms;
 
 namespace Novelity
 {
-    public partial class Plan : Form
+    public partial class Payment : Form
     {
-        private readonly Signup _signupForm;
+        private readonly Plan _planForm;
 
-        public Plan(Signup signupForm)
+        public Payment(Plan planForm)
         {
             InitializeComponent();
-            _signupForm = signupForm;
-            this.FormClosing += Plan_FormClosing;
+            _planForm = planForm;
+            this.FormClosing += Payment_FormClosing;
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
@@ -21,7 +21,7 @@ namespace Novelity
             this.Close();
         }
 
-        private void Plan_FormClosing(object sender, FormClosingEventArgs e)
+        private void Payment_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form loginForm = GetLoginForm();
             loginForm.Show();
@@ -29,11 +29,11 @@ namespace Novelity
 
         private void backBtn_Click(object sender, EventArgs e)
         {
-            _signupForm.Show();
+            _planForm.Show();
             this.Close();
         }
 
-        private void basicBtn_Click(object sender, EventArgs e)
+        private void completeSignupBtn_Click(object sender, EventArgs e)
         {
             Signup_Success successForm = new Signup_Success(this);
             successForm.ShowDialog();
@@ -42,15 +42,6 @@ namespace Novelity
             this.Close();
         }
 
-        private void premiumBtn_Click(object sender, EventArgs e)
-        {
-            Payment paymentForm = new Payment(this);
-            paymentForm.Show();
-            this.Hide();
-        }
-
-        public Form GetPreviousForm() => _signupForm;
-
-        public Form GetLoginForm() => _signupForm.GetLoginForm();
+        public Form GetLoginForm() => _planForm.GetLoginForm();
     }
 }

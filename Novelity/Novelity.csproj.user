@@ -19,7 +19,10 @@
     <Compile Update="Login\Plan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Signup-Success.cs">
+    <Compile Update="Notifications\Signup-Success.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
