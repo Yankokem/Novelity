@@ -73,6 +73,16 @@ namespace Novelity.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back_red {
             get {
                 object obj = ResourceManager.GetObject("back red", resourceCulture);
@@ -86,6 +96,16 @@ namespace Novelity.Properties {
         internal static System.Drawing.Bitmap back_red_v1 {
             get {
                 object obj = ResourceManager.GetObject("back red v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg__radial {
+            get {
+                object obj = ResourceManager.GetObject("bg -radial", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +153,39 @@ namespace Novelity.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap crime {
+            get {
+                object obj = ResourceManager.GetObject("crime", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fairytail {
+            get {
+                object obj = ResourceManager.GetObject("fairytail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gcash {
             get {
                 object obj = ResourceManager.GetObject("gcash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap horror {
+            get {
+                object obj = ResourceManager.GetObject("horror", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +243,16 @@ namespace Novelity.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap novelity {
+            get {
+                object obj = ResourceManager.GetObject("novelity", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap paypal {
             get {
                 object obj = ResourceManager.GetObject("paypal", resourceCulture);
@@ -223,9 +283,39 @@ namespace Novelity.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap romance {
+            get {
+                object obj = ResourceManager.GetObject("romance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sf {
+            get {
+                object obj = ResourceManager.GetObject("sf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shelf {
             get {
                 object obj = ResourceManager.GetObject("shelf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thriller {
+            get {
+                object obj = ResourceManager.GetObject("thriller", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

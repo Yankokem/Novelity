@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logo - login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo - login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -127,23 +130,11 @@
   <data name="back red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="-" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\-.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back red v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back red v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo - login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo - login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pfp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pfp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,28 +142,64 @@
   <data name="x red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back red v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back red v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="romance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\romance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paypal - grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paypal - grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="novelity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\novelity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="check red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gcash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gcash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg-notif" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg-notif.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fairytail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\fairytail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gcash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gcash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="horror" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\horror.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg -radial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg -radial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shelf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paypal - grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paypal - grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="-" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\-.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\crime.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thriller" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\thriller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\sf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

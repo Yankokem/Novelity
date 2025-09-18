@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             myRentalBtn = new Label();
             bookBtn = new Label();
@@ -67,36 +68,39 @@
             // 
             // myRentalBtn
             // 
+            myRentalBtn.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             myRentalBtn.AutoSize = true;
-            myRentalBtn.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            myRentalBtn.Font = new Font("Poppins", 18F);
             myRentalBtn.ForeColor = Color.Transparent;
-            myRentalBtn.Location = new Point(1100, 39);
+            myRentalBtn.Location = new Point(1115, 24);
             myRentalBtn.Name = "myRentalBtn";
-            myRentalBtn.Size = new Size(130, 37);
+            myRentalBtn.Size = new Size(148, 42);
             myRentalBtn.TabIndex = 7;
             myRentalBtn.Text = "My Rentals";
             myRentalBtn.Click += myRentalBtn_Click;
             // 
             // bookBtn
             // 
+            bookBtn.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             bookBtn.AutoSize = true;
-            bookBtn.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookBtn.Font = new Font("Poppins", 18F);
             bookBtn.ForeColor = Color.Transparent;
-            bookBtn.Location = new Point(910, 39);
+            bookBtn.Location = new Point(925, 24);
             bookBtn.Name = "bookBtn";
-            bookBtn.Size = new Size(78, 37);
+            bookBtn.Size = new Size(88, 42);
             bookBtn.TabIndex = 6;
             bookBtn.Text = "Books";
             bookBtn.Click += bookBtn_Click;
             // 
             // homeBtn
             // 
+            homeBtn.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             homeBtn.AutoSize = true;
-            homeBtn.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            homeBtn.Font = new Font("Poppins", 18F);
             homeBtn.ForeColor = Color.Transparent;
-            homeBtn.Location = new Point(716, 39);
+            homeBtn.Location = new Point(731, 24);
             homeBtn.Name = "homeBtn";
-            homeBtn.Size = new Size(80, 37);
+            homeBtn.Size = new Size(90, 42);
             homeBtn.TabIndex = 5;
             homeBtn.Text = "Home";
             homeBtn.Click += homeBtn_Click;
@@ -113,6 +117,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox4.Image = Properties.Resources.pfp;
             pictureBox4.Location = new Point(1813, 39);
             pictureBox4.Name = "pictureBox4";
@@ -123,6 +128,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox3.Image = Properties.Resources.logout;
             pictureBox3.Location = new Point(1868, 39);
             pictureBox3.Name = "pictureBox3";
@@ -133,6 +139,7 @@
             // 
             // minimizeBtn
             // 
+            minimizeBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             minimizeBtn.Image = Properties.Resources._;
             minimizeBtn.Location = new Point(1862, 8);
             minimizeBtn.Name = "minimizeBtn";
@@ -144,6 +151,7 @@
             // 
             // closeBtn
             // 
+            closeBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             closeBtn.Image = Properties.Resources.x;
             closeBtn.Location = new Point(1888, 8);
             closeBtn.Name = "closeBtn";
@@ -178,9 +186,10 @@
             Controls.Add(panelContent);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "    ";
+            Text = "    Novelity";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();

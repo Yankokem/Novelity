@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1920, 1080);
             ControlBox = false;
             FormBorderStyle = FormBorderStyle.None;
             Name = "MyRentals";
