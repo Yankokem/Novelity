@@ -7,9 +7,13 @@ namespace Novelity
     {
         private readonly Form _previousForm;
 
-        public Signup_Success(Form previousForm)
+        public Signup_Success()
         {
             InitializeComponent();
+        }
+
+        public Signup_Success(Form previousForm) : this()
+        {
             _previousForm = previousForm;
             this.FormClosing += Signup_Success_FormClosing;
         }
@@ -21,9 +25,23 @@ namespace Novelity
 
         private void Signup_Success_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Form loginForm = _previousForm is Payment payment ? payment.GetLoginForm() : (_previousForm as Plan)?.GetLoginForm();
-            if (loginForm != null)
-                loginForm.Show();
+            // Simplified closing logic
+            if (_previousForm != null)
+            {
+                if (_previousForm is Payment payment)
+                {
+                    payment.GetLoginForm()?.Show();
+                }
+                else if (_previousForm is Plan plan)
+                {
+                    plan.GetLoginForm()?.Show();
+                }
+            }
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -35,18 +35,18 @@
             backBtn = new PictureBox();
             label7 = new Label();
             label8 = new Label();
-            textBox4 = new TextBox();
+            signupPasswordField = new TextBox();
             label10 = new Label();
             label11 = new Label();
-            textBox3 = new TextBox();
+            signupEmailField = new TextBox();
             pictureBox2 = new PictureBox();
-            signupBtn = new Button();
+            nextBtn = new Button();
             label6 = new Label();
             label4 = new Label();
-            textBox2 = new TextBox();
+            signupUsernameField = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            signupNameField = new TextBox();
             label1 = new Label();
             closeBtn = new PictureBox();
             panel1.SuspendLayout();
@@ -94,18 +94,18 @@
             panel2.Controls.Add(backBtn);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label8);
-            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(signupPasswordField);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label11);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(signupEmailField);
             panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(signupBtn);
+            panel2.Controls.Add(nextBtn);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(signupUsernameField);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(signupNameField);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(closeBtn);
             panel2.Dock = DockStyle.Fill;
@@ -145,12 +145,12 @@
             label8.TabIndex = 21;
             label8.Text = "Password";
             // 
-            // textBox4
+            // signupPasswordField
             // 
-            textBox4.Location = new Point(50, 341);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(233, 23);
-            textBox4.TabIndex = 20;
+            signupPasswordField.Location = new Point(50, 341);
+            signupPasswordField.Name = "signupPasswordField";
+            signupPasswordField.Size = new Size(233, 23);
+            signupPasswordField.TabIndex = 20;
             // 
             // label10
             // 
@@ -172,12 +172,12 @@
             label11.TabIndex = 18;
             label11.Text = "Email";
             // 
-            // textBox3
+            // signupEmailField
             // 
-            textBox3.Location = new Point(50, 283);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(233, 23);
-            textBox3.TabIndex = 17;
+            signupEmailField.Location = new Point(50, 283);
+            signupEmailField.Name = "signupEmailField";
+            signupEmailField.Size = new Size(233, 23);
+            signupEmailField.TabIndex = 17;
             // 
             // pictureBox2
             // 
@@ -189,19 +189,19 @@
             pictureBox2.TabIndex = 16;
             pictureBox2.TabStop = false;
             // 
-            // signupBtn
+            // nextBtn
             // 
-            signupBtn.BackColor = Color.FromArgb(127, 23, 52);
-            signupBtn.FlatStyle = FlatStyle.Flat;
-            signupBtn.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            signupBtn.ForeColor = Color.Transparent;
-            signupBtn.Location = new Point(103, 386);
-            signupBtn.Name = "signupBtn";
-            signupBtn.Size = new Size(122, 33);
-            signupBtn.TabIndex = 11;
-            signupBtn.Text = "Next";
-            signupBtn.UseVisualStyleBackColor = false;
-            signupBtn.Click += signupBtn_Click_1;
+            nextBtn.BackColor = Color.FromArgb(127, 23, 52);
+            nextBtn.FlatStyle = FlatStyle.Flat;
+            nextBtn.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nextBtn.ForeColor = Color.Transparent;
+            nextBtn.Location = new Point(103, 386);
+            nextBtn.Name = "nextBtn";
+            nextBtn.Size = new Size(122, 33);
+            nextBtn.TabIndex = 11;
+            nextBtn.Text = "Next";
+            nextBtn.UseVisualStyleBackColor = false;
+            nextBtn.Click += nextBtn_Click_1;
             // 
             // label6
             // 
@@ -223,14 +223,14 @@
             label4.TabIndex = 9;
             label4.Text = "Username";
             // 
-            // textBox2
+            // signupUsernameField
             // 
-            textBox2.BackColor = SystemColors.Window;
-            textBox2.Location = new Point(50, 225);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(233, 23);
-            textBox2.TabIndex = 3;
+            signupUsernameField.BackColor = SystemColors.Window;
+            signupUsernameField.Location = new Point(50, 225);
+            signupUsernameField.Name = "signupUsernameField";
+            signupUsernameField.PasswordChar = '*';
+            signupUsernameField.Size = new Size(233, 23);
+            signupUsernameField.TabIndex = 3;
             // 
             // label3
             // 
@@ -252,12 +252,12 @@
             label2.TabIndex = 4;
             label2.Text = "Full Name";
             // 
-            // textBox1
+            // signupNameField
             // 
-            textBox1.Location = new Point(50, 169);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(233, 23);
-            textBox1.TabIndex = 3;
+            signupNameField.Location = new Point(50, 169);
+            signupNameField.Name = "signupNameField";
+            signupNameField.Size = new Size(233, 23);
+            signupNameField.TabIndex = 3;
             // 
             // label1
             // 
@@ -313,18 +313,18 @@
         private Label label1;
         private Label label3;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox signupNameField;
         private Label label6;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox signupUsernameField;
         private PictureBox pictureBox2;
-        private Button signupBtn;
+        private Button nextBtn;
         private Label label10;
         private Label label11;
-        private TextBox textBox3;
+        private TextBox signupEmailField;
         private Label label7;
         private Label label8;
-        private TextBox textBox4;
+        private TextBox signupPasswordField;
         private PictureBox backBtn;
     }
 }

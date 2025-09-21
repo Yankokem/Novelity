@@ -1,17 +1,29 @@
+using System;
+using System.Windows.Forms;
+
 namespace Novelity
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            // Try to load existing session
+            bool hasSession = UserSession.LoadSession();
+
+            if (hasSession && UserSession.IsLoggedIn)
+            {
+                // If we have a valid session, go directly to main form
+                Application.Run(new Form1());
+            }
+            else
+            {
+                // Otherwise, show login form
+                Application.Run(new Login());
+            }
         }
     }
 }

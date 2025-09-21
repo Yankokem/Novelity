@@ -29,42 +29,113 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            panel1 = new Panel();
+            Navbar = new Panel();
+            accountGroupBtn = new FlowLayoutPanel();
+            profileBtn = new PictureBox();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            usernameLabel = new Label();
+            roleLabel = new Label();
             myRentalBtn = new Label();
             bookBtn = new Label();
             homeBtn = new Label();
             pictureBox5 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            logoutBtn = new PictureBox();
             minimizeBtn = new PictureBox();
             closeBtn = new PictureBox();
-            panelContent = new FlowLayoutPanel();
-            panel2 = new Panel();
-            panel1.SuspendLayout();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            adminNavbar = new Panel();
+            flowy = new FlowLayoutPanel();
+            pictureBox1 = new PictureBox();
+            dashboardBtn = new Label();
+            panelContent = new Panel();
+            Navbar.SuspendLayout();
+            accountGroupBtn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)profileBtn).BeginInit();
+            flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logoutBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)minimizeBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
-            panelContent.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            adminNavbar.SuspendLayout();
+            flowy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // Navbar
             // 
-            panel1.BackColor = Color.FromArgb(127, 23, 52);
-            panel1.Controls.Add(myRentalBtn);
-            panel1.Controls.Add(bookBtn);
-            panel1.Controls.Add(homeBtn);
-            panel1.Controls.Add(pictureBox5);
-            panel1.Controls.Add(pictureBox4);
-            panel1.Controls.Add(pictureBox3);
-            panel1.Controls.Add(minimizeBtn);
-            panel1.Controls.Add(closeBtn);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1920, 86);
-            panel1.TabIndex = 0;
+            Navbar.BackColor = Color.FromArgb(127, 23, 52);
+            Navbar.Controls.Add(accountGroupBtn);
+            Navbar.Controls.Add(myRentalBtn);
+            Navbar.Controls.Add(bookBtn);
+            Navbar.Controls.Add(homeBtn);
+            Navbar.Controls.Add(pictureBox5);
+            Navbar.Controls.Add(logoutBtn);
+            Navbar.Controls.Add(minimizeBtn);
+            Navbar.Controls.Add(closeBtn);
+            Navbar.Dock = DockStyle.Top;
+            Navbar.Location = new Point(0, 0);
+            Navbar.Name = "Navbar";
+            Navbar.Size = new Size(1920, 86);
+            Navbar.TabIndex = 0;
+            // 
+            // accountGroupBtn
+            // 
+            accountGroupBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            accountGroupBtn.Controls.Add(profileBtn);
+            accountGroupBtn.Controls.Add(flowLayoutPanel2);
+            accountGroupBtn.Location = new Point(1647, 16);
+            accountGroupBtn.Name = "accountGroupBtn";
+            accountGroupBtn.Size = new Size(195, 55);
+            accountGroupBtn.TabIndex = 8;
+            // 
+            // profileBtn
+            // 
+            profileBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            profileBtn.Image = Properties.Resources.pfp;
+            profileBtn.Location = new Point(3, 3);
+            profileBtn.Name = "profileBtn";
+            profileBtn.Size = new Size(50, 50);
+            profileBtn.SizeMode = PictureBoxSizeMode.Zoom;
+            profileBtn.TabIndex = 3;
+            profileBtn.TabStop = false;
+            profileBtn.Click += profileBtn_Click;
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.BackColor = Color.Transparent;
+            flowLayoutPanel2.Controls.Add(usernameLabel);
+            flowLayoutPanel2.Controls.Add(roleLabel);
+            flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel2.Location = new Point(59, 3);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(133, 50);
+            flowLayoutPanel2.TabIndex = 4;
+            // 
+            // usernameLabel
+            // 
+            usernameLabel.AllowDrop = true;
+            usernameLabel.BackColor = Color.Transparent;
+            usernameLabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usernameLabel.ForeColor = Color.Transparent;
+            usernameLabel.Location = new Point(3, 0);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new Size(130, 23);
+            usernameLabel.TabIndex = 3;
+            usernameLabel.Text = "Username";
+            // 
+            // roleLabel
+            // 
+            roleLabel.AllowDrop = true;
+            roleLabel.BackColor = Color.Transparent;
+            roleLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            roleLabel.ForeColor = Color.Transparent;
+            roleLabel.Location = new Point(3, 30);
+            roleLabel.Margin = new Padding(3, 7, 3, 0);
+            roleLabel.Name = "roleLabel";
+            roleLabel.Size = new Size(130, 19);
+            roleLabel.TabIndex = 4;
+            roleLabel.Text = "role";
             // 
             // myRentalBtn
             // 
@@ -115,27 +186,17 @@
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
             // 
-            // pictureBox4
+            // logoutBtn
             // 
-            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox4.Image = Properties.Resources.pfp;
-            pictureBox4.Location = new Point(1813, 39);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(40, 40);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox3.Image = Properties.Resources.logout;
-            pictureBox3.Location = new Point(1868, 39);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(40, 40);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
+            logoutBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            logoutBtn.Image = Properties.Resources.logout;
+            logoutBtn.Location = new Point(1868, 39);
+            logoutBtn.Name = "logoutBtn";
+            logoutBtn.Size = new Size(40, 40);
+            logoutBtn.SizeMode = PictureBoxSizeMode.Zoom;
+            logoutBtn.TabIndex = 2;
+            logoutBtn.TabStop = false;
+            logoutBtn.Click += logoutBtn_Click_1;
             // 
             // minimizeBtn
             // 
@@ -161,58 +222,122 @@
             closeBtn.TabStop = false;
             closeBtn.Click += closeBtn_Click;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(adminNavbar);
+            flowLayoutPanel1.Controls.Add(panelContent);
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Location = new Point(0, 86);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1920, 994);
+            flowLayoutPanel1.TabIndex = 3;
+            // 
+            // adminNavbar
+            // 
+            adminNavbar.BackColor = Color.FromArgb(188, 67, 100);
+            adminNavbar.Controls.Add(flowy);
+            adminNavbar.Location = new Point(0, 0);
+            adminNavbar.Margin = new Padding(0);
+            adminNavbar.Name = "adminNavbar";
+            adminNavbar.Size = new Size(1920, 63);
+            adminNavbar.TabIndex = 0;
+            // 
+            // flowy
+            // 
+            flowy.AutoSize = true;
+            flowy.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowy.Controls.Add(pictureBox1);
+            flowy.Controls.Add(dashboardBtn);
+            flowy.Location = new Point(360, 13);
+            flowy.Name = "flowy";
+            flowy.Size = new Size(162, 35);
+            flowy.TabIndex = 0;
+            flowy.Click += dashboardBtn_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.dashboard;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(35, 35);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += dashboardBtn_Click;
+            // 
+            // dashboardBtn
+            // 
+            dashboardBtn.AutoSize = true;
+            dashboardBtn.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dashboardBtn.ForeColor = Color.Transparent;
+            dashboardBtn.Location = new Point(38, 2);
+            dashboardBtn.Margin = new Padding(3, 2, 3, 0);
+            dashboardBtn.Name = "dashboardBtn";
+            dashboardBtn.Size = new Size(121, 33);
+            dashboardBtn.TabIndex = 1;
+            dashboardBtn.Text = "Dashboard";
+            dashboardBtn.Click += dashboardBtn_Click;
+            // 
             // panelContent
             // 
-            panelContent.Controls.Add(panel2);
-            panelContent.Dock = DockStyle.Fill;
-            panelContent.Location = new Point(0, 86);
+            panelContent.Location = new Point(0, 63);
+            panelContent.Margin = new Padding(0);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(1920, 994);
+            panelContent.Size = new Size(1920, 922);
             panelContent.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.Location = new Point(3, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(200, 0);
-            panel2.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(panelContent);
-            Controls.Add(panel1);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(Navbar);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "    Novelity";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Navbar.ResumeLayout(false);
+            Navbar.PerformLayout();
+            accountGroupBtn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)profileBtn).EndInit();
+            flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logoutBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)minimizeBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)closeBtn).EndInit();
-            panelContent.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
+            adminNavbar.ResumeLayout(false);
+            adminNavbar.PerformLayout();
+            flowy.ResumeLayout(false);
+            flowy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private PictureBox pictureBox3;
+        private Panel Navbar;
+        private PictureBox logoutBtn;
         private PictureBox minimizeBtn;
         private PictureBox closeBtn;
         private Label myRentalBtn;
         private Label bookBtn;
         private Label homeBtn;
         private PictureBox pictureBox5;
-        private PictureBox pictureBox4;
-        private FlowLayoutPanel panelContent;
-        private Panel panel2;
+        private PictureBox profileBtn;
+        private FlowLayoutPanel accountGroupBtn;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Label usernameLabel;
+        private Label roleLabel;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel adminNavbar;
+        private Panel panelContent;
+        private FlowLayoutPanel flowy;
+        private PictureBox pictureBox1;
+        private Label dashboardBtn;
     }
 }

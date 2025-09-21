@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -22,7 +25,10 @@
     <Compile Update="Notifications\Signup-Success.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Payment.cs">
+    <Compile Update="Login\Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

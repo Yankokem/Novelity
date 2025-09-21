@@ -44,25 +44,28 @@
             label5 = new Label();
             backBtn = new PictureBox();
             closeBtn = new PictureBox();
-            panel1 = new Panel();
+            gcashBtn = new Panel();
             pictureBox1 = new PictureBox();
             label4 = new Label();
             label2 = new Label();
             label1 = new Label();
             label3 = new Label();
-            panel3 = new Panel();
-            pictureBox2 = new PictureBox();
+            completeSignupBtn = new Button();
+            label10 = new Label();
+            paypalBtn = new Panel();
             label6 = new Label();
+            pictureBox2 = new PictureBox();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            label10 = new Label();
             label11 = new Label();
-            accNameField = new TextBox();
+            paymayaBtn = new Panel();
             label12 = new Label();
+            pictureBox3 = new PictureBox();
             label20 = new Label();
-            accNumField = new TextBox();
-            completeSignupBtn = new Button();
+            label21 = new Label();
+            label22 = new Label();
+            label23 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -71,10 +74,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
-            panel1.SuspendLayout();
+            gcashBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel3.SuspendLayout();
+            paypalBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            paymayaBtn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -260,24 +265,25 @@
             closeBtn.TabStop = false;
             closeBtn.Click += closeBtn_Click;
             // 
-            // panel1
+            // gcashBtn
             // 
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(label3);
-            panel1.Location = new Point(334, 57);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(150, 41);
-            panel1.TabIndex = 29;
+            gcashBtn.Controls.Add(label10);
+            gcashBtn.Controls.Add(pictureBox1);
+            gcashBtn.Controls.Add(label4);
+            gcashBtn.Controls.Add(label2);
+            gcashBtn.Controls.Add(label1);
+            gcashBtn.Controls.Add(label3);
+            gcashBtn.Location = new Point(343, 78);
+            gcashBtn.Name = "gcashBtn";
+            gcashBtn.Size = new Size(289, 68);
+            gcashBtn.TabIndex = 29;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.gcash;
-            pictureBox1.Location = new Point(8, 5);
+            pictureBox1.Location = new Point(45, 9);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(134, 31);
+            pictureBox1.Size = new Size(200, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
@@ -285,9 +291,9 @@
             // label4
             // 
             label4.BackColor = Color.FromArgb(0, 44, 184);
-            label4.Location = new Point(148, 2);
+            label4.Location = new Point(306, 0);
             label4.Name = "label4";
-            label4.Size = new Size(2, 41);
+            label4.Size = new Size(2, 49);
             label4.TabIndex = 13;
             label4.Text = "OR";
             // 
@@ -296,16 +302,16 @@
             label2.BackColor = Color.FromArgb(0, 44, 184);
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(2, 41);
+            label2.Size = new Size(2, 69);
             label2.TabIndex = 12;
             label2.Text = "OR";
             // 
             // label1
             // 
             label1.BackColor = Color.FromArgb(0, 44, 184);
-            label1.Location = new Point(0, 39);
+            label1.Location = new Point(0, 66);
             label1.Name = "label1";
-            label1.Size = new Size(151, 2);
+            label1.Size = new Size(308, 2);
             label1.TabIndex = 11;
             label1.Text = "OR";
             // 
@@ -314,121 +320,9 @@
             label3.BackColor = Color.FromArgb(0, 44, 184);
             label3.Location = new Point(0, 0);
             label3.Name = "label3";
-            label3.Size = new Size(151, 2);
+            label3.Size = new Size(308, 2);
             label3.TabIndex = 10;
             label3.Text = "OR";
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(pictureBox2);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(label8);
-            panel3.Controls.Add(label9);
-            panel3.Location = new Point(492, 57);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(150, 41);
-            panel3.TabIndex = 30;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.paypal___grey;
-            pictureBox2.Location = new Point(8, 5);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(134, 31);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 14;
-            pictureBox2.TabStop = false;
-            // 
-            // label6
-            // 
-            label6.BackColor = Color.Gray;
-            label6.Location = new Point(148, 2);
-            label6.Name = "label6";
-            label6.Size = new Size(2, 41);
-            label6.TabIndex = 13;
-            label6.Text = "OR";
-            // 
-            // label7
-            // 
-            label7.BackColor = Color.Gray;
-            label7.Location = new Point(0, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(2, 41);
-            label7.TabIndex = 12;
-            label7.Text = "OR";
-            // 
-            // label8
-            // 
-            label8.BackColor = Color.Gray;
-            label8.Location = new Point(0, 39);
-            label8.Name = "label8";
-            label8.Size = new Size(151, 2);
-            label8.TabIndex = 11;
-            label8.Text = "OR";
-            // 
-            // label9
-            // 
-            label9.BackColor = Color.Gray;
-            label9.Location = new Point(0, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(151, 2);
-            label9.TabIndex = 10;
-            label9.Text = "OR";
-            // 
-            // label10
-            // 
-            label10.BackColor = Color.FromArgb(127, 23, 52);
-            label10.Location = new Point(372, 172);
-            label10.Name = "label10";
-            label10.Size = new Size(230, 2);
-            label10.TabIndex = 33;
-            label10.Text = "OR";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.FromArgb(127, 23, 52);
-            label11.Location = new Point(371, 125);
-            label11.Name = "label11";
-            label11.Size = new Size(106, 23);
-            label11.TabIndex = 32;
-            label11.Text = "Account Name";
-            // 
-            // accNameField
-            // 
-            accNameField.Location = new Point(371, 151);
-            accNameField.Name = "accNameField";
-            accNameField.Size = new Size(233, 23);
-            accNameField.TabIndex = 31;
-            // 
-            // label12
-            // 
-            label12.BackColor = Color.FromArgb(127, 23, 52);
-            label12.Location = new Point(372, 236);
-            label12.Name = "label12";
-            label12.Size = new Size(230, 2);
-            label12.TabIndex = 36;
-            label12.Text = "OR";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label20.ForeColor = Color.FromArgb(127, 23, 52);
-            label20.Location = new Point(371, 189);
-            label20.Name = "label20";
-            label20.Size = new Size(119, 23);
-            label20.TabIndex = 35;
-            label20.Text = "Account Number";
-            // 
-            // accNumField
-            // 
-            accNumField.Location = new Point(371, 215);
-            accNumField.Name = "accNumField";
-            accNumField.Size = new Size(233, 23);
-            accNumField.TabIndex = 34;
             // 
             // completeSignupBtn
             // 
@@ -436,7 +330,7 @@
             completeSignupBtn.FlatStyle = FlatStyle.Flat;
             completeSignupBtn.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             completeSignupBtn.ForeColor = Color.White;
-            completeSignupBtn.Location = new Point(408, 331);
+            completeSignupBtn.Location = new Point(409, 340);
             completeSignupBtn.Name = "completeSignupBtn";
             completeSignupBtn.Size = new Size(156, 33);
             completeSignupBtn.TabIndex = 37;
@@ -444,21 +338,161 @@
             completeSignupBtn.UseVisualStyleBackColor = false;
             completeSignupBtn.Click += completeSignupBtn_Click;
             // 
+            // label10
+            // 
+            label10.BackColor = Color.FromArgb(0, 44, 184);
+            label10.Location = new Point(287, -1);
+            label10.Name = "label10";
+            label10.Size = new Size(2, 69);
+            label10.TabIndex = 15;
+            label10.Text = "OR";
+            // 
+            // paypalBtn
+            // 
+            paypalBtn.Controls.Add(label6);
+            paypalBtn.Controls.Add(pictureBox2);
+            paypalBtn.Controls.Add(label7);
+            paypalBtn.Controls.Add(label8);
+            paypalBtn.Controls.Add(label9);
+            paypalBtn.Controls.Add(label11);
+            paypalBtn.Location = new Point(343, 167);
+            paypalBtn.Name = "paypalBtn";
+            paypalBtn.Size = new Size(289, 68);
+            paypalBtn.TabIndex = 30;
+            // 
+            // label6
+            // 
+            label6.BackColor = Color.FromArgb(0, 48, 135);
+            label6.Location = new Point(287, -1);
+            label6.Name = "label6";
+            label6.Size = new Size(2, 69);
+            label6.TabIndex = 15;
+            label6.Text = "OR";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.paypal;
+            pictureBox2.Location = new Point(45, 9);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(200, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 14;
+            pictureBox2.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.BackColor = Color.FromArgb(0, 44, 184);
+            label7.Location = new Point(306, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(2, 49);
+            label7.TabIndex = 13;
+            label7.Text = "OR";
+            // 
+            // label8
+            // 
+            label8.BackColor = Color.FromArgb(0, 48, 135);
+            label8.Location = new Point(0, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(2, 69);
+            label8.TabIndex = 12;
+            label8.Text = "OR";
+            // 
+            // label9
+            // 
+            label9.BackColor = Color.FromArgb(0, 48, 135);
+            label9.Location = new Point(0, 66);
+            label9.Name = "label9";
+            label9.Size = new Size(308, 2);
+            label9.TabIndex = 11;
+            label9.Text = "OR";
+            // 
+            // label11
+            // 
+            label11.BackColor = Color.FromArgb(0, 48, 135);
+            label11.Location = new Point(0, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(308, 2);
+            label11.TabIndex = 10;
+            label11.Text = "OR";
+            // 
+            // paymayaBtn
+            // 
+            paymayaBtn.Controls.Add(label12);
+            paymayaBtn.Controls.Add(pictureBox3);
+            paymayaBtn.Controls.Add(label20);
+            paymayaBtn.Controls.Add(label21);
+            paymayaBtn.Controls.Add(label22);
+            paymayaBtn.Controls.Add(label23);
+            paymayaBtn.Location = new Point(343, 257);
+            paymayaBtn.Name = "paymayaBtn";
+            paymayaBtn.Size = new Size(289, 68);
+            paymayaBtn.TabIndex = 31;
+            // 
+            // label12
+            // 
+            label12.BackColor = Color.FromArgb(0, 198, 115);
+            label12.Location = new Point(287, -1);
+            label12.Name = "label12";
+            label12.Size = new Size(2, 69);
+            label12.TabIndex = 15;
+            label12.Text = "OR";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.paymaya;
+            pictureBox3.Location = new Point(45, 9);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(200, 50);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 14;
+            pictureBox3.TabStop = false;
+            // 
+            // label20
+            // 
+            label20.BackColor = Color.FromArgb(0, 44, 184);
+            label20.Location = new Point(306, 0);
+            label20.Name = "label20";
+            label20.Size = new Size(2, 49);
+            label20.TabIndex = 13;
+            label20.Text = "OR";
+            // 
+            // label21
+            // 
+            label21.BackColor = Color.FromArgb(0, 198, 115);
+            label21.Location = new Point(0, 0);
+            label21.Name = "label21";
+            label21.Size = new Size(2, 69);
+            label21.TabIndex = 12;
+            label21.Text = "OR";
+            // 
+            // label22
+            // 
+            label22.BackColor = Color.FromArgb(0, 198, 115);
+            label22.Location = new Point(0, 66);
+            label22.Name = "label22";
+            label22.Size = new Size(308, 2);
+            label22.TabIndex = 11;
+            label22.Text = "OR";
+            // 
+            // label23
+            // 
+            label23.BackColor = Color.FromArgb(0, 198, 115);
+            label23.Location = new Point(0, 0);
+            label23.Name = "label23";
+            label23.Size = new Size(308, 2);
+            label23.TabIndex = 10;
+            label23.Text = "OR";
+            // 
             // Payment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(654, 411);
             ControlBox = false;
+            Controls.Add(paymayaBtn);
+            Controls.Add(paypalBtn);
             Controls.Add(completeSignupBtn);
-            Controls.Add(label12);
-            Controls.Add(label20);
-            Controls.Add(accNumField);
-            Controls.Add(label10);
-            Controls.Add(label11);
-            Controls.Add(accNameField);
-            Controls.Add(panel3);
-            Controls.Add(panel1);
+            Controls.Add(gcashBtn);
             Controls.Add(label5);
             Controls.Add(backBtn);
             Controls.Add(closeBtn);
@@ -467,6 +501,7 @@
             Name = "Payment";
             StartPosition = FormStartPosition.CenterScreen;
             Text = " ";
+            Load += Payment_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -476,10 +511,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)backBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)closeBtn).EndInit();
-            panel1.ResumeLayout(false);
+            gcashBtn.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel3.ResumeLayout(false);
+            paypalBtn.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            paymayaBtn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -502,24 +539,27 @@
         private Label label5;
         private PictureBox backBtn;
         private PictureBox closeBtn;
-        private Panel panel1;
+        private Panel gcashBtn;
         private PictureBox pictureBox1;
         private Label label4;
         private Label label2;
         private Label label1;
         private Label label3;
-        private Panel panel3;
-        private PictureBox pictureBox2;
+        private Button completeSignupBtn;
+        private Label label10;
+        private Panel paypalBtn;
         private Label label6;
+        private PictureBox pictureBox2;
         private Label label7;
         private Label label8;
         private Label label9;
-        private Label label10;
         private Label label11;
-        private TextBox accNameField;
+        private Panel paymayaBtn;
         private Label label12;
+        private PictureBox pictureBox3;
         private Label label20;
-        private TextBox accNumField;
-        private Button completeSignupBtn;
+        private Label label21;
+        private Label label22;
+        private Label label23;
     }
 }
