@@ -448,6 +448,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Home";
             WindowState = FormWindowState.Maximized;
+            Load += Home_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             flowLayoutPanel1.ResumeLayout(false);

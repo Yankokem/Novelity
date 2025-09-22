@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Novelity
+namespace Novelity.Pages.Admin
 {
-    public partial class Home : Form
+    public partial class ManageBooks : Form
     {
-        public Home()
+        public ManageBooks()
         {
             InitializeComponent();
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

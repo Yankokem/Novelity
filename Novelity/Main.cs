@@ -1,3 +1,4 @@
+using Novelity.Pages.Admin;
 using System;
 using System.Windows.Forms;
 
@@ -112,6 +113,11 @@ namespace Novelity
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             LoadForm(new Dashboard());
+        }
+
+        private void manageAccountsBtn_Click(object sender, EventArgs e)
+        {
+            LoadForm(new ManageAccounts());
         }
 
         // Handle form resize to maintain proper layout

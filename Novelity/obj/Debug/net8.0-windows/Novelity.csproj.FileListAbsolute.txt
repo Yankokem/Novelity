@@ -77,3 +77,8 @@ C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.
 C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.csproj.Up2Date
 C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Profile.resources
 C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Dashboard.resources
+C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Pages.Admin.ManageAccounts.resources
+C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Pages.Admin.ManageBooks.resources
+C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Pages.Admin.Reports.resources
+C:\Users\adach\source\repos\Novelity\Novelity\bin\Debug\net8.0-windows\FontAwesome.WPF.dll
+C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Modals.CreateAccount.resources
