@@ -138,5 +138,7 @@ namespace Novelity
             public string PlanName { get; set; }
             public bool IsLoggedIn { get; set; }
         }
+
+
     }
 }

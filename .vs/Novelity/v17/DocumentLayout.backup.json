@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\adach\\source\\repos\\Novelity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\pages\\admin\\manageaccounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\pages\\admin\\manageaccounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\cards\\accountcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\cards\\accountcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\helpers\\sessionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\helpers\\sessionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\pages\\admin\\manageaccounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\pages\\admin\\manageaccounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|C:\\Users\\adach\\source\\repos\\Novelity\\novelity\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\pages\\admin\\manageaccounts.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\pages\\admin\\manageaccounts.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\cards\\accountcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\cards\\accountcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,63 +42,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Login\\Login.cs",
-              "RelativeDocumentMoniker": "Novelity\\Login\\Login.cs",
-              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Login\\Login.cs",
-              "RelativeToolTip": "Novelity\\Login\\Login.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAcwJYAAAABAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ManageAccounts.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageAccounts.Designer.cs",
+              "RelativeDocumentMoniker": "Novelity\\Pages\\Admin\\ManageAccounts.Designer.cs",
+              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageAccounts.Designer.cs*",
+              "RelativeToolTip": "Novelity\\Pages\\Admin\\ManageAccounts.Designer.cs*",
+              "ViewState": "AgIAAAABAAAAAAAAAAAiwBMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T14:52:18.749Z",
+              "WhenOpened": "2025-09-23T16:09:47.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountCard.cs",
+              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Cards\\AccountCard.cs",
+              "RelativeDocumentMoniker": "Novelity\\Cards\\AccountCard.cs",
+              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Cards\\AccountCard.cs",
+              "RelativeToolTip": "Novelity\\Cards\\AccountCard.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAA8wEEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T13:45:21.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountCard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Cards\\AccountCard.cs",
+              "RelativeDocumentMoniker": "Novelity\\Cards\\AccountCard.cs",
+              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Cards\\AccountCard.cs [Design]",
+              "RelativeToolTip": "Novelity\\Cards\\AccountCard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T13:47:35.834Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManageAccounts.cs",
+              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageAccounts.cs",
+              "RelativeDocumentMoniker": "Novelity\\Pages\\Admin\\ManageAccounts.cs",
+              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageAccounts.cs*",
+              "RelativeToolTip": "Novelity\\Pages\\Admin\\ManageAccounts.cs*",
+              "ViewState": "AgIAAP8AAAAAAAAAAADwvx4BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T13:42:09.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserSession.cs",
-              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\UserSession.cs",
-              "RelativeDocumentMoniker": "Novelity\\UserSession.cs",
-              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\UserSession.cs",
-              "RelativeToolTip": "Novelity\\UserSession.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAYwI0AAAABAAAAAAAAAA==",
+              "Title": "ManageAccounts.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageAccounts.cs",
+              "RelativeDocumentMoniker": "Novelity\\Pages\\Admin\\ManageAccounts.cs",
+              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageAccounts.cs [Design]*",
+              "RelativeToolTip": "Novelity\\Pages\\Admin\\ManageAccounts.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T14:48:37.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-23T13:18:41.557Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\App.config",
-              "RelativeDocumentMoniker": "Novelity\\App.config",
-              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\App.config",
-              "RelativeToolTip": "Novelity\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-09-22T14:46:37.421Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SessionHelper.cs",
-              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Helpers\\SessionHelper.cs",
-              "RelativeDocumentMoniker": "Novelity\\Helpers\\SessionHelper.cs",
-              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Helpers\\SessionHelper.cs",
-              "RelativeToolTip": "Novelity\\Helpers\\SessionHelper.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAkwEYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T14:46:24.014Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Main.cs [Design]",
               "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Main.cs",
               "RelativeDocumentMoniker": "Novelity\\Main.cs",
@@ -106,20 +121,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Main.cs",
               "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Main.cs",
               "RelativeDocumentMoniker": "Novelity\\Main.cs",
               "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Main.cs",
               "RelativeToolTip": "Novelity\\Main.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAkwJAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAADwv3QAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T13:19:34.499Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Program.cs",
               "RelativeDocumentMoniker": "Novelity\\Program.cs",

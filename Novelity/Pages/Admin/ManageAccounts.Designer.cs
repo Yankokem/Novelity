@@ -31,22 +31,23 @@
             label14 = new Label();
             label2 = new Label();
             label3 = new Label();
-            panel1 = new Panel();
-            checkBox9 = new CheckBox();
-            checkBox10 = new CheckBox();
+            filterPanel = new Panel();
+            oldestToNewestBox = new CheckBox();
+            newestToOldestBox = new CheckBox();
             label7 = new Label();
-            checkBox7 = new CheckBox();
-            checkBox5 = new CheckBox();
-            checkBox6 = new CheckBox();
+            activeBox = new CheckBox();
+            inactiveBox = new CheckBox();
+            expiredBox = new CheckBox();
             label6 = new Label();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            premiumBox = new CheckBox();
+            basicBox = new CheckBox();
+            customerBox = new CheckBox();
+            adminBox = new CheckBox();
             label5 = new Label();
             label4 = new Label();
             createAccountModalBtn = new Button();
-            panel1.SuspendLayout();
+            accountsPanel = new FlowLayoutPanel();
+            filterPanel.SuspendLayout();
             SuspendLayout();
             // 
             // label14
@@ -76,50 +77,50 @@
             label3.TabIndex = 30;
             label3.Text = "OR";
             // 
-            // panel1
+            // filterPanel
             // 
-            panel1.BackColor = Color.FromArgb(127, 23, 52);
-            panel1.Controls.Add(checkBox9);
-            panel1.Controls.Add(checkBox10);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(checkBox7);
-            panel1.Controls.Add(checkBox5);
-            panel1.Controls.Add(checkBox6);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(checkBox4);
-            panel1.Controls.Add(checkBox3);
-            panel1.Controls.Add(checkBox2);
-            panel1.Controls.Add(checkBox1);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label4);
-            panel1.Location = new Point(319, 108);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(330, 527);
-            panel1.TabIndex = 31;
+            filterPanel.BackColor = Color.FromArgb(127, 23, 52);
+            filterPanel.Controls.Add(oldestToNewestBox);
+            filterPanel.Controls.Add(newestToOldestBox);
+            filterPanel.Controls.Add(label7);
+            filterPanel.Controls.Add(activeBox);
+            filterPanel.Controls.Add(inactiveBox);
+            filterPanel.Controls.Add(expiredBox);
+            filterPanel.Controls.Add(label6);
+            filterPanel.Controls.Add(premiumBox);
+            filterPanel.Controls.Add(basicBox);
+            filterPanel.Controls.Add(customerBox);
+            filterPanel.Controls.Add(adminBox);
+            filterPanel.Controls.Add(label5);
+            filterPanel.Controls.Add(label4);
+            filterPanel.Location = new Point(319, 108);
+            filterPanel.Name = "filterPanel";
+            filterPanel.Size = new Size(322, 530);
+            filterPanel.TabIndex = 31;
             // 
-            // checkBox9
+            // oldestToNewestBox
             // 
-            checkBox9.AutoSize = true;
-            checkBox9.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox9.ForeColor = Color.Transparent;
-            checkBox9.Location = new Point(21, 480);
-            checkBox9.Name = "checkBox9";
-            checkBox9.Size = new Size(156, 30);
-            checkBox9.TabIndex = 12;
-            checkBox9.Text = "Oldest to Newest";
-            checkBox9.UseVisualStyleBackColor = true;
+            oldestToNewestBox.AutoSize = true;
+            oldestToNewestBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            oldestToNewestBox.ForeColor = Color.Transparent;
+            oldestToNewestBox.Location = new Point(21, 480);
+            oldestToNewestBox.Name = "oldestToNewestBox";
+            oldestToNewestBox.Size = new Size(156, 30);
+            oldestToNewestBox.TabIndex = 12;
+            oldestToNewestBox.Text = "Oldest to Newest";
+            oldestToNewestBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox10
+            // newestToOldestBox
             // 
-            checkBox10.AutoSize = true;
-            checkBox10.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox10.ForeColor = Color.Transparent;
-            checkBox10.Location = new Point(21, 444);
-            checkBox10.Name = "checkBox10";
-            checkBox10.Size = new Size(156, 30);
-            checkBox10.TabIndex = 11;
-            checkBox10.Text = "Newest to Oldest";
-            checkBox10.UseVisualStyleBackColor = true;
+            newestToOldestBox.AutoSize = true;
+            newestToOldestBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            newestToOldestBox.ForeColor = Color.Transparent;
+            newestToOldestBox.Location = new Point(21, 444);
+            newestToOldestBox.Name = "newestToOldestBox";
+            newestToOldestBox.Size = new Size(156, 30);
+            newestToOldestBox.TabIndex = 11;
+            newestToOldestBox.Text = "Newest to Oldest";
+            newestToOldestBox.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -132,41 +133,41 @@
             label7.TabIndex = 10;
             label7.Text = "Date";
             // 
-            // checkBox7
+            // activeBox
             // 
-            checkBox7.AutoSize = true;
-            checkBox7.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox7.ForeColor = Color.Transparent;
-            checkBox7.Location = new Point(21, 351);
-            checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(85, 30);
-            checkBox7.TabIndex = 9;
-            checkBox7.Text = "Expired";
-            checkBox7.UseVisualStyleBackColor = true;
+            activeBox.AutoSize = true;
+            activeBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            activeBox.ForeColor = Color.Transparent;
+            activeBox.Location = new Point(21, 351);
+            activeBox.Name = "activeBox";
+            activeBox.Size = new Size(76, 30);
+            activeBox.TabIndex = 9;
+            activeBox.Text = "Active";
+            activeBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // inactiveBox
             // 
-            checkBox5.AutoSize = true;
-            checkBox5.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox5.ForeColor = Color.Transparent;
-            checkBox5.Location = new Point(21, 315);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(90, 30);
-            checkBox5.TabIndex = 8;
-            checkBox5.Text = "Inactive";
-            checkBox5.UseVisualStyleBackColor = true;
+            inactiveBox.AutoSize = true;
+            inactiveBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            inactiveBox.ForeColor = Color.Transparent;
+            inactiveBox.Location = new Point(21, 315);
+            inactiveBox.Name = "inactiveBox";
+            inactiveBox.Size = new Size(90, 30);
+            inactiveBox.TabIndex = 8;
+            inactiveBox.Text = "Inactive";
+            inactiveBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // expiredBox
             // 
-            checkBox6.AutoSize = true;
-            checkBox6.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox6.ForeColor = Color.Transparent;
-            checkBox6.Location = new Point(21, 279);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(85, 30);
-            checkBox6.TabIndex = 7;
-            checkBox6.Text = "Expired";
-            checkBox6.UseVisualStyleBackColor = true;
+            expiredBox.AutoSize = true;
+            expiredBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            expiredBox.ForeColor = Color.Transparent;
+            expiredBox.Location = new Point(21, 279);
+            expiredBox.Name = "expiredBox";
+            expiredBox.Size = new Size(85, 30);
+            expiredBox.TabIndex = 7;
+            expiredBox.Text = "Expired";
+            expiredBox.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -179,53 +180,53 @@
             label6.TabIndex = 6;
             label6.Text = "Status";
             // 
-            // checkBox4
+            // premiumBox
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox4.ForeColor = Color.Transparent;
-            checkBox4.Location = new Point(21, 186);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(99, 30);
-            checkBox4.TabIndex = 5;
-            checkBox4.Text = "Premium";
-            checkBox4.UseVisualStyleBackColor = true;
+            premiumBox.AutoSize = true;
+            premiumBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            premiumBox.ForeColor = Color.Transparent;
+            premiumBox.Location = new Point(21, 186);
+            premiumBox.Name = "premiumBox";
+            premiumBox.Size = new Size(99, 30);
+            premiumBox.TabIndex = 5;
+            premiumBox.Text = "Premium";
+            premiumBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // basicBox
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox3.ForeColor = Color.Transparent;
-            checkBox3.Location = new Point(21, 150);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(71, 30);
-            checkBox3.TabIndex = 4;
-            checkBox3.Text = "Basic";
-            checkBox3.UseVisualStyleBackColor = true;
+            basicBox.AutoSize = true;
+            basicBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            basicBox.ForeColor = Color.Transparent;
+            basicBox.Location = new Point(21, 150);
+            basicBox.Name = "basicBox";
+            basicBox.Size = new Size(71, 30);
+            basicBox.TabIndex = 4;
+            basicBox.Text = "Basic";
+            basicBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // customerBox
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox2.ForeColor = Color.Transparent;
-            checkBox2.Location = new Point(107, 70);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(106, 30);
-            checkBox2.TabIndex = 3;
-            checkBox2.Text = "Customer";
-            checkBox2.UseVisualStyleBackColor = true;
+            customerBox.AutoSize = true;
+            customerBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customerBox.ForeColor = Color.Transparent;
+            customerBox.Location = new Point(107, 70);
+            customerBox.Name = "customerBox";
+            customerBox.Size = new Size(106, 30);
+            customerBox.TabIndex = 3;
+            customerBox.Text = "Customer";
+            customerBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // adminBox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox1.ForeColor = Color.Transparent;
-            checkBox1.Location = new Point(21, 70);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(80, 30);
-            checkBox1.TabIndex = 2;
-            checkBox1.Text = "Admin";
-            checkBox1.UseVisualStyleBackColor = true;
+            adminBox.AutoSize = true;
+            adminBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            adminBox.ForeColor = Color.Transparent;
+            adminBox.Location = new Point(21, 70);
+            adminBox.Name = "adminBox";
+            adminBox.Size = new Size(80, 30);
+            adminBox.TabIndex = 2;
+            adminBox.Text = "Admin";
+            adminBox.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -263,43 +264,57 @@
             createAccountModalBtn.UseVisualStyleBackColor = false;
             createAccountModalBtn.Click += createAccountModalBtn_Click;
             // 
+            // accountsPanel
+            // 
+            accountsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            accountsPanel.AutoSize = true;
+            accountsPanel.FlowDirection = FlowDirection.TopDown;
+            accountsPanel.Location = new Point(671, 108);
+            accountsPanel.Name = "accountsPanel";
+            accountsPanel.Size = new Size(935, 847);
+            accountsPanel.TabIndex = 33;
+            // 
             // ManageAccounts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1920, 1080);
             ControlBox = false;
+            Controls.Add(accountsPanel);
             Controls.Add(createAccountModalBtn);
-            Controls.Add(panel1);
+            Controls.Add(filterPanel);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label14);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManageAccounts";
             Text = "ManageAccounts";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            filterPanel.ResumeLayout(false);
+            filterPanel.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Label label14;
         private Label label2;
         private Label label3;
-        private Panel panel1;
-        private CheckBox checkBox1;
+        private Panel filterPanel;
+        private CheckBox adminBox;
         private Label label5;
         private Label label4;
-        private CheckBox checkBox9;
-        private CheckBox checkBox10;
+        private CheckBox oldestToNewestBox;
+        private CheckBox newestToOldestBox;
         private Label label7;
-        private CheckBox checkBox7;
-        private CheckBox checkBox5;
-        private CheckBox checkBox6;
+        private CheckBox activeBox;
+        private CheckBox inactiveBox;
+        private CheckBox expiredBox;
         private Label label6;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
+        private CheckBox premiumBox;
+        private CheckBox basicBox;
+        private CheckBox customerBox;
         private Button createAccountModalBtn;
+        private FlowLayoutPanel accountsPanel;
     }
 }

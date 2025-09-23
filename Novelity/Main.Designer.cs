@@ -45,7 +45,6 @@
             flowLayoutPanel4 = new FlowLayoutPanel();
             pictureBox3 = new PictureBox();
             manageAccountsBtn = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             adminNavbar = new Panel();
             panel1 = new Panel();
             flowy = new FlowLayoutPanel();
@@ -58,7 +57,7 @@
             pictureBox2 = new PictureBox();
             manageBooksBtn = new Label();
             panelContent = new Panel();
-            label1 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             Navbar.SuspendLayout();
             accountGroupBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)profileBtn).BeginInit();
@@ -69,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
             flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            flowLayoutPanel1.SuspendLayout();
             adminNavbar.SuspendLayout();
             panel1.SuspendLayout();
             flowy.SuspendLayout();
@@ -78,7 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panelContent.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // Navbar
@@ -277,17 +275,6 @@
             manageAccountsBtn.Text = "Manage Accounts";
             manageAccountsBtn.Click += manageAccountsBtn_Click;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Controls.Add(adminNavbar);
-            flowLayoutPanel1.Controls.Add(panelContent);
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(0, 86);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1920, 994);
-            flowLayoutPanel1.TabIndex = 3;
-            // 
             // adminNavbar
             // 
             adminNavbar.BackColor = Color.FromArgb(188, 67, 100);
@@ -416,21 +403,21 @@
             // 
             // panelContent
             // 
-            panelContent.Controls.Add(label1);
             panelContent.Location = new Point(0, 63);
             panelContent.Margin = new Padding(0);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(1920, 922);
+            panelContent.Size = new Size(1920, 933);
             panelContent.TabIndex = 1;
             // 
-            // label1
+            // flowLayoutPanel1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(671, 342);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            flowLayoutPanel1.Controls.Add(adminNavbar);
+            flowLayoutPanel1.Controls.Add(panelContent);
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Location = new Point(0, 85);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1920, 996);
+            flowLayoutPanel1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -456,7 +443,6 @@
             flowLayoutPanel4.ResumeLayout(false);
             flowLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            flowLayoutPanel1.ResumeLayout(false);
             adminNavbar.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -469,8 +455,7 @@
             flowLayoutPanel3.ResumeLayout(false);
             flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panelContent.ResumeLayout(false);
-            panelContent.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -489,7 +474,6 @@
         private FlowLayoutPanel flowLayoutPanel2;
         private Label usernameLabel;
         private Label roleLabel;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Panel adminNavbar;
         private Panel panelContent;
         private FlowLayoutPanel flowy;
@@ -505,6 +489,6 @@
         private FlowLayoutPanel flowLayoutPanel5;
         private PictureBox pictureBox4;
         private Label reportsBtn;
-        private Label label1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -24,24 +24,11 @@ namespace Novelity
 
         private void SetAdminNavbarVisibility()
         {
-            if (UserSession.IsLoggedIn && UserSession.IsAdmin)
-            {
-                // Admin is logged in - show the admin navbar
-                adminNavbar.Visible = true;
 
-                // Adjust panelContent position and size to account for admin navbar
-                panelContent.Top = adminNavbar.Bottom;
-                panelContent.Height = this.ClientSize.Height - panelContent.Top;
-            }
-            else
-            {
-                // Customer or not logged in - hide the admin navbar
-                adminNavbar.Visible = false;
+            adminNavbar.Visible = (UserSession.IsLoggedIn && UserSession.IsAdmin);
 
-                // Adjust panelContent to take the full space
-                panelContent.Top = 0;
-                panelContent.Height = this.ClientSize.Height;
-            }
+            // Refresh the flow layout
+            flowLayoutPanel1.PerformLayout();
         }
 
         private void DisplayUserInfo()
@@ -62,7 +49,8 @@ namespace Novelity
         private void LoadForm(Form form)
         {
             form.TopLevel = false;
-            form.Size = panelContent.Size;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
             panelContent.Controls.Clear();
             panelContent.Controls.Add(form);
             form.BringToFront();
@@ -123,23 +111,7 @@ namespace Novelity
         // Handle form resize to maintain proper layout
         private void Form1_Resize(object sender, EventArgs e)
         {
-            // Re-adjust panelContent when form is resized
-            if (adminNavbar.Visible)
-            {
-                panelContent.Top = adminNavbar.Bottom;
-                panelContent.Height = this.ClientSize.Height - panelContent.Top;
-            }
-            else
-            {
-                panelContent.Top = 0;
-                panelContent.Height = this.ClientSize.Height;
-            }
-
-            // Resize any loaded form to match panelContent size
-            if (panelContent.Controls.Count > 0 && panelContent.Controls[0] is Form loadedForm)
-            {
-                loadedForm.Size = panelContent.Size;
-            }
+            SetAdminNavbarVisibility();
         }
     }
 }
