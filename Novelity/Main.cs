@@ -103,6 +103,11 @@ namespace Novelity
             LoadForm(new Dashboard());
         }
 
+        private void manageBooksBtn_Click(object sender, EventArgs e)
+        {
+            LoadForm(new ManageBooks());
+        }
+
         private void manageAccountsBtn_Click(object sender, EventArgs e)
         {
             LoadForm(new ManageAccounts());
@@ -113,5 +118,7 @@ namespace Novelity
         {
             SetAdminNavbarVisibility();
         }
+
+        
     }
 }

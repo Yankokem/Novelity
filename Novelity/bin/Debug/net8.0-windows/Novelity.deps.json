@@ -9,6 +9,7 @@
       "Novelity/1.0.0": {
         "dependencies": {
           "FontAwesome": "4.7.0",
+          "FontAwesome.Sharp": "6.6.0",
           "FontAwesome.WPF": "4.7.0.9",
           "Microsoft.Data.SqlClient": "6.1.1",
           "System.Configuration.ConfigurationManager": "9.0.9"
@@ -45,6 +46,14 @@
         }
       },
       "FontAwesome/4.7.0": {},
+      "FontAwesome.Sharp/6.6.0": {
+        "runtime": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {
+            "assemblyVersion": "6.6.0.0",
+            "fileVersion": "6.6.0.0"
+          }
+        }
+      },
       "FontAwesome.WPF/4.7.0.9": {
         "runtime": {
           "lib/net40/FontAwesome.WPF.dll": {
@@ -451,6 +460,13 @@
       "sha512": "sha512-n4H/brfszElyoZ4kmGh8E75uqvLzLvFr3h2PFVdPH1LwUmWIpeqdaW2pcC4oZAhg7sESyObh0IZpAI8COCNeUg==",
       "path": "fontawesome/4.7.0",
       "hashPath": "fontawesome.4.7.0.nupkg.sha512"
+    },
+    "FontAwesome.Sharp/6.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bJCb2x73UC1nD9+9iMLaUy6Ujf9Pf+buL6FHwVnaoDYT4CQNLazz59hO5gQ0+SMSW0G+ZXmjjShOYr3Jn2UZiw==",
+      "path": "fontawesome.sharp/6.6.0",
+      "hashPath": "fontawesome.sharp.6.6.0.nupkg.sha512"
     },
     "FontAwesome.WPF/4.7.0.9": {
       "type": "package",

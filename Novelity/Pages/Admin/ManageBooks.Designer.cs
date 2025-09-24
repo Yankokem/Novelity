@@ -28,12 +28,292 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ManageBooks";
+            label14 = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            filterPanel = new Panel();
+            oldestToNewestBox = new CheckBox();
+            newestToOldestBox = new CheckBox();
+            label7 = new Label();
+            activeBox = new CheckBox();
+            inactiveBox = new CheckBox();
+            expiredBox = new CheckBox();
+            label6 = new Label();
+            premiumBox = new CheckBox();
+            basicBox = new CheckBox();
+            customerBox = new CheckBox();
+            adminBox = new CheckBox();
+            label5 = new Label();
+            label4 = new Label();
+            createBookModalBtn = new Button();
+            manageBooksPanel = new FlowLayoutPanel();
+            filterPanel.SuspendLayout();
+            SuspendLayout();
+            // 
+            // label14
+            // 
+            label14.BackColor = Color.FromArgb(127, 23, 52);
+            label14.Location = new Point(960, -460);
+            label14.Name = "label14";
+            label14.Size = new Size(1, 1500);
+            label14.TabIndex = 28;
+            label14.Text = "OR";
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.FromArgb(127, 23, 52);
+            label1.Location = new Point(319, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(1, 1500);
+            label1.TabIndex = 29;
+            label1.Text = "OR";
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.FromArgb(127, 23, 52);
+            label2.Location = new Point(1600, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(1, 1500);
+            label2.TabIndex = 30;
+            label2.Text = "OR";
+            // 
+            // filterPanel
+            // 
+            filterPanel.BackColor = Color.FromArgb(127, 23, 52);
+            filterPanel.Controls.Add(oldestToNewestBox);
+            filterPanel.Controls.Add(newestToOldestBox);
+            filterPanel.Controls.Add(label7);
+            filterPanel.Controls.Add(activeBox);
+            filterPanel.Controls.Add(inactiveBox);
+            filterPanel.Controls.Add(expiredBox);
+            filterPanel.Controls.Add(label6);
+            filterPanel.Controls.Add(premiumBox);
+            filterPanel.Controls.Add(basicBox);
+            filterPanel.Controls.Add(customerBox);
+            filterPanel.Controls.Add(adminBox);
+            filterPanel.Controls.Add(label5);
+            filterPanel.Controls.Add(label4);
+            filterPanel.Location = new Point(319, 108);
+            filterPanel.Name = "filterPanel";
+            filterPanel.Size = new Size(322, 530);
+            filterPanel.TabIndex = 32;
+            // 
+            // oldestToNewestBox
+            // 
+            oldestToNewestBox.AutoSize = true;
+            oldestToNewestBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            oldestToNewestBox.ForeColor = Color.Transparent;
+            oldestToNewestBox.Location = new Point(21, 480);
+            oldestToNewestBox.Name = "oldestToNewestBox";
+            oldestToNewestBox.Size = new Size(156, 30);
+            oldestToNewestBox.TabIndex = 12;
+            oldestToNewestBox.Text = "Oldest to Newest";
+            oldestToNewestBox.UseVisualStyleBackColor = true;
+            // 
+            // newestToOldestBox
+            // 
+            newestToOldestBox.AutoSize = true;
+            newestToOldestBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            newestToOldestBox.ForeColor = Color.Transparent;
+            newestToOldestBox.Location = new Point(21, 444);
+            newestToOldestBox.Name = "newestToOldestBox";
+            newestToOldestBox.Size = new Size(156, 30);
+            newestToOldestBox.TabIndex = 11;
+            newestToOldestBox.Text = "Newest to Oldest";
+            newestToOldestBox.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Transparent;
+            label7.Location = new Point(16, 416);
+            label7.Name = "label7";
+            label7.Size = new Size(60, 33);
+            label7.TabIndex = 10;
+            label7.Text = "Date";
+            // 
+            // activeBox
+            // 
+            activeBox.AutoSize = true;
+            activeBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            activeBox.ForeColor = Color.Transparent;
+            activeBox.Location = new Point(21, 351);
+            activeBox.Name = "activeBox";
+            activeBox.Size = new Size(76, 30);
+            activeBox.TabIndex = 9;
+            activeBox.Text = "Active";
+            activeBox.UseVisualStyleBackColor = true;
+            // 
+            // inactiveBox
+            // 
+            inactiveBox.AutoSize = true;
+            inactiveBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            inactiveBox.ForeColor = Color.Transparent;
+            inactiveBox.Location = new Point(21, 315);
+            inactiveBox.Name = "inactiveBox";
+            inactiveBox.Size = new Size(90, 30);
+            inactiveBox.TabIndex = 8;
+            inactiveBox.Text = "Inactive";
+            inactiveBox.UseVisualStyleBackColor = true;
+            // 
+            // expiredBox
+            // 
+            expiredBox.AutoSize = true;
+            expiredBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            expiredBox.ForeColor = Color.Transparent;
+            expiredBox.Location = new Point(21, 279);
+            expiredBox.Name = "expiredBox";
+            expiredBox.Size = new Size(85, 30);
+            expiredBox.TabIndex = 7;
+            expiredBox.Text = "Expired";
+            expiredBox.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Transparent;
+            label6.Location = new Point(16, 249);
+            label6.Name = "label6";
+            label6.Size = new Size(75, 33);
+            label6.TabIndex = 6;
+            label6.Text = "Status";
+            // 
+            // premiumBox
+            // 
+            premiumBox.AutoSize = true;
+            premiumBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            premiumBox.ForeColor = Color.Transparent;
+            premiumBox.Location = new Point(21, 186);
+            premiumBox.Name = "premiumBox";
+            premiumBox.Size = new Size(99, 30);
+            premiumBox.TabIndex = 5;
+            premiumBox.Text = "Premium";
+            premiumBox.UseVisualStyleBackColor = true;
+            // 
+            // basicBox
+            // 
+            basicBox.AutoSize = true;
+            basicBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            basicBox.ForeColor = Color.Transparent;
+            basicBox.Location = new Point(21, 150);
+            basicBox.Name = "basicBox";
+            basicBox.Size = new Size(71, 30);
+            basicBox.TabIndex = 4;
+            basicBox.Text = "Basic";
+            basicBox.UseVisualStyleBackColor = true;
+            // 
+            // customerBox
+            // 
+            customerBox.AutoSize = true;
+            customerBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customerBox.ForeColor = Color.Transparent;
+            customerBox.Location = new Point(107, 70);
+            customerBox.Name = "customerBox";
+            customerBox.Size = new Size(106, 30);
+            customerBox.TabIndex = 3;
+            customerBox.Text = "Customer";
+            customerBox.UseVisualStyleBackColor = true;
+            // 
+            // adminBox
+            // 
+            adminBox.AutoSize = true;
+            adminBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            adminBox.ForeColor = Color.Transparent;
+            adminBox.Location = new Point(21, 70);
+            adminBox.Name = "adminBox";
+            adminBox.Size = new Size(80, 30);
+            adminBox.TabIndex = 2;
+            adminBox.Text = "Admin";
+            adminBox.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Transparent;
+            label5.Location = new Point(16, 118);
+            label5.Name = "label5";
+            label5.Size = new Size(181, 33);
+            label5.TabIndex = 1;
+            label5.Text = "Membership Plan";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Poppins", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Transparent;
+            label4.Location = new Point(16, 17);
+            label4.Name = "label4";
+            label4.Size = new Size(85, 48);
+            label4.TabIndex = 0;
+            label4.Text = "Filter";
+            // 
+            // createBookModalBtn
+            // 
+            createBookModalBtn.BackColor = Color.FromArgb(127, 23, 52);
+            createBookModalBtn.FlatStyle = FlatStyle.Flat;
+            createBookModalBtn.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createBookModalBtn.ForeColor = Color.Transparent;
+            createBookModalBtn.Location = new Point(1445, 35);
+            createBookModalBtn.Name = "createBookModalBtn";
+            createBookModalBtn.Size = new Size(156, 48);
+            createBookModalBtn.TabIndex = 33;
+            createBookModalBtn.Text = "Add Book";
+            createBookModalBtn.UseVisualStyleBackColor = false;
+            // 
+            // manageBooksPanel
+            // 
+            manageBooksPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            manageBooksPanel.AutoSize = true;
+            manageBooksPanel.FlowDirection = FlowDirection.TopDown;
+            manageBooksPanel.Location = new Point(671, 108);
+            manageBooksPanel.Name = "manageBooksPanel";
+            manageBooksPanel.Size = new Size(935, 2567);
+            manageBooksPanel.TabIndex = 34;
+            // 
+            // ManageBooks
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1920, 1080);
+            ControlBox = false;
+            Controls.Add(manageBooksPanel);
+            Controls.Add(createBookModalBtn);
+            Controls.Add(filterPanel);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(label14);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "ManageBooks";
+            Text = "ManageBooks";
+            filterPanel.ResumeLayout(false);
+            filterPanel.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label14;
+        private Label label1;
+        private Label label2;
+        private Panel filterPanel;
+        private CheckBox oldestToNewestBox;
+        private CheckBox newestToOldestBox;
+        private Label label7;
+        private CheckBox activeBox;
+        private CheckBox inactiveBox;
+        private CheckBox expiredBox;
+        private Label label6;
+        private CheckBox premiumBox;
+        private CheckBox basicBox;
+        private CheckBox customerBox;
+        private CheckBox adminBox;
+        private Label label5;
+        private Label label4;
+        private Button createBookModalBtn;
+        private FlowLayoutPanel manageBooksPanel;
     }
 }

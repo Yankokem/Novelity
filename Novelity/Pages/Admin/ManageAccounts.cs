@@ -96,22 +96,22 @@ namespace Novelity.Pages.Admin
                 accountsPanel.Controls.Clear();
 
                 string baseQuery = @"
-                    SELECT 
-                        u.UserID,
-                        u.Username,
-                        u.Email,
-                        u.FirstName + ' ' + u.LastName as FullName,
-                        r.RoleName,
-                        ISNULL(mp.PlanName, 'No Plan') as PlanName,
-                        CONVERT(VARCHAR, u.MembershipStartDate, 107) as SubscriptionDate,
-                        CONVERT(VARCHAR, u.MembershipEndDate, 107) as RenewalDate,
-                        u.IsDeleted,
-                        u.IsActiveMembership,
-                        u.MembershipEndDate as RawEndDate
-                    FROM Users u
-                    INNER JOIN Roles r ON u.RoleID = r.RoleID
-                    LEFT JOIN MembershipPlans mp ON u.PlanID = mp.PlanID
-                    WHERE 1=1";
+            SELECT 
+                u.UserID,
+                u.Username,
+                u.Email,
+                u.FirstName + ' ' + u.LastName as FullName,
+                r.RoleName,
+                ISNULL(mp.PlanName, 'No Plan') as PlanName,
+                CONVERT(VARCHAR, u.MembershipStartDate, 107) as SubscriptionDate,
+                CONVERT(VARCHAR, u.MembershipEndDate, 107) as RenewalDate,
+                u.IsDeleted,
+                u.IsActiveMembership,
+                u.MembershipEndDate as RawEndDate
+            FROM Users u
+            INNER JOIN Roles r ON u.RoleID = r.RoleID
+            LEFT JOIN MembershipPlans mp ON u.PlanID = mp.PlanID
+            WHERE 1=1";
 
                 string whereConditions = BuildWhereConditions();
                 string orderBy = BuildOrderByClause();
@@ -127,10 +127,14 @@ namespace Novelity.Pages.Admin
                     card.UserID = Convert.ToInt32(row["UserID"]);
                     card.FullName = row["FullName"].ToString();
                     card.Username = row["Username"].ToString();
+                    card.Email = row["Email"].ToString(); // Set email
                     card.Tier = row["PlanName"].ToString();
                     card.SubscriptionDate = row["SubscriptionDate"].ToString();
                     card.RenewalDate = row["RenewalDate"].ToString();
                     card.Role = row["RoleName"].ToString();
+
+                    // Apply conditional display
+                    card.SetConditionalDisplay(row["RoleName"].ToString(), row["PlanName"].ToString());
 
                     card.DisplayUserID();
                     card.Margin = new Padding(0, 0, 0, 10);
@@ -153,7 +157,7 @@ namespace Novelity.Pages.Admin
         {
             string conditions = "";
 
-            // Role filters - FIXED: No longer requires customer to be checked for plan filters
+            // Role filters
             if (adminBox.Checked && !customerBox.Checked)
                 conditions += " AND r.RoleName = 'Admin'";
             else if (!adminBox.Checked && customerBox.Checked)
@@ -163,7 +167,7 @@ namespace Novelity.Pages.Admin
             else if (!adminBox.Checked && !customerBox.Checked)
                 conditions += " AND 1=0";
 
-            // Plan filters - FIXED: Works independently of role selection
+            // Plan filters
             bool basicSelected = basicBox.Checked;
             bool premiumSelected = premiumBox.Checked;
 
@@ -181,7 +185,7 @@ namespace Novelity.Pages.Admin
                 conditions += ")";
             }
 
-            // Status filters
+            // Status filters - FIXED BASED ON YOUR SPECIFICATIONS
             bool expiredSelected = expiredBox.Checked;
             bool inactiveSelected = inactiveBox.Checked;
             bool activeSelected = activeBox.Checked;
@@ -192,13 +196,23 @@ namespace Novelity.Pages.Admin
                 List<string> statusConditions = new List<string>();
 
                 if (expiredSelected)
-                    statusConditions.Add("(u.IsActiveMembership = 1 AND u.MembershipEndDate < GETDATE())");
+                {
+                    // Only customers with expired membership (didn't pay)
+                    statusConditions.Add("(r.RoleName = 'Customer' AND u.IsActiveMembership = 1 AND u.MembershipEndDate < GETDATE() AND u.IsDeleted = 0)");
+                }
 
                 if (inactiveSelected)
+                {
+                    // All archived/deleted accounts (both admins and customers)
                     statusConditions.Add("(u.IsDeleted = 1)");
+                }
 
                 if (activeSelected)
-                    statusConditions.Add("(u.IsActiveMembership = 1 AND u.MembershipEndDate >= GETDATE() AND u.IsDeleted = 0)");
+                {
+                    // Admins (always active) + Active-paying customers
+                    statusConditions.Add("(r.RoleName = 'Admin' AND u.IsDeleted = 0)"); // All non-deleted admins
+                    statusConditions.Add("(r.RoleName = 'Customer' AND u.IsActiveMembership = 1 AND u.MembershipEndDate >= GETDATE() AND u.IsDeleted = 0)"); // Active customers
+                }
 
                 conditions += string.Join(" OR ", statusConditions);
                 conditions += ")";
@@ -229,12 +243,16 @@ namespace Novelity.Pages.Admin
 
         private void EditAccount(int userId)
         {
-            MessageBox.Show($"Edit account with ID: {userId}");
+            EditAccount modal = new EditAccount(userId);
+            if (modal.ShowDialog() == DialogResult.OK)
+            {
+                LoadAccountCards();
+            }
         }
 
         private void DeleteAccount(int userId)
         {
-            if (MessageBox.Show("Are you sure you want to delete this account?", "Confirm Delete",
+            if (MessageBox.Show("Are you sure you want to archive this account? This action can be reversed later.", "Confirm Archive",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
@@ -246,13 +264,17 @@ namespace Novelity.Pages.Admin
 
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Account deleted successfully!", "Success");
+                        MessageBox.Show("Account archived successfully!", "Success");
                         LoadAccountCards();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to archive account.", "Error");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error deleting account: " + ex.Message, "Error");
+                    MessageBox.Show("Error archiving account: " + ex.Message, "Error");
                 }
             }
         }

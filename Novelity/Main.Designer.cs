@@ -388,6 +388,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += manageBooksBtn_Click;
             // 
             // manageBooksBtn
             // 
@@ -400,6 +401,7 @@
             manageBooksBtn.Size = new Size(155, 33);
             manageBooksBtn.TabIndex = 1;
             manageBooksBtn.Text = "Manage Books";
+            manageBooksBtn.Click += manageBooksBtn_Click;
             // 
             // panelContent
             // 

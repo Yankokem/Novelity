@@ -42,9 +42,10 @@
             renewalDateLabel = new Label();
             label16 = new Label();
             historyBtn = new Button();
-            EditBtn = new Button();
+            editBtn = new Button();
             deleteBtn = new Button();
             accountProfile = new Panel();
+            emailLabel = new Label();
             panel1 = new Panel();
             roleLabel = new Label();
             label6 = new Label();
@@ -94,7 +95,7 @@
             // 
             userIdLabel.AutoSize = true;
             userIdLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userIdLabel.Location = new Point(140, 109);
+            userIdLabel.Location = new Point(140, 71);
             userIdLabel.Name = "userIdLabel";
             userIdLabel.Size = new Size(21, 21);
             userIdLabel.TabIndex = 3;
@@ -209,18 +210,19 @@
             historyBtn.Text = "History";
             historyBtn.UseVisualStyleBackColor = false;
             // 
-            // EditBtn
+            // editBtn
             // 
-            EditBtn.BackColor = Color.FromArgb(127, 23, 52);
-            EditBtn.FlatStyle = FlatStyle.Flat;
-            EditBtn.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            EditBtn.ForeColor = Color.Transparent;
-            EditBtn.Location = new Point(808, 57);
-            EditBtn.Name = "EditBtn";
-            EditBtn.Size = new Size(105, 35);
-            EditBtn.TabIndex = 9;
-            EditBtn.Text = "Edit";
-            EditBtn.UseVisualStyleBackColor = false;
+            editBtn.BackColor = Color.FromArgb(127, 23, 52);
+            editBtn.FlatStyle = FlatStyle.Flat;
+            editBtn.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editBtn.ForeColor = Color.Transparent;
+            editBtn.Location = new Point(808, 57);
+            editBtn.Name = "editBtn";
+            editBtn.Size = new Size(105, 35);
+            editBtn.TabIndex = 9;
+            editBtn.Text = "Edit";
+            editBtn.UseVisualStyleBackColor = false;
+            editBtn.Click += editBtn_Click_1;
             // 
             // deleteBtn
             // 
@@ -232,18 +234,20 @@
             deleteBtn.Name = "deleteBtn";
             deleteBtn.Size = new Size(105, 35);
             deleteBtn.TabIndex = 10;
-            deleteBtn.Text = "Delete";
+            deleteBtn.Text = "Archive";
             deleteBtn.UseVisualStyleBackColor = false;
+            deleteBtn.Click += deleteBtn_Click_1;
             // 
             // accountProfile
             // 
+            accountProfile.Controls.Add(emailLabel);
             accountProfile.Controls.Add(panel1);
             accountProfile.Controls.Add(label4);
             accountProfile.Controls.Add(label3);
             accountProfile.Controls.Add(label2);
             accountProfile.Controls.Add(label1);
             accountProfile.Controls.Add(deleteBtn);
-            accountProfile.Controls.Add(EditBtn);
+            accountProfile.Controls.Add(editBtn);
             accountProfile.Controls.Add(historyBtn);
             accountProfile.Controls.Add(panel5);
             accountProfile.Controls.Add(panel4);
@@ -252,10 +256,21 @@
             accountProfile.Controls.Add(usernameLabel);
             accountProfile.Controls.Add(fullNameLabel);
             accountProfile.Controls.Add(pictureBox1);
+            accountProfile.Dock = DockStyle.Fill;
             accountProfile.Location = new Point(0, 0);
             accountProfile.Name = "accountProfile";
             accountProfile.Size = new Size(929, 150);
             accountProfile.TabIndex = 34;
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            emailLabel.Location = new Point(140, 111);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new Size(21, 21);
+            emailLabel.TabIndex = 39;
+            emailLabel.Text = "id";
             // 
             // panel1
             // 
@@ -362,7 +377,7 @@
         private Label renewalDateLabel;
         private Label label16;
         private Button historyBtn;
-        private Button EditBtn;
+        private Button editBtn;
         private Button deleteBtn;
         private Panel accountProfile;
         private Label label4;
@@ -372,5 +387,6 @@
         private Panel panel1;
         private Label roleLabel;
         private Label label6;
+        private Label emailLabel;
     }
 }

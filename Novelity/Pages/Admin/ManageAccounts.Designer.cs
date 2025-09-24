@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label14 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             filterPanel = new Panel();
             oldestToNewestBox = new CheckBox();
             newestToOldestBox = new CheckBox();
@@ -47,35 +44,9 @@
             label4 = new Label();
             createAccountModalBtn = new Button();
             accountsPanel = new FlowLayoutPanel();
+            label16 = new Label();
             filterPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // label14
-            // 
-            label14.BackColor = Color.FromArgb(127, 23, 52);
-            label14.Location = new Point(319, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(1, 2000);
-            label14.TabIndex = 28;
-            label14.Text = "OR";
-            // 
-            // label2
-            // 
-            label2.BackColor = Color.FromArgb(127, 23, 52);
-            label2.Location = new Point(1600, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(1, 2000);
-            label2.TabIndex = 29;
-            label2.Text = "OR";
-            // 
-            // label3
-            // 
-            label3.BackColor = Color.FromArgb(127, 23, 52);
-            label3.Location = new Point(960, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(1, 2000);
-            label3.TabIndex = 30;
-            label3.Text = "OR";
             // 
             // filterPanel
             // 
@@ -271,8 +242,17 @@
             accountsPanel.FlowDirection = FlowDirection.TopDown;
             accountsPanel.Location = new Point(671, 108);
             accountsPanel.Name = "accountsPanel";
-            accountsPanel.Size = new Size(935, 847);
+            accountsPanel.Size = new Size(935, 2567);
             accountsPanel.TabIndex = 33;
+            // 
+            // label16
+            // 
+            label16.BackColor = Color.White;
+            label16.Location = new Point(1600, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(3, 1500);
+            label16.TabIndex = 36;
+            label16.Text = "OR";
             // 
             // ManageAccounts
             // 
@@ -284,9 +264,7 @@
             Controls.Add(accountsPanel);
             Controls.Add(createAccountModalBtn);
             Controls.Add(filterPanel);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label14);
+            Controls.Add(label16);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManageAccounts";
             Text = "ManageAccounts";
@@ -297,9 +275,6 @@
         }
 
         #endregion
-        private Label label14;
-        private Label label2;
-        private Label label3;
         private Panel filterPanel;
         private CheckBox adminBox;
         private Label label5;
@@ -316,5 +291,6 @@
         private CheckBox customerBox;
         private Button createAccountModalBtn;
         private FlowLayoutPanel accountsPanel;
+        private Label label16;
     }
 }

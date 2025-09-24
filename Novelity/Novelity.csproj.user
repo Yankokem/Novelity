@@ -4,7 +4,13 @@
     <Compile Update="Cards\AccountCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Cards\ManageBooksCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Modals\CreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modals\EditAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\Admin\Dashboard.cs">

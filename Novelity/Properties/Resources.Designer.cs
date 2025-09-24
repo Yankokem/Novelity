@@ -133,6 +133,16 @@ namespace Novelity.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar___red {
+            get {
+                object obj = ResourceManager.GetObject("calendar - red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check {
             get {
                 object obj = ResourceManager.GetObject("check", resourceCulture);
@@ -326,6 +336,16 @@ namespace Novelity.Properties {
         internal static System.Drawing.Bitmap pfp___red {
             get {
                 object obj = ResourceManager.GetObject("pfp - red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pfp_v1___red {
+            get {
+                object obj = ResourceManager.GetObject("pfp v1 - red", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
