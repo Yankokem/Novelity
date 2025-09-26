@@ -13,6 +13,7 @@ namespace Novelity.Modals
         {
             InitializeComponent();
             LoadRoles();
+            LoadStatusOptions();
             roleBox.SelectedIndexChanged += roleBox_SelectedIndexChanged;
         }
 
@@ -21,6 +22,15 @@ namespace Novelity.Modals
             roleBox.Items.Add("Customer");
             roleBox.Items.Add("Admin");
             roleBox.SelectedIndex = 0;
+        }
+
+        private void LoadStatusOptions()
+        {
+            statusBox.Items.Add("Active");
+            statusBox.Items.Add("Expired");
+            statusBox.Items.Add("Suspended");
+            statusBox.Items.Add("Banned");
+            statusBox.SelectedIndex = 0; // Default to Active
         }
 
         private void roleBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,7 +108,8 @@ namespace Novelity.Modals
                 string email = createEmailField.Text.Trim();
                 string password = createPasswordField.Text;
                 string role = roleBox.SelectedItem.ToString();
-                string planName = role == "Customer" ? planBox.SelectedItem.ToString() : null;
+                string planName = role == "Customer" ? planBox.SelectedItem?.ToString() : null;
+                string userStatus = statusBox.SelectedItem?.ToString() ?? "Active";
 
                 // Check if username already exists
                 if (UsernameExists(username))
@@ -129,10 +140,35 @@ namespace Novelity.Modals
                     int roleId = GetRoleId(role);
                     int? planId = role == "Customer" ? GetPlanId(planName) : null;
 
-                    // Insert user into database
+                    // Calculate membership dates based on status and plan
+                    DateTime? membershipStartDate = null;
+                    DateTime? membershipEndDate = null;
+                    bool autoRenewal = true;
+
+                    if (role == "Customer" && planId.HasValue)
+                    {
+                        if (userStatus == "Active")
+                        {
+                            // Active customers get proper membership dates
+                            membershipStartDate = DateTime.Today;
+                            membershipEndDate = DateTime.Today.AddDays(30); // Default 30-day membership
+                            autoRenewal = true;
+                        }
+                        else
+                        {
+                            // Non-active statuses get no membership benefits
+                            membershipStartDate = null;
+                            membershipEndDate = null;
+                            autoRenewal = false;
+                        }
+                    }
+
+                    // Insert user into database with new schema
                     string query = @"
-                        INSERT INTO Users (Username, Email, PasswordHash, PasswordSalt, FirstName, LastName, RoleID, PlanID, IsActiveMembership)
-                        VALUES (@Username, @Email, @PasswordHash, @PasswordSalt, @FirstName, @LastName, @RoleID, @PlanID, @IsActiveMembership)";
+                        INSERT INTO Users (Username, Email, PasswordHash, PasswordSalt, FirstName, LastName, RoleID, PlanID, 
+                                        UserStatus, AutoRenewal, MembershipStartDate, MembershipEndDate)
+                        VALUES (@Username, @Email, @PasswordHash, @PasswordSalt, @FirstName, @LastName, @RoleID, @PlanID, 
+                                @UserStatus, @AutoRenewal, @MembershipStartDate, @MembershipEndDate)";
 
                     SqlParameter[] parameters = {
                         new SqlParameter("@Username", username),
@@ -143,7 +179,10 @@ namespace Novelity.Modals
                         new SqlParameter("@LastName", lastName),
                         new SqlParameter("@RoleID", roleId),
                         new SqlParameter("@PlanID", planId ?? (object)DBNull.Value),
-                        new SqlParameter("@IsActiveMembership", role == "Customer" ? 1 : 0)
+                        new SqlParameter("@UserStatus", userStatus),
+                        new SqlParameter("@AutoRenewal", autoRenewal),
+                        new SqlParameter("@MembershipStartDate", membershipStartDate ?? (object)DBNull.Value),
+                        new SqlParameter("@MembershipEndDate", membershipEndDate ?? (object)DBNull.Value)
                     };
 
                     int rowsAffected = DatabaseHelper.ExecuteNonQuery(query, parameters);
@@ -151,6 +190,7 @@ namespace Novelity.Modals
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Account created successfully!", "Success");
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else

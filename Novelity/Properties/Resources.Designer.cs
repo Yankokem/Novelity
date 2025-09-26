@@ -93,6 +93,16 @@ namespace Novelity.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap active {
+            get {
+                object obj = ResourceManager.GetObject("active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back_red {
             get {
                 object obj = ResourceManager.GetObject("back red", resourceCulture);
@@ -106,6 +116,16 @@ namespace Novelity.Properties {
         internal static System.Drawing.Bitmap back_red_v1 {
             get {
                 object obj = ResourceManager.GetObject("back red v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap banned {
+            get {
+                object obj = ResourceManager.GetObject("banned", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace Novelity.Properties {
         internal static System.Drawing.Bitmap calendar___red {
             get {
                 object obj = ResourceManager.GetObject("calendar - red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar___red1 {
+            get {
+                object obj = ResourceManager.GetObject("calendar - red1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +223,16 @@ namespace Novelity.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap expired {
+            get {
+                object obj = ResourceManager.GetObject("expired", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fairytail {
             get {
                 object obj = ResourceManager.GetObject("fairytail", resourceCulture);
@@ -216,6 +256,16 @@ namespace Novelity.Properties {
         internal static System.Drawing.Bitmap horror {
             get {
                 object obj = ResourceManager.GetObject("horror", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inactive {
+            get {
+                object obj = ResourceManager.GetObject("inactive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,6 +413,16 @@ namespace Novelity.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap renew {
+            get {
+                object obj = ResourceManager.GetObject("renew", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reports {
             get {
                 object obj = ResourceManager.GetObject("reports", resourceCulture);
@@ -396,6 +456,16 @@ namespace Novelity.Properties {
         internal static System.Drawing.Bitmap shelf {
             get {
                 object obj = ResourceManager.GetObject("shelf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap suspended {
+            get {
+                object obj = ResourceManager.GetObject("suspended", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -10,6 +10,9 @@
     <Compile Update="Modals\CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Modals\CreateBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Modals\EditAccount.cs">
       <SubType>Form</SubType>
     </Compile>

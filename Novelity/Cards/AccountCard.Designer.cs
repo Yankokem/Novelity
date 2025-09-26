@@ -35,16 +35,21 @@
             panel3 = new Panel();
             tierLabel = new Label();
             label10 = new Label();
-            panel4 = new Panel();
             subDateLabel = new Label();
-            label13 = new Label();
-            panel5 = new Panel();
             renewalDateLabel = new Label();
-            label16 = new Label();
             historyBtn = new Button();
             editBtn = new Button();
             deleteBtn = new Button();
             accountProfile = new Panel();
+            panel2 = new Panel();
+            InactiveIcon = new PictureBox();
+            ExpiredIcon = new PictureBox();
+            SuspendedIcon = new PictureBox();
+            BannedIcon = new PictureBox();
+            ActiveIcon = new PictureBox();
+            label7 = new Label();
+            pictureBox2 = new PictureBox();
+            closeBtn = new PictureBox();
             emailLabel = new Label();
             panel1 = new Panel();
             roleLabel = new Label();
@@ -55,9 +60,15 @@
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
             accountProfile.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)InactiveIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ExpiredIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SuspendedIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BannedIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ActiveIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -105,7 +116,7 @@
             // 
             panel3.Controls.Add(tierLabel);
             panel3.Controls.Add(label10);
-            panel3.Location = new Point(363, 41);
+            panel3.Location = new Point(371, 41);
             panel3.Name = "panel3";
             panel3.Size = new Size(107, 66);
             panel3.TabIndex = 5;
@@ -133,69 +144,27 @@
             label10.Text = "Tier";
             label10.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // panel4
-            // 
-            panel4.Controls.Add(subDateLabel);
-            panel4.Controls.Add(label13);
-            panel4.Location = new Point(480, 41);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(161, 66);
-            panel4.TabIndex = 6;
-            // 
             // subDateLabel
             // 
             subDateLabel.AutoSize = true;
             subDateLabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            subDateLabel.Location = new Point(38, 34);
+            subDateLabel.Location = new Point(681, 51);
             subDateLabel.Name = "subDateLabel";
             subDateLabel.Size = new Size(41, 23);
             subDateLabel.TabIndex = 5;
             subDateLabel.Text = "date";
             subDateLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.FromArgb(127, 23, 52);
-            label13.Location = new Point(4, 2);
-            label13.Name = "label13";
-            label13.Size = new Size(153, 28);
-            label13.TabIndex = 4;
-            label13.Text = "Subscription Date";
-            label13.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(renewalDateLabel);
-            panel5.Controls.Add(label16);
-            panel5.Location = new Point(649, 41);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(142, 66);
-            panel5.TabIndex = 7;
-            // 
             // renewalDateLabel
             // 
             renewalDateLabel.AutoSize = true;
             renewalDateLabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            renewalDateLabel.Location = new Point(25, 34);
+            renewalDateLabel.Location = new Point(681, 84);
             renewalDateLabel.Name = "renewalDateLabel";
             renewalDateLabel.Size = new Size(41, 23);
             renewalDateLabel.TabIndex = 5;
             renewalDateLabel.Text = "date";
             renewalDateLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.FromArgb(127, 23, 52);
-            label16.Location = new Point(10, 2);
-            label16.Name = "label16";
-            label16.Size = new Size(122, 28);
-            label16.TabIndex = 4;
-            label16.Text = "Renewal Date";
-            label16.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // historyBtn
             // 
@@ -240,6 +209,11 @@
             // 
             // accountProfile
             // 
+            accountProfile.Controls.Add(panel2);
+            accountProfile.Controls.Add(pictureBox2);
+            accountProfile.Controls.Add(closeBtn);
+            accountProfile.Controls.Add(subDateLabel);
+            accountProfile.Controls.Add(renewalDateLabel);
             accountProfile.Controls.Add(emailLabel);
             accountProfile.Controls.Add(panel1);
             accountProfile.Controls.Add(label4);
@@ -249,8 +223,6 @@
             accountProfile.Controls.Add(deleteBtn);
             accountProfile.Controls.Add(editBtn);
             accountProfile.Controls.Add(historyBtn);
-            accountProfile.Controls.Add(panel5);
-            accountProfile.Controls.Add(panel4);
             accountProfile.Controls.Add(panel3);
             accountProfile.Controls.Add(userIdLabel);
             accountProfile.Controls.Add(usernameLabel);
@@ -261,6 +233,108 @@
             accountProfile.Name = "accountProfile";
             accountProfile.Size = new Size(929, 150);
             accountProfile.TabIndex = 34;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(ActiveIcon);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(SuspendedIcon);
+            panel2.Controls.Add(BannedIcon);
+            panel2.Controls.Add(InactiveIcon);
+            panel2.Controls.Add(ExpiredIcon);
+            panel2.Location = new Point(499, 41);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(130, 66);
+            panel2.TabIndex = 6;
+            // 
+            // InactiveIcon
+            // 
+            InactiveIcon.BackColor = Color.Transparent;
+            InactiveIcon.Image = Properties.Resources.inactive;
+            InactiveIcon.Location = new Point(18, 30);
+            InactiveIcon.Name = "InactiveIcon";
+            InactiveIcon.Size = new Size(92, 31);
+            InactiveIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            InactiveIcon.TabIndex = 50;
+            InactiveIcon.TabStop = false;
+            // 
+            // ExpiredIcon
+            // 
+            ExpiredIcon.BackColor = Color.Transparent;
+            ExpiredIcon.Image = Properties.Resources.expired;
+            ExpiredIcon.Location = new Point(18, 30);
+            ExpiredIcon.Name = "ExpiredIcon";
+            ExpiredIcon.Size = new Size(92, 31);
+            ExpiredIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            ExpiredIcon.TabIndex = 49;
+            ExpiredIcon.TabStop = false;
+            // 
+            // SuspendedIcon
+            // 
+            SuspendedIcon.BackColor = Color.Transparent;
+            SuspendedIcon.Image = Properties.Resources.suspended;
+            SuspendedIcon.Location = new Point(18, 30);
+            SuspendedIcon.Name = "SuspendedIcon";
+            SuspendedIcon.Size = new Size(92, 31);
+            SuspendedIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            SuspendedIcon.TabIndex = 48;
+            SuspendedIcon.TabStop = false;
+            // 
+            // BannedIcon
+            // 
+            BannedIcon.BackColor = Color.Transparent;
+            BannedIcon.Image = Properties.Resources.banned;
+            BannedIcon.Location = new Point(18, 30);
+            BannedIcon.Name = "BannedIcon";
+            BannedIcon.Size = new Size(92, 31);
+            BannedIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            BannedIcon.TabIndex = 47;
+            BannedIcon.TabStop = false;
+            // 
+            // ActiveIcon
+            // 
+            ActiveIcon.BackColor = Color.Transparent;
+            ActiveIcon.Image = Properties.Resources.active;
+            ActiveIcon.Location = new Point(18, 30);
+            ActiveIcon.Name = "ActiveIcon";
+            ActiveIcon.Size = new Size(92, 31);
+            ActiveIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            ActiveIcon.TabIndex = 46;
+            ActiveIcon.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(127, 23, 52);
+            label7.Location = new Point(33, 1);
+            label7.Name = "label7";
+            label7.Size = new Size(62, 28);
+            label7.TabIndex = 4;
+            label7.Text = "Status";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = Properties.Resources.renew;
+            pictureBox2.Location = new Point(655, 82);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(20, 20);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 45;
+            pictureBox2.TabStop = false;
+            // 
+            // closeBtn
+            // 
+            closeBtn.BackColor = Color.Transparent;
+            closeBtn.Image = Properties.Resources.calendar___red1;
+            closeBtn.Location = new Point(655, 51);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(20, 20);
+            closeBtn.SizeMode = PictureBoxSizeMode.Zoom;
+            closeBtn.TabIndex = 44;
+            closeBtn.TabStop = false;
             // 
             // emailLabel
             // 
@@ -350,12 +424,17 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             accountProfile.ResumeLayout(false);
             accountProfile.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)InactiveIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ExpiredIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SuspendedIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BannedIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ActiveIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)closeBtn).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -370,12 +449,8 @@
         private Panel panel3;
         private Label tierLabel;
         private Label label10;
-        private Panel panel4;
         private Label subDateLabel;
-        private Label label13;
-        private Panel panel5;
         private Label renewalDateLabel;
-        private Label label16;
         private Button historyBtn;
         private Button editBtn;
         private Button deleteBtn;
@@ -388,5 +463,14 @@
         private Label roleLabel;
         private Label label6;
         private Label emailLabel;
+        private PictureBox pictureBox2;
+        private PictureBox closeBtn;
+        private Panel panel2;
+        private PictureBox SuspendedIcon;
+        private PictureBox BannedIcon;
+        private PictureBox ActiveIcon;
+        private Label label7;
+        private PictureBox InactiveIcon;
+        private PictureBox ExpiredIcon;
     }
 }

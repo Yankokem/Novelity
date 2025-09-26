@@ -52,6 +52,8 @@
             label15 = new Label();
             planBox = new ComboBox();
             planGroup = new Panel();
+            label16 = new Label();
+            statusBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
             planGroup.SuspendLayout();
             SuspendLayout();
@@ -279,10 +281,29 @@
             // 
             planGroup.Controls.Add(label15);
             planGroup.Controls.Add(planBox);
-            planGroup.Location = new Point(21, 398);
+            planGroup.Location = new Point(170, 330);
             planGroup.Name = "planGroup";
             planGroup.Size = new Size(143, 56);
             planGroup.TabIndex = 36;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.ForeColor = Color.FromArgb(127, 23, 52);
+            label16.Location = new Point(21, 395);
+            label16.Name = "label16";
+            label16.Size = new Size(52, 23);
+            label16.TabIndex = 38;
+            label16.Text = "Status";
+            // 
+            // statusBox
+            // 
+            statusBox.FormattingEnabled = true;
+            statusBox.Location = new Point(22, 421);
+            statusBox.Name = "statusBox";
+            statusBox.Size = new Size(129, 23);
+            statusBox.TabIndex = 37;
             // 
             // CreateAccount
             // 
@@ -290,6 +311,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(400, 500);
             ControlBox = false;
+            Controls.Add(label16);
+            Controls.Add(statusBox);
             Controls.Add(planGroup);
             Controls.Add(createAccountBtn);
             Controls.Add(label14);
@@ -349,5 +372,7 @@
         private Label label15;
         private ComboBox planBox;
         private Panel planGroup;
+        private Label label16;
+        private ComboBox statusBox;
     }
 }

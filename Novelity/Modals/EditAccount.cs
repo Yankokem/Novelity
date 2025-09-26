@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace Novelity.Modals
 {
@@ -43,7 +44,8 @@ namespace Novelity.Modals
                         r.RoleName,
                         ISNULL(mp.PlanName, 'No Plan') as PlanName,
                         u.MembershipStartDate,
-                        u.MembershipEndDate
+                        u.MembershipEndDate,
+                        u.UserStatus
                     FROM Users u
                     INNER JOIN Roles r ON u.RoleID = r.RoleID
                     LEFT JOIN MembershipPlans mp ON u.PlanID = mp.PlanID
@@ -70,27 +72,32 @@ namespace Novelity.Modals
                     _originalMembershipEndDate = row["MembershipEndDate"] != DBNull.Value ?
                         Convert.ToDateTime(row["MembershipEndDate"]) : (DateTime?)null;
 
-                    // Load roles and set current role
+                    // Load roles
                     editroleBox.Items.Add("Customer");
                     editroleBox.Items.Add("Admin");
                     editroleBox.SelectedItem = _currentRole;
 
-                    // Load plans and set current plan if customer
+                    // Load plans
                     editplanBox.Items.Add("Basic");
                     editplanBox.Items.Add("Premium");
-
                     if (_currentRole == "Customer" && _currentPlan != "No Plan")
                     {
                         editplanBox.SelectedItem = _currentPlan;
                     }
 
-                    // Set calendar date if available
+                    // Load statuses
+                    editStatusBox.Items.Add("Active");
+                    editStatusBox.Items.Add("Expired");
+                    editStatusBox.Items.Add("Suspended");
+                    editStatusBox.Items.Add("Banned");
+                    editStatusBox.SelectedItem = row["UserStatus"].ToString();
+
+                    // Set calendar
                     if (_originalMembershipEndDate.HasValue)
                     {
                         editMonthCalendar.SetDate(_originalMembershipEndDate.Value);
                     }
 
-                    // Apply initial UI state
                     ApplyUIStateBasedOnRoleAndPlan();
                 }
             }
@@ -107,7 +114,6 @@ namespace Novelity.Modals
 
             if (selectedRole == "Admin")
             {
-                // Admin selected - hide customer-specific controls
                 this.Height = 500;
                 editAccountBtn.Location = new System.Drawing.Point(279, 448);
                 panelLineBottom.Location = new System.Drawing.Point(0, 497);
@@ -118,10 +124,7 @@ namespace Novelity.Modals
             }
             else if (selectedRole == "Customer")
             {
-                // Customer selected - show customer-specific controls
                 planGroup.Visible = true;
-
-                // Apply plan-specific adjustments
                 ApplyPlanSpecificUI();
             }
         }
@@ -137,7 +140,6 @@ namespace Novelity.Modals
 
             if (selectedPlan == "Basic")
             {
-                // Basic plan - hide calendar, reduce form height
                 this.Height = 450;
                 editAccountBtn.Location = new System.Drawing.Point(279, 398);
                 panelLineBottom.Location = new System.Drawing.Point(0, 447);
@@ -147,7 +149,6 @@ namespace Novelity.Modals
             }
             else if (selectedPlan == "Premium")
             {
-                // Premium plan - show everything at default size
                 this.Height = 600;
                 editAccountBtn.Location = new System.Drawing.Point(279, 548);
                 panelLineBottom.Location = new System.Drawing.Point(0, 597);
@@ -166,14 +167,12 @@ namespace Novelity.Modals
             else if (_currentRole == "Customer")
             {
                 planGroup.Visible = true;
-
                 if (_currentPlan == "Basic")
                 {
                     ApplyPlanSpecificUI();
                 }
                 else
                 {
-                    // Default to Premium layout
                     this.Height = 600;
                     editAccountBtn.Location = new System.Drawing.Point(279, 548);
                     panelLineBottom.Location = new System.Drawing.Point(0, 597);
@@ -213,14 +212,12 @@ namespace Novelity.Modals
                 return false;
             }
 
-            // Check if username already exists (excluding current user)
             if (UsernameExists(editUsernameField.Text, _userId))
             {
                 MessageBox.Show("Username already exists. Please choose a different one.", "Error");
                 return false;
             }
 
-            // Check if email already exists (excluding current user)
             if (EmailExists(editEmailField.Text, _userId))
             {
                 MessageBox.Show("Email already exists. Please use a different one.", "Error");
@@ -237,10 +234,7 @@ namespace Novelity.Modals
                 var addr = new System.Net.Mail.MailAddress(email);
                 return addr.Address == email;
             }
-            catch
-            {
-                return false;
-            }
+            catch { return false; }
         }
 
         private void UpdateAccount()
@@ -253,46 +247,36 @@ namespace Novelity.Modals
                 string password = editPasswordField.Text;
                 string role = editroleBox.SelectedItem.ToString();
                 string planName = role == "Customer" ? editplanBox.SelectedItem?.ToString() : null;
+                string userStatus = editStatusBox.SelectedItem?.ToString() ?? "Active";
 
-                // Split name into first and last name
                 string[] nameParts = fullName.Split(' ');
                 string firstName = nameParts[0];
                 string lastName = nameParts.Length > 1 ? nameParts[1] : "";
 
-                // Get role ID
                 int roleId = GetRoleId(role);
                 int? planId = (role == "Customer" && planName != null) ? GetPlanId(planName) : null;
 
-                // Handle membership dates based on calendar selection
                 DateTime? newMembershipStartDate = _originalMembershipStartDate;
                 DateTime? newMembershipEndDate = _originalMembershipEndDate;
 
                 if (role == "Customer" && planName == "Premium" && editMonthCalendar.Visible)
                 {
-                    // If calendar is visible and we're setting a Premium plan, use the selected date
                     newMembershipEndDate = editMonthCalendar.SelectionStart;
-
-                    // If this is a new subscription (no existing start date), set start date to today
                     if (!_originalMembershipStartDate.HasValue)
-                    {
                         newMembershipStartDate = DateTime.Today;
-                    }
                 }
                 else if (role == "Customer" && planName == "Basic")
                 {
-                    // For Basic plan, set 30-day membership from today or existing start date
                     DateTime startDate = _originalMembershipStartDate ?? DateTime.Today;
                     newMembershipStartDate = startDate;
                     newMembershipEndDate = startDate.AddDays(30);
                 }
                 else if (role == "Admin")
                 {
-                    // Admin doesn't have membership dates
                     newMembershipStartDate = null;
                     newMembershipEndDate = null;
                 }
 
-                // Build update query
                 string query = @"
                     UPDATE Users 
                     SET Username = @Username, 
@@ -303,9 +287,8 @@ namespace Novelity.Modals
                         PlanID = @PlanID,
                         MembershipStartDate = @MembershipStartDate,
                         MembershipEndDate = @MembershipEndDate,
-                        IsActiveMembership = @IsActiveMembership";
+                        UserStatus = @UserStatus";
 
-                // Add password update if provided
                 if (!string.IsNullOrEmpty(password))
                 {
                     if (password.Length < 6)
@@ -320,12 +303,13 @@ namespace Novelity.Modals
                         byte[] passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
 
                         query += ", PasswordHash = @PasswordHash, PasswordSalt = @PasswordSalt";
+
+                        // Add password params after building base param list
                     }
                 }
 
                 query += " WHERE UserID = @UserID";
 
-                // Create parameters
                 List<SqlParameter> parameters = new List<SqlParameter>
                 {
                     new SqlParameter("@Username", username),
@@ -336,11 +320,10 @@ namespace Novelity.Modals
                     new SqlParameter("@PlanID", planId ?? (object)DBNull.Value),
                     new SqlParameter("@MembershipStartDate", newMembershipStartDate ?? (object)DBNull.Value),
                     new SqlParameter("@MembershipEndDate", newMembershipEndDate ?? (object)DBNull.Value),
-                    new SqlParameter("@IsActiveMembership", role == "Customer" ? 1 : 0),
+                    new SqlParameter("@UserStatus", userStatus),
                     new SqlParameter("@UserID", _userId)
                 };
 
-                // Add password parameters if password was changed
                 if (!string.IsNullOrEmpty(password))
                 {
                     using (var hmac = new HMACSHA512())

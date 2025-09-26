@@ -54,6 +54,8 @@
             editAccountBtn = new Button();
             calenderLabel = new Label();
             editMonthCalendar = new MonthCalendar();
+            label3 = new Label();
+            editStatusBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
             planGroup.SuspendLayout();
             SuspendLayout();
@@ -290,17 +292,36 @@
             calenderLabel.AutoSize = true;
             calenderLabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             calenderLabel.ForeColor = Color.FromArgb(127, 23, 52);
-            calenderLabel.Location = new Point(18, 391);
+            calenderLabel.Location = new Point(23, 395);
             calenderLabel.Name = "calenderLabel";
-            calenderLabel.Size = new Size(328, 23);
+            calenderLabel.Size = new Size(78, 23);
             calenderLabel.TabIndex = 57;
-            calenderLabel.Text = "Up Until what date (not sure what to put here yet)";
+            calenderLabel.Text = "Next Billing";
             // 
             // editMonthCalendar
             // 
-            editMonthCalendar.Location = new Point(18, 420);
+            editMonthCalendar.Location = new Point(22, 420);
             editMonthCalendar.Name = "editMonthCalendar";
             editMonthCalendar.TabIndex = 56;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(127, 23, 52);
+            label3.Location = new Point(256, 394);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 23);
+            label3.TabIndex = 59;
+            label3.Text = "Status";
+            // 
+            // editStatusBox
+            // 
+            editStatusBox.FormattingEnabled = true;
+            editStatusBox.Location = new Point(257, 420);
+            editStatusBox.Name = "editStatusBox";
+            editStatusBox.Size = new Size(129, 23);
+            editStatusBox.TabIndex = 58;
             // 
             // EditAccount
             // 
@@ -308,6 +329,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(400, 600);
             ControlBox = false;
+            Controls.Add(label3);
+            Controls.Add(editStatusBox);
             Controls.Add(calenderLabel);
             Controls.Add(editMonthCalendar);
             Controls.Add(editAccountBtn);
@@ -371,5 +394,7 @@
         private Button editAccountBtn;
         private Label calenderLabel;
         private MonthCalendar editMonthCalendar;
+        private Label label3;
+        private ComboBox editStatusBox;
     }
 }

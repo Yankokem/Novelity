@@ -86,3 +86,4 @@ C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.
 C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Modals.EditAccount.resources
 C:\Users\adach\source\repos\Novelity\Novelity\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
 C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Cards.ManageBooksCard.resources
+C:\Users\adach\source\repos\Novelity\Novelity\obj\Debug\net8.0-windows\Novelity.Modals.CreateBook.resources

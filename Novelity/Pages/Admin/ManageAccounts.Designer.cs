@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             filterPanel = new Panel();
+            suspendedBox = new CheckBox();
+            bannedBox = new CheckBox();
             oldestToNewestBox = new CheckBox();
             newestToOldestBox = new CheckBox();
             label7 = new Label();
@@ -45,12 +47,16 @@
             createAccountModalBtn = new Button();
             accountsPanel = new FlowLayoutPanel();
             label16 = new Label();
+            nextBtn = new Button();
+            prevBtn = new Button();
             filterPanel.SuspendLayout();
             SuspendLayout();
             // 
             // filterPanel
             // 
             filterPanel.BackColor = Color.FromArgb(127, 23, 52);
+            filterPanel.Controls.Add(suspendedBox);
+            filterPanel.Controls.Add(bannedBox);
             filterPanel.Controls.Add(oldestToNewestBox);
             filterPanel.Controls.Add(newestToOldestBox);
             filterPanel.Controls.Add(label7);
@@ -66,15 +72,39 @@
             filterPanel.Controls.Add(label4);
             filterPanel.Location = new Point(319, 108);
             filterPanel.Name = "filterPanel";
-            filterPanel.Size = new Size(322, 530);
+            filterPanel.Size = new Size(322, 607);
             filterPanel.TabIndex = 31;
+            // 
+            // suspendedBox
+            // 
+            suspendedBox.AutoSize = true;
+            suspendedBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            suspendedBox.ForeColor = Color.Transparent;
+            suspendedBox.Location = new Point(21, 387);
+            suspendedBox.Name = "suspendedBox";
+            suspendedBox.Size = new Size(116, 30);
+            suspendedBox.TabIndex = 16;
+            suspendedBox.Text = "Suspended";
+            suspendedBox.UseVisualStyleBackColor = true;
+            // 
+            // bannedBox
+            // 
+            bannedBox.AutoSize = true;
+            bannedBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bannedBox.ForeColor = Color.Transparent;
+            bannedBox.Location = new Point(21, 423);
+            bannedBox.Name = "bannedBox";
+            bannedBox.Size = new Size(89, 30);
+            bannedBox.TabIndex = 15;
+            bannedBox.Text = "Banned";
+            bannedBox.UseVisualStyleBackColor = true;
             // 
             // oldestToNewestBox
             // 
             oldestToNewestBox.AutoSize = true;
             oldestToNewestBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             oldestToNewestBox.ForeColor = Color.Transparent;
-            oldestToNewestBox.Location = new Point(21, 480);
+            oldestToNewestBox.Location = new Point(21, 549);
             oldestToNewestBox.Name = "oldestToNewestBox";
             oldestToNewestBox.Size = new Size(156, 30);
             oldestToNewestBox.TabIndex = 12;
@@ -86,7 +116,7 @@
             newestToOldestBox.AutoSize = true;
             newestToOldestBox.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             newestToOldestBox.ForeColor = Color.Transparent;
-            newestToOldestBox.Location = new Point(21, 444);
+            newestToOldestBox.Location = new Point(21, 513);
             newestToOldestBox.Name = "newestToOldestBox";
             newestToOldestBox.Size = new Size(156, 30);
             newestToOldestBox.TabIndex = 11;
@@ -98,7 +128,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Transparent;
-            label7.Location = new Point(16, 416);
+            label7.Location = new Point(16, 485);
             label7.Name = "label7";
             label7.Size = new Size(60, 33);
             label7.TabIndex = 10;
@@ -237,12 +267,11 @@
             // 
             // accountsPanel
             // 
-            accountsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             accountsPanel.AutoSize = true;
             accountsPanel.FlowDirection = FlowDirection.TopDown;
             accountsPanel.Location = new Point(671, 108);
             accountsPanel.Name = "accountsPanel";
-            accountsPanel.Size = new Size(935, 2567);
+            accountsPanel.Size = new Size(935, 883);
             accountsPanel.TabIndex = 33;
             // 
             // label16
@@ -254,13 +283,34 @@
             label16.TabIndex = 36;
             label16.Text = "OR";
             // 
+            // nextBtn
+            // 
+            nextBtn.Location = new Point(487, 874);
+            nextBtn.Name = "nextBtn";
+            nextBtn.Size = new Size(84, 27);
+            nextBtn.TabIndex = 38;
+            nextBtn.Text = "Next";
+            nextBtn.UseVisualStyleBackColor = true;
+            nextBtn.Click += nextBtn_Click;
+            // 
+            // prevBtn
+            // 
+            prevBtn.Location = new Point(487, 824);
+            prevBtn.Name = "prevBtn";
+            prevBtn.Size = new Size(84, 27);
+            prevBtn.TabIndex = 37;
+            prevBtn.Text = "Prev";
+            prevBtn.UseVisualStyleBackColor = true;
+            prevBtn.Click += prevBtn_Click;
+            // 
             // ManageAccounts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
             ClientSize = new Size(1920, 1080);
             ControlBox = false;
+            Controls.Add(nextBtn);
+            Controls.Add(prevBtn);
             Controls.Add(accountsPanel);
             Controls.Add(createAccountModalBtn);
             Controls.Add(filterPanel);
@@ -292,5 +342,9 @@
         private Button createAccountModalBtn;
         private FlowLayoutPanel accountsPanel;
         private Label label16;
+        private CheckBox suspendedBox;
+        private CheckBox bannedBox;
+        private Button nextBtn;
+        private Button prevBtn;
     }
 }

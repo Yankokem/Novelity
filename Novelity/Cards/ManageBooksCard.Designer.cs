@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             accountProfile = new Panel();
+            dateBarrowedLabel = new Label();
+            usernameLabel = new Label();
+            bookIdLabel = new Label();
+            dateAddedLabel = new Label();
+            pictureBox1 = new PictureBox();
+            closeBtn = new PictureBox();
             panel2 = new Panel();
             quantityLabel = new Label();
             label8 = new Label();
             releaseDateLabel = new Label();
-            pictureBox2 = new PictureBox();
+            bookCoverImg = new PictureBox();
             publisherLabel = new Label();
             panel1 = new Panel();
             conditionLabel = new Label();
@@ -49,20 +55,14 @@
             label16 = new Label();
             genreLabel = new Label();
             authorLabel = new Label();
-            TitleLabel = new Label();
-            closeBtn = new PictureBox();
-            pictureBox1 = new PictureBox();
-            dateAddedLabel = new Label();
-            bookIdLabel = new Label();
-            usernameLabel = new Label();
-            dateBarrowedLabel = new Label();
+            titleLabel = new Label();
             accountProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bookCoverImg).BeginInit();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // accountProfile
@@ -75,7 +75,7 @@
             accountProfile.Controls.Add(closeBtn);
             accountProfile.Controls.Add(panel2);
             accountProfile.Controls.Add(releaseDateLabel);
-            accountProfile.Controls.Add(pictureBox2);
+            accountProfile.Controls.Add(bookCoverImg);
             accountProfile.Controls.Add(publisherLabel);
             accountProfile.Controls.Add(panel1);
             accountProfile.Controls.Add(label4);
@@ -87,12 +87,76 @@
             accountProfile.Controls.Add(panel5);
             accountProfile.Controls.Add(genreLabel);
             accountProfile.Controls.Add(authorLabel);
-            accountProfile.Controls.Add(TitleLabel);
+            accountProfile.Controls.Add(titleLabel);
             accountProfile.Dock = DockStyle.Fill;
             accountProfile.Location = new Point(0, 0);
             accountProfile.Name = "accountProfile";
             accountProfile.Size = new Size(929, 160);
             accountProfile.TabIndex = 35;
+            // 
+            // dateBarrowedLabel
+            // 
+            dateBarrowedLabel.AutoSize = true;
+            dateBarrowedLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateBarrowedLabel.Location = new Point(684, 84);
+            dateBarrowedLabel.Name = "dateBarrowedLabel";
+            dateBarrowedLabel.Size = new Size(97, 21);
+            dateBarrowedLabel.TabIndex = 47;
+            dateBarrowedLabel.Text = "date borrowed";
+            // 
+            // usernameLabel
+            // 
+            usernameLabel.AutoSize = true;
+            usernameLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usernameLabel.Location = new Point(684, 54);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new Size(70, 21);
+            usernameLabel.TabIndex = 46;
+            usernameLabel.Text = "username";
+            // 
+            // bookIdLabel
+            // 
+            bookIdLabel.AutoSize = true;
+            bookIdLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookIdLabel.Location = new Point(892, 16);
+            bookIdLabel.Name = "bookIdLabel";
+            bookIdLabel.Size = new Size(21, 21);
+            bookIdLabel.TabIndex = 45;
+            bookIdLabel.Text = "ID";
+            bookIdLabel.TextAlign = ContentAlignment.TopRight;
+            // 
+            // dateAddedLabel
+            // 
+            dateAddedLabel.AutoSize = true;
+            dateAddedLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateAddedLabel.Location = new Point(834, 124);
+            dateAddedLabel.Name = "dateAddedLabel";
+            dateAddedLabel.Size = new Size(79, 21);
+            dateAddedLabel.TabIndex = 44;
+            dateAddedLabel.Text = "date added";
+            dateAddedLabel.TextAlign = ContentAlignment.TopRight;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.calendar___red;
+            pictureBox1.Location = new Point(658, 84);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(20, 20);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 43;
+            pictureBox1.TabStop = false;
+            // 
+            // closeBtn
+            // 
+            closeBtn.BackColor = Color.Transparent;
+            closeBtn.Image = Properties.Resources.pfp_v1___red;
+            closeBtn.Location = new Point(658, 53);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(20, 20);
+            closeBtn.SizeMode = PictureBoxSizeMode.Zoom;
+            closeBtn.TabIndex = 42;
+            closeBtn.TabStop = false;
             // 
             // panel2
             // 
@@ -136,15 +200,15 @@
             releaseDateLabel.TabIndex = 41;
             releaseDateLabel.Text = "Release Date";
             // 
-            // pictureBox2
+            // bookCoverImg
             // 
-            pictureBox2.Image = Properties.Resources._1;
-            pictureBox2.Location = new Point(17, 16);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(108, 129);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 40;
-            pictureBox2.TabStop = false;
+            bookCoverImg.Image = Properties.Resources._1;
+            bookCoverImg.Location = new Point(17, 16);
+            bookCoverImg.Name = "bookCoverImg";
+            bookCoverImg.Size = new Size(108, 129);
+            bookCoverImg.SizeMode = PictureBoxSizeMode.Zoom;
+            bookCoverImg.TabIndex = 40;
+            bookCoverImg.TabStop = false;
             // 
             // publisherLabel
             // 
@@ -304,79 +368,15 @@
             authorLabel.TabIndex = 2;
             authorLabel.Text = "Author";
             // 
-            // TitleLabel
+            // titleLabel
             // 
-            TitleLabel.AutoSize = true;
-            TitleLabel.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TitleLabel.Location = new Point(131, 16);
-            TitleLabel.Name = "TitleLabel";
-            TitleLabel.Size = new Size(45, 28);
-            TitleLabel.TabIndex = 1;
-            TitleLabel.Text = "Title";
-            // 
-            // closeBtn
-            // 
-            closeBtn.BackColor = Color.Transparent;
-            closeBtn.Image = Properties.Resources.pfp_v1___red;
-            closeBtn.Location = new Point(658, 53);
-            closeBtn.Name = "closeBtn";
-            closeBtn.Size = new Size(20, 20);
-            closeBtn.SizeMode = PictureBoxSizeMode.Zoom;
-            closeBtn.TabIndex = 42;
-            closeBtn.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.calendar___red;
-            pictureBox1.Location = new Point(658, 84);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(20, 20);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 43;
-            pictureBox1.TabStop = false;
-            // 
-            // dateAddedLabel
-            // 
-            dateAddedLabel.AutoSize = true;
-            dateAddedLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateAddedLabel.Location = new Point(834, 124);
-            dateAddedLabel.Name = "dateAddedLabel";
-            dateAddedLabel.Size = new Size(79, 21);
-            dateAddedLabel.TabIndex = 44;
-            dateAddedLabel.Text = "date added";
-            dateAddedLabel.TextAlign = ContentAlignment.TopRight;
-            // 
-            // bookIdLabel
-            // 
-            bookIdLabel.AutoSize = true;
-            bookIdLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookIdLabel.Location = new Point(892, 16);
-            bookIdLabel.Name = "bookIdLabel";
-            bookIdLabel.Size = new Size(21, 21);
-            bookIdLabel.TabIndex = 45;
-            bookIdLabel.Text = "ID";
-            bookIdLabel.TextAlign = ContentAlignment.TopRight;
-            // 
-            // usernameLabel
-            // 
-            usernameLabel.AutoSize = true;
-            usernameLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameLabel.Location = new Point(684, 54);
-            usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(70, 21);
-            usernameLabel.TabIndex = 46;
-            usernameLabel.Text = "username";
-            // 
-            // dateBarrowedLabel
-            // 
-            dateBarrowedLabel.AutoSize = true;
-            dateBarrowedLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateBarrowedLabel.Location = new Point(684, 84);
-            dateBarrowedLabel.Name = "dateBarrowedLabel";
-            dateBarrowedLabel.Size = new Size(97, 21);
-            dateBarrowedLabel.TabIndex = 47;
-            dateBarrowedLabel.Text = "date borrowed";
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            titleLabel.Location = new Point(131, 16);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(45, 28);
+            titleLabel.TabIndex = 1;
+            titleLabel.Text = "Title";
             // 
             // ManageBooksCard
             // 
@@ -387,15 +387,15 @@
             Size = new Size(929, 160);
             accountProfile.ResumeLayout(false);
             accountProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)closeBtn).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bookCoverImg).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)closeBtn).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -417,8 +417,8 @@
         private Label label16;
         private Label genreLabel;
         private Label authorLabel;
-        private Label TitleLabel;
-        private PictureBox pictureBox2;
+        private Label titleLabel;
+        private PictureBox bookCoverImg;
         private Label releaseDateLabel;
         private Panel panel2;
         private Label quantityLabel;

@@ -46,4 +46,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Built Tools\" />
+    <Folder Include="Book Covers\" />
+    <Folder Include="Resources\Book Covers\" />
+  </ItemGroup>
+
 </Project>

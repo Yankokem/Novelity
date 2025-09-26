@@ -68,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
             flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            adminNavbar.SuspendLayout();
             panel1.SuspendLayout();
             flowy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -82,6 +81,7 @@
             // Navbar
             // 
             Navbar.BackColor = Color.FromArgb(127, 23, 52);
+            Navbar.Controls.Add(panel1);
             Navbar.Controls.Add(accountGroupBtn);
             Navbar.Controls.Add(myRentalBtn);
             Navbar.Controls.Add(bookBtn);
@@ -278,7 +278,6 @@
             // adminNavbar
             // 
             adminNavbar.BackColor = Color.FromArgb(188, 67, 100);
-            adminNavbar.Controls.Add(panel1);
             adminNavbar.Location = new Point(0, 0);
             adminNavbar.Margin = new Padding(0);
             adminNavbar.Name = "adminNavbar";
@@ -291,7 +290,7 @@
             panel1.Controls.Add(flowLayoutPanel4);
             panel1.Controls.Add(flowLayoutPanel5);
             panel1.Controls.Add(flowLayoutPanel3);
-            panel1.Location = new Point(441, 15);
+            panel1.Location = new Point(334, 51);
             panel1.Name = "panel1";
             panel1.Size = new Size(1052, 35);
             panel1.TabIndex = 0;
@@ -445,7 +444,6 @@
             flowLayoutPanel4.ResumeLayout(false);
             flowLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            adminNavbar.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             flowy.ResumeLayout(false);
