@@ -42,10 +42,11 @@ namespace Novelity
             {
                 // Get user data from database
                 string query = @"
-            SELECT u.UserID, u.Username, u.PasswordHash, u.PasswordSalt, u.RoleID, r.RoleName 
-            FROM Users u 
-            INNER JOIN Roles r ON u.RoleID = r.RoleID 
-            WHERE u.Username = @Username AND u.IsDeleted = 0";
+        SELECT u.UserID, u.Username, u.PasswordHash, u.PasswordSalt, u.RoleID, r.RoleName, u.Email, u.FirstName, u.LastName, p.PlanName
+        FROM Users u
+        INNER JOIN Roles r ON u.RoleID = r.RoleID
+        LEFT JOIN MembershipPlans p ON u.PlanID = p.PlanID
+        WHERE u.Username = @Username AND u.IsDeleted = 0";
 
                 SqlParameter[] parameters = {
             new SqlParameter("@Username", username)
@@ -68,32 +69,16 @@ namespace Novelity
                     // Login successful
                     int userId = Convert.ToInt32(result.Rows[0]["UserID"]);
                     string roleName = result.Rows[0]["RoleName"].ToString();
+                    string email = result.Rows[0]["Email"].ToString();
+                    string firstName = result.Rows[0]["FirstName"].ToString();
+                    string lastName = result.Rows[0]["LastName"].ToString();
 
-                    // Get additional user info for session
-                    string queryUserInfo = "SELECT Email, FirstName, LastName, PlanID FROM Users WHERE UserID = @UserID";
-                    SqlParameter[] userInfoParams = { new SqlParameter("@UserID", userId) };
-                    DataTable userInfo = DatabaseHelper.ExecuteQuery(queryUserInfo, userInfoParams);
+                    // PlanName may be NULL if user hasn’t subscribed yet
+                    string planName = result.Rows[0]["PlanName"] == DBNull.Value
+                        ? "Free"
+                        : result.Rows[0]["PlanName"].ToString();
 
-                    string email = userInfo.Rows[0]["Email"].ToString();
-                    string firstName = userInfo.Rows[0]["FirstName"].ToString();
-                    string lastName = userInfo.Rows[0]["LastName"].ToString();
-                    object planIdObj = userInfo.Rows[0]["PlanID"];
-
-                    string planName = null;
-                    if (planIdObj != DBNull.Value)
-                    {
-                        int planId = Convert.ToInt32(planIdObj);
-                        string queryPlan = "SELECT PlanName FROM MembershipPlans WHERE PlanID = @PlanID";
-                        SqlParameter[] planParams = { new SqlParameter("@PlanID", planId) };
-                        DataTable planInfo = DatabaseHelper.ExecuteQuery(queryPlan, planParams);
-
-                        if (planInfo.Rows.Count > 0)
-                        {
-                            planName = planInfo.Rows[0]["PlanName"].ToString();
-                        }
-                    }
-
-                    // Create user session (this will automatically save it)
+                    // Create session
                     UserSession.CreateSession(userId, username, email, firstName, lastName, roleName, planName);
 
                     // Open main form

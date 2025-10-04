@@ -29,12 +29,8 @@
         private void InitializeComponent()
         {
             accountProfile = new Panel();
-            dateBarrowedLabel = new Label();
-            usernameLabel = new Label();
             bookIdLabel = new Label();
             dateAddedLabel = new Label();
-            pictureBox1 = new PictureBox();
-            closeBtn = new PictureBox();
             panel2 = new Panel();
             quantityLabel = new Label();
             label8 = new Label();
@@ -51,28 +47,46 @@
             archiveBookBtn = new Button();
             editBookBtn = new Button();
             panel5 = new Panel();
-            statusLabel = new Label();
+            statusPanel = new Panel();
+            availableIcon = new PictureBox();
+            rentedIcon = new PictureBox();
+            archivedIcon = new PictureBox();
+            overdueIcon = new PictureBox();
             label16 = new Label();
+            borrowersPanel = new Panel();
+            label5 = new Label();
+            pictureBox2 = new PictureBox();
+            closeBtn = new PictureBox();
+            dateBarrowedLabel = new Label();
+            usernameLabel = new Label();
+            pictureBox1 = new PictureBox();
             genreLabel = new Label();
             authorLabel = new Label();
             titleLabel = new Label();
             accountProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bookCoverImg).BeginInit();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
+            statusPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)availableIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)rentedIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)archivedIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)overdueIcon).BeginInit();
+            borrowersPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // accountProfile
             // 
-            accountProfile.Controls.Add(dateBarrowedLabel);
-            accountProfile.Controls.Add(usernameLabel);
+            accountProfile.Controls.Add(overdueIcon);
+            accountProfile.Controls.Add(archivedIcon);
+            accountProfile.Controls.Add(rentedIcon);
+            accountProfile.Controls.Add(availableIcon);
             accountProfile.Controls.Add(bookIdLabel);
             accountProfile.Controls.Add(dateAddedLabel);
-            accountProfile.Controls.Add(pictureBox1);
-            accountProfile.Controls.Add(closeBtn);
             accountProfile.Controls.Add(panel2);
             accountProfile.Controls.Add(releaseDateLabel);
             accountProfile.Controls.Add(bookCoverImg);
@@ -93,26 +107,6 @@
             accountProfile.Name = "accountProfile";
             accountProfile.Size = new Size(929, 160);
             accountProfile.TabIndex = 35;
-            // 
-            // dateBarrowedLabel
-            // 
-            dateBarrowedLabel.AutoSize = true;
-            dateBarrowedLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateBarrowedLabel.Location = new Point(684, 84);
-            dateBarrowedLabel.Name = "dateBarrowedLabel";
-            dateBarrowedLabel.Size = new Size(97, 21);
-            dateBarrowedLabel.TabIndex = 47;
-            dateBarrowedLabel.Text = "date borrowed";
-            // 
-            // usernameLabel
-            // 
-            usernameLabel.AutoSize = true;
-            usernameLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameLabel.Location = new Point(684, 54);
-            usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(70, 21);
-            usernameLabel.TabIndex = 46;
-            usernameLabel.Text = "username";
             // 
             // bookIdLabel
             // 
@@ -136,33 +130,11 @@
             dateAddedLabel.Text = "date added";
             dateAddedLabel.TextAlign = ContentAlignment.TopRight;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.calendar___red;
-            pictureBox1.Location = new Point(658, 84);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(20, 20);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 43;
-            pictureBox1.TabStop = false;
-            // 
-            // closeBtn
-            // 
-            closeBtn.BackColor = Color.Transparent;
-            closeBtn.Image = Properties.Resources.pfp_v1___red;
-            closeBtn.Location = new Point(658, 53);
-            closeBtn.Name = "closeBtn";
-            closeBtn.Size = new Size(20, 20);
-            closeBtn.SizeMode = PictureBoxSizeMode.Zoom;
-            closeBtn.TabIndex = 42;
-            closeBtn.TabStop = false;
-            // 
             // panel2
             // 
             panel2.Controls.Add(quantityLabel);
             panel2.Controls.Add(label8);
-            panel2.Location = new Point(382, 47);
+            panel2.Location = new Point(470, 47);
             panel2.Name = "panel2";
             panel2.Size = new Size(122, 66);
             panel2.TabIndex = 7;
@@ -224,7 +196,7 @@
             // 
             panel1.Controls.Add(conditionLabel);
             panel1.Controls.Add(label6);
-            panel1.Location = new Point(254, 47);
+            panel1.Location = new Point(323, 47);
             panel1.Name = "panel1";
             panel1.Size = new Size(122, 66);
             panel1.TabIndex = 6;
@@ -233,11 +205,11 @@
             // 
             conditionLabel.AutoSize = true;
             conditionLabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            conditionLabel.Location = new Point(24, 34);
+            conditionLabel.Location = new Point(33, 34);
             conditionLabel.Name = "conditionLabel";
-            conditionLabel.Size = new Size(70, 23);
+            conditionLabel.Size = new Size(49, 23);
             conditionLabel.TabIndex = 5;
-            conditionLabel.Text = "condition";
+            conditionLabel.Text = "rating";
             conditionLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -245,46 +217,50 @@
             label6.AutoSize = true;
             label6.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(127, 23, 52);
-            label6.Location = new Point(15, 3);
+            label6.Location = new Point(25, 3);
             label6.Name = "label6";
-            label6.Size = new Size(89, 28);
+            label6.Size = new Size(64, 28);
             label6.TabIndex = 4;
-            label6.Text = "Condition";
+            label6.Text = "Rating";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
             label4.BackColor = Color.FromArgb(127, 23, 52);
-            label4.Location = new Point(1, 157);
+            label4.Dock = DockStyle.Bottom;
+            label4.Location = new Point(2, 158);
             label4.Name = "label4";
-            label4.Size = new Size(927, 2);
+            label4.Size = new Size(925, 2);
             label4.TabIndex = 38;
             label4.Text = "OR";
             // 
             // label3
             // 
             label3.BackColor = Color.FromArgb(127, 23, 52);
-            label3.Location = new Point(1, 1);
+            label3.Dock = DockStyle.Top;
+            label3.Location = new Point(2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(927, 2);
+            label3.Size = new Size(925, 2);
             label3.TabIndex = 37;
             label3.Text = "OR";
             // 
             // label2
             // 
             label2.BackColor = Color.FromArgb(127, 23, 52);
-            label2.Location = new Point(1, 1);
+            label2.Dock = DockStyle.Left;
+            label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(2, 159);
+            label2.Size = new Size(2, 160);
             label2.TabIndex = 36;
             label2.Text = "OR";
             // 
             // label1
             // 
             label1.BackColor = Color.FromArgb(127, 23, 52);
-            label1.Location = new Point(926, 1);
+            label1.Dock = DockStyle.Right;
+            label1.Location = new Point(927, 0);
             label1.Name = "label1";
-            label1.Size = new Size(2, 157);
+            label1.Size = new Size(2, 160);
             label1.TabIndex = 35;
             label1.Text = "OR";
             // 
@@ -318,35 +294,152 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(statusLabel);
-            panel5.Controls.Add(label16);
-            panel5.Location = new Point(510, 47);
+            panel5.Controls.Add(statusPanel);
+            panel5.Controls.Add(borrowersPanel);
+            panel5.Location = new Point(614, 6);
             panel5.Name = "panel5";
-            panel5.Size = new Size(142, 66);
+            panel5.Size = new Size(171, 148);
             panel5.TabIndex = 7;
             // 
-            // statusLabel
+            // statusPanel
             // 
-            statusLabel.AutoSize = true;
-            statusLabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            statusLabel.Location = new Point(43, 34);
-            statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(51, 23);
-            statusLabel.TabIndex = 5;
-            statusLabel.Text = "status";
-            statusLabel.TextAlign = ContentAlignment.MiddleCenter;
+            statusPanel.Controls.Add(label16);
+            statusPanel.Location = new Point(9, 6);
+            statusPanel.Name = "statusPanel";
+            statusPanel.Size = new Size(154, 63);
+            statusPanel.TabIndex = 48;
+            // 
+            // availableIcon
+            // 
+            availableIcon.BackColor = Color.Transparent;
+            availableIcon.Image = Properties.Resources.available;
+            availableIcon.Location = new Point(490, 10);
+            availableIcon.Name = "availableIcon";
+            availableIcon.Size = new Size(92, 31);
+            availableIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            availableIcon.TabIndex = 48;
+            availableIcon.TabStop = false;
+            // 
+            // rentedIcon
+            // 
+            rentedIcon.BackColor = Color.Transparent;
+            rentedIcon.Image = Properties.Resources.rented;
+            rentedIcon.Location = new Point(392, 9);
+            rentedIcon.Name = "rentedIcon";
+            rentedIcon.Size = new Size(92, 31);
+            rentedIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            rentedIcon.TabIndex = 48;
+            rentedIcon.TabStop = false;
+            // 
+            // archivedIcon
+            // 
+            archivedIcon.BackColor = Color.Transparent;
+            archivedIcon.Image = Properties.Resources.archive;
+            archivedIcon.Location = new Point(294, 9);
+            archivedIcon.Name = "archivedIcon";
+            archivedIcon.Size = new Size(92, 31);
+            archivedIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            archivedIcon.TabIndex = 47;
+            archivedIcon.TabStop = false;
+            // 
+            // overdueIcon
+            // 
+            overdueIcon.BackColor = Color.Transparent;
+            overdueIcon.Image = Properties.Resources.overdue;
+            overdueIcon.Location = new Point(196, 10);
+            overdueIcon.Name = "overdueIcon";
+            overdueIcon.Size = new Size(92, 31);
+            overdueIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            overdueIcon.TabIndex = 49;
+            overdueIcon.TabStop = false;
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label16.ForeColor = Color.FromArgb(127, 23, 52);
-            label16.Location = new Point(37, 3);
+            label16.Location = new Point(42, -3);
             label16.Name = "label16";
             label16.Size = new Size(62, 28);
             label16.TabIndex = 4;
             label16.Text = "Status";
             label16.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // borrowersPanel
+            // 
+            borrowersPanel.Controls.Add(label5);
+            borrowersPanel.Controls.Add(pictureBox2);
+            borrowersPanel.Controls.Add(closeBtn);
+            borrowersPanel.Controls.Add(dateBarrowedLabel);
+            borrowersPanel.Controls.Add(usernameLabel);
+            borrowersPanel.Controls.Add(pictureBox1);
+            borrowersPanel.Location = new Point(9, 65);
+            borrowersPanel.Name = "borrowersPanel";
+            borrowersPanel.Size = new Size(154, 77);
+            borrowersPanel.TabIndex = 8;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(32, 55);
+            label5.Name = "label5";
+            label5.Size = new Size(75, 21);
+            label5.TabIndex = 49;
+            label5.Text = "return date";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = Properties.Resources.calendar___red;
+            pictureBox2.Location = new Point(6, 55);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(20, 20);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 48;
+            pictureBox2.TabStop = false;
+            // 
+            // closeBtn
+            // 
+            closeBtn.BackColor = Color.Transparent;
+            closeBtn.Image = Properties.Resources.pfp_v1___red;
+            closeBtn.Location = new Point(6, 5);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(20, 20);
+            closeBtn.SizeMode = PictureBoxSizeMode.Zoom;
+            closeBtn.TabIndex = 42;
+            closeBtn.TabStop = false;
+            // 
+            // dateBarrowedLabel
+            // 
+            dateBarrowedLabel.AutoSize = true;
+            dateBarrowedLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateBarrowedLabel.Location = new Point(32, 30);
+            dateBarrowedLabel.Name = "dateBarrowedLabel";
+            dateBarrowedLabel.Size = new Size(97, 21);
+            dateBarrowedLabel.TabIndex = 47;
+            dateBarrowedLabel.Text = "date borrowed";
+            // 
+            // usernameLabel
+            // 
+            usernameLabel.AutoSize = true;
+            usernameLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usernameLabel.Location = new Point(32, 6);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new Size(70, 21);
+            usernameLabel.TabIndex = 46;
+            usernameLabel.Text = "username";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.calendar___red;
+            pictureBox1.Location = new Point(6, 30);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(20, 20);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 43;
+            pictureBox1.TabStop = false;
             // 
             // genreLabel
             // 
@@ -387,15 +480,23 @@
             Size = new Size(929, 160);
             accountProfile.ResumeLayout(false);
             accountProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)closeBtn).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)bookCoverImg).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            statusPanel.ResumeLayout(false);
+            statusPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)availableIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)rentedIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)archivedIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)overdueIcon).EndInit();
+            borrowersPanel.ResumeLayout(false);
+            borrowersPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)closeBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -413,7 +514,6 @@
         private Button archiveBookBtn;
         private Button editBookBtn;
         private Panel panel5;
-        private Label statusLabel;
         private Label label16;
         private Label genreLabel;
         private Label authorLabel;
@@ -429,5 +529,13 @@
         private Label dateBarrowedLabel;
         private Label usernameLabel;
         private Label bookIdLabel;
+        private Panel borrowersPanel;
+        private Panel statusPanel;
+        private Label label5;
+        private PictureBox pictureBox2;
+        private PictureBox archivedIcon;
+        private PictureBox rentedIcon;
+        private PictureBox overdueIcon;
+        private PictureBox availableIcon;
     }
 }

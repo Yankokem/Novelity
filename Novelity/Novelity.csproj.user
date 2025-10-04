@@ -4,7 +4,25 @@
     <Compile Update="Cards\AccountCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Cards\BookCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Cards\BookCoverCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Cards\CategoriesCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Cards\ManageBooksCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Cards\RentalCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Cards\RentCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Cards\RequestCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Modals\CreateAccount.cs">
@@ -14,6 +32,21 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Modals\EditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modals\EditBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modals\EditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modals\RequestRentalExtension.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modals\ReturnBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modals\ViewDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\Admin\Dashboard.cs">
@@ -31,6 +64,9 @@
     <Compile Update="Pages\Admin\Reports.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pages\Client\BookInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pages\Client\Books.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -38,9 +74,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Pages\Client\MyRentals.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login\Plan.cs">
@@ -52,7 +85,13 @@
     <Compile Update="Login\Payment.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pages\Client\Rentals.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pages\Client\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Client\Requests.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

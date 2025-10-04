@@ -474,7 +474,6 @@
 
         #endregion
 
-        private Button button1;
         private Label label6;
         private Label label5;
         private Label label1;

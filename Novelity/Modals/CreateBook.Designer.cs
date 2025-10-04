@@ -39,7 +39,6 @@
             label7 = new Label();
             addTitleField = new TextBox();
             addReleaseDate = new DateTimePicker();
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             label5 = new Label();
             Copies = new Label();
             addCopiesField = new TextBox();
@@ -72,6 +71,11 @@
             panel2 = new Panel();
             imageLabel = new Label();
             addImageBtn = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            label12 = new Label();
+            label14 = new Label();
+            label15 = new Label();
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
             genrePanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -171,15 +175,11 @@
             // 
             // addReleaseDate
             // 
+            addReleaseDate.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addReleaseDate.Location = new Point(19, 321);
             addReleaseDate.Name = "addReleaseDate";
-            addReleaseDate.Size = new Size(200, 23);
+            addReleaseDate.Size = new Size(231, 25);
             addReleaseDate.TabIndex = 38;
-            // 
-            // sqlCommand1
-            // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // label5
             // 
@@ -211,9 +211,9 @@
             // checkFantasy
             // 
             checkFantasy.AutoSize = true;
-            checkFantasy.Location = new Point(16, 0);
+            checkFantasy.Location = new Point(2, 0);
             checkFantasy.Name = "checkFantasy";
-            checkFantasy.Size = new Size(66, 19);
+            checkFantasy.Size = new Size(76, 25);
             checkFantasy.TabIndex = 43;
             checkFantasy.Text = "Fantasy";
             checkFantasy.UseVisualStyleBackColor = true;
@@ -221,9 +221,9 @@
             // checkSF
             // 
             checkSF.AutoSize = true;
-            checkSF.Location = new Point(16, 25);
+            checkSF.Location = new Point(2, 25);
             checkSF.Name = "checkSF";
-            checkSF.Size = new Size(105, 19);
+            checkSF.Size = new Size(117, 25);
             checkSF.TabIndex = 44;
             checkSF.Text = "Science Fiction";
             checkSF.UseVisualStyleBackColor = true;
@@ -231,9 +231,9 @@
             // checkMystery
             // 
             checkMystery.AutoSize = true;
-            checkMystery.Location = new Point(16, 50);
+            checkMystery.Location = new Point(2, 50);
             checkMystery.Name = "checkMystery";
-            checkMystery.Size = new Size(68, 19);
+            checkMystery.Size = new Size(74, 25);
             checkMystery.TabIndex = 45;
             checkMystery.Text = "Mystery";
             checkMystery.UseVisualStyleBackColor = true;
@@ -241,9 +241,9 @@
             // checkThriller
             // 
             checkThriller.AutoSize = true;
-            checkThriller.Location = new Point(16, 75);
+            checkThriller.Location = new Point(2, 75);
             checkThriller.Name = "checkThriller";
-            checkThriller.Size = new Size(63, 19);
+            checkThriller.Size = new Size(67, 25);
             checkThriller.TabIndex = 46;
             checkThriller.Text = "Thriller";
             checkThriller.UseVisualStyleBackColor = true;
@@ -251,9 +251,9 @@
             // checkHorror
             // 
             checkHorror.AutoSize = true;
-            checkHorror.Location = new Point(16, 100);
+            checkHorror.Location = new Point(2, 100);
             checkHorror.Name = "checkHorror";
-            checkHorror.Size = new Size(61, 19);
+            checkHorror.Size = new Size(65, 25);
             checkHorror.TabIndex = 47;
             checkHorror.Text = "Horror";
             checkHorror.UseVisualStyleBackColor = true;
@@ -261,9 +261,9 @@
             // checkCL
             // 
             checkCL.AutoSize = true;
-            checkCL.Location = new Point(125, 100);
+            checkCL.Location = new Point(123, 100);
             checkCL.Name = "checkCL";
-            checkCL.Size = new Size(132, 19);
+            checkCL.Size = new Size(145, 25);
             checkCL.TabIndex = 52;
             checkCL.Text = "Children’s Literature";
             checkCL.UseVisualStyleBackColor = true;
@@ -271,9 +271,9 @@
             // checkYA
             // 
             checkYA.AutoSize = true;
-            checkYA.Location = new Point(125, 75);
+            checkYA.Location = new Point(123, 75);
             checkYA.Name = "checkYA";
-            checkYA.Size = new Size(117, 19);
+            checkYA.Size = new Size(130, 25);
             checkYA.TabIndex = 51;
             checkYA.Text = "Young Adult (YA)";
             checkYA.UseVisualStyleBackColor = true;
@@ -281,9 +281,9 @@
             // checkAdventure
             // 
             checkAdventure.AutoSize = true;
-            checkAdventure.Location = new Point(125, 50);
+            checkAdventure.Location = new Point(123, 50);
             checkAdventure.Name = "checkAdventure";
-            checkAdventure.Size = new Size(81, 19);
+            checkAdventure.Size = new Size(90, 25);
             checkAdventure.TabIndex = 50;
             checkAdventure.Text = "Adventure";
             checkAdventure.UseVisualStyleBackColor = true;
@@ -291,9 +291,9 @@
             // checkHF
             // 
             checkHF.AutoSize = true;
-            checkHF.Location = new Point(125, 25);
+            checkHF.Location = new Point(123, 25);
             checkHF.Name = "checkHF";
-            checkHF.Size = new Size(115, 19);
+            checkHF.Size = new Size(125, 25);
             checkHF.TabIndex = 49;
             checkHF.Text = "Historical Fiction";
             checkHF.UseVisualStyleBackColor = true;
@@ -301,9 +301,9 @@
             // checkRomance
             // 
             checkRomance.AutoSize = true;
-            checkRomance.Location = new Point(125, 0);
+            checkRomance.Location = new Point(123, 0);
             checkRomance.Name = "checkRomance";
-            checkRomance.Size = new Size(76, 19);
+            checkRomance.Size = new Size(86, 25);
             checkRomance.TabIndex = 48;
             checkRomance.Text = "Romance";
             checkRomance.UseVisualStyleBackColor = true;
@@ -311,9 +311,9 @@
             // checkClassics
             // 
             checkClassics.AutoSize = true;
-            checkClassics.Location = new Point(267, 100);
+            checkClassics.Location = new Point(285, 100);
             checkClassics.Name = "checkClassics";
-            checkClassics.Size = new Size(67, 19);
+            checkClassics.Size = new Size(77, 25);
             checkClassics.TabIndex = 57;
             checkClassics.Text = "Classics";
             checkClassics.UseVisualStyleBackColor = true;
@@ -321,9 +321,9 @@
             // checkPoetry
             // 
             checkPoetry.AutoSize = true;
-            checkPoetry.Location = new Point(267, 75);
+            checkPoetry.Location = new Point(285, 75);
             checkPoetry.Name = "checkPoetry";
-            checkPoetry.Size = new Size(60, 19);
+            checkPoetry.Size = new Size(66, 25);
             checkPoetry.TabIndex = 56;
             checkPoetry.Text = "Poetry";
             checkPoetry.UseVisualStyleBackColor = true;
@@ -331,9 +331,9 @@
             // checkSH
             // 
             checkSH.AutoSize = true;
-            checkSH.Location = new Point(267, 50);
+            checkSH.Location = new Point(285, 50);
             checkSH.Name = "checkSH";
-            checkSH.Size = new Size(75, 19);
+            checkSH.Size = new Size(83, 25);
             checkSH.TabIndex = 55;
             checkSH.Text = "Self-Help";
             checkSH.UseVisualStyleBackColor = true;
@@ -341,9 +341,9 @@
             // checkBiography
             // 
             checkBiography.AutoSize = true;
-            checkBiography.Location = new Point(267, 25);
+            checkBiography.Location = new Point(285, 25);
             checkBiography.Name = "checkBiography";
-            checkBiography.Size = new Size(80, 19);
+            checkBiography.Size = new Size(90, 25);
             checkBiography.TabIndex = 54;
             checkBiography.Text = "Biography";
             checkBiography.UseVisualStyleBackColor = true;
@@ -351,9 +351,9 @@
             // checkNF
             // 
             checkNF.AutoSize = true;
-            checkNF.Location = new Point(267, 0);
+            checkNF.Location = new Point(285, 0);
             checkNF.Name = "checkNF";
-            checkNF.Size = new Size(90, 19);
+            checkNF.Size = new Size(99, 25);
             checkNF.TabIndex = 53;
             checkNF.Text = "Non-Fiction";
             checkNF.UseVisualStyleBackColor = true;
@@ -361,9 +361,9 @@
             // checkMemoir
             // 
             checkMemoir.AutoSize = true;
-            checkMemoir.Location = new Point(370, 100);
+            checkMemoir.Location = new Point(399, 100);
             checkMemoir.Name = "checkMemoir";
-            checkMemoir.Size = new Size(68, 19);
+            checkMemoir.Size = new Size(73, 25);
             checkMemoir.TabIndex = 62;
             checkMemoir.Text = "Memoir";
             checkMemoir.UseVisualStyleBackColor = true;
@@ -371,9 +371,9 @@
             // checkCrimeFiction
             // 
             checkCrimeFiction.AutoSize = true;
-            checkCrimeFiction.Location = new Point(370, 75);
+            checkCrimeFiction.Location = new Point(399, 75);
             checkCrimeFiction.Name = "checkCrimeFiction";
-            checkCrimeFiction.Size = new Size(97, 19);
+            checkCrimeFiction.Size = new Size(106, 25);
             checkCrimeFiction.TabIndex = 61;
             checkCrimeFiction.Text = "Crime Fiction";
             checkCrimeFiction.UseVisualStyleBackColor = true;
@@ -381,9 +381,9 @@
             // checkContempFiction
             // 
             checkContempFiction.AutoSize = true;
-            checkContempFiction.Location = new Point(370, 50);
+            checkContempFiction.Location = new Point(399, 50);
             checkContempFiction.Name = "checkContempFiction";
-            checkContempFiction.Size = new Size(142, 19);
+            checkContempFiction.Size = new Size(158, 25);
             checkContempFiction.TabIndex = 60;
             checkContempFiction.Text = "Contemporary Fiction";
             checkContempFiction.UseVisualStyleBackColor = true;
@@ -391,9 +391,9 @@
             // checkComics
             // 
             checkComics.AutoSize = true;
-            checkComics.Location = new Point(370, 25);
+            checkComics.Location = new Point(399, 25);
             checkComics.Name = "checkComics";
-            checkComics.Size = new Size(66, 19);
+            checkComics.Size = new Size(74, 25);
             checkComics.TabIndex = 59;
             checkComics.Text = "Comics";
             checkComics.UseVisualStyleBackColor = true;
@@ -401,19 +401,19 @@
             // checkDystopian
             // 
             checkDystopian.AutoSize = true;
-            checkDystopian.Location = new Point(370, 0);
+            checkDystopian.Location = new Point(399, 0);
             checkDystopian.Name = "checkDystopian";
-            checkDystopian.Size = new Size(79, 19);
+            checkDystopian.Size = new Size(89, 25);
             checkDystopian.TabIndex = 58;
             checkDystopian.Text = "Dystopian";
             checkDystopian.UseVisualStyleBackColor = true;
             // 
             // addDescriptionField
             // 
-            addDescriptionField.Location = new Point(268, 82);
+            addDescriptionField.Location = new Point(268, 138);
             addDescriptionField.Multiline = true;
             addDescriptionField.Name = "addDescriptionField";
-            addDescriptionField.Size = new Size(412, 262);
+            addDescriptionField.Size = new Size(412, 206);
             addDescriptionField.TabIndex = 63;
             // 
             // AddBookBtn
@@ -446,7 +446,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(127, 23, 52);
-            label1.Location = new Point(268, 56);
+            label1.Location = new Point(268, 112);
             label1.Name = "label1";
             label1.Size = new Size(83, 23);
             label1.TabIndex = 66;
@@ -474,9 +474,10 @@
             genrePanel.Controls.Add(checkPoetry);
             genrePanel.Controls.Add(checkNF);
             genrePanel.Controls.Add(checkBiography);
+            genrePanel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             genrePanel.Location = new Point(19, 363);
             genrePanel.Name = "genrePanel";
-            genrePanel.Size = new Size(516, 119);
+            genrePanel.Size = new Size(554, 119);
             genrePanel.TabIndex = 67;
             // 
             // label2
@@ -492,35 +493,95 @@
             // 
             panel2.Controls.Add(imageLabel);
             panel2.Controls.Add(addImageBtn);
-            panel2.Location = new Point(337, 12);
+            panel2.Location = new Point(268, 56);
             panel2.Name = "panel2";
-            panel2.Size = new Size(305, 47);
+            panel2.Size = new Size(412, 49);
             panel2.TabIndex = 69;
             // 
             // imageLabel
             // 
             imageLabel.AutoSize = true;
-            imageLabel.Location = new Point(94, 15);
+            imageLabel.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            imageLabel.Location = new Point(102, 15);
             imageLabel.Name = "imageLabel";
-            imageLabel.Size = new Size(83, 15);
+            imageLabel.Size = new Size(97, 21);
             imageLabel.TabIndex = 1;
             imageLabel.Text = "Choose image";
             // 
             // addImageBtn
             // 
-            addImageBtn.Location = new Point(13, 11);
+            addImageBtn.BackColor = Color.FromArgb(127, 23, 52);
+            addImageBtn.FlatStyle = FlatStyle.Flat;
+            addImageBtn.ForeColor = Color.Transparent;
+            addImageBtn.Location = new Point(12, 8);
             addImageBtn.Name = "addImageBtn";
-            addImageBtn.Size = new Size(75, 23);
+            addImageBtn.Size = new Size(80, 34);
             addImageBtn.TabIndex = 0;
             addImageBtn.Text = "Add Image";
-            addImageBtn.UseVisualStyleBackColor = true;
+            addImageBtn.UseVisualStyleBackColor = false;
             addImageBtn.Click += addImageBtn_Click;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.FromArgb(127, 23, 52);
+            label3.Dock = DockStyle.Top;
+            label3.Location = new Point(0, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(700, 3);
+            label3.TabIndex = 70;
+            label3.Text = "OR";
+            // 
+            // label4
+            // 
+            label4.BackColor = Color.FromArgb(127, 23, 52);
+            label4.Dock = DockStyle.Right;
+            label4.Location = new Point(697, 3);
+            label4.Name = "label4";
+            label4.Size = new Size(3, 497);
+            label4.TabIndex = 71;
+            label4.Text = "OR";
+            // 
+            // label12
+            // 
+            label12.BackColor = Color.FromArgb(127, 23, 52);
+            label12.Dock = DockStyle.Bottom;
+            label12.Location = new Point(0, 497);
+            label12.Name = "label12";
+            label12.Size = new Size(697, 3);
+            label12.TabIndex = 72;
+            label12.Text = "OR";
+            // 
+            // label14
+            // 
+            label14.BackColor = Color.FromArgb(127, 23, 52);
+            label14.Dock = DockStyle.Left;
+            label14.Location = new Point(0, 3);
+            label14.Name = "label14";
+            label14.Size = new Size(3, 494);
+            label14.TabIndex = 73;
+            label14.Text = "OR";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Poppins", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.FromArgb(127, 23, 52);
+            label15.Location = new Point(9, 9);
+            label15.Name = "label15";
+            label15.Size = new Size(146, 48);
+            label15.TabIndex = 74;
+            label15.Text = "Add Book";
             // 
             // CreateBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 500);
+            Controls.Add(label15);
+            Controls.Add(label14);
+            Controls.Add(label12);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(panel2);
             Controls.Add(label2);
             Controls.Add(genrePanel);
@@ -568,7 +629,6 @@
         private Label label7;
         private TextBox addTitleField;
         private DateTimePicker addReleaseDate;
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private Label label5;
         private Label Copies;
         private TextBox addCopiesField;
@@ -601,5 +661,10 @@
         private Panel panel2;
         private Label imageLabel;
         private Button addImageBtn;
+        private Label label3;
+        private Label label4;
+        private Label label12;
+        private Label label14;
+        private Label label15;
     }
 }

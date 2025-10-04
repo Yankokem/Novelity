@@ -1,4 +1,5 @@
 using Novelity.Pages.Admin;
+using Novelity.Pages.Client;
 using System;
 using System.Windows.Forms;
 
@@ -46,7 +47,7 @@ namespace Novelity
             }
         }
 
-        private void LoadForm(Form form)
+        public void LoadForm(Form form)
         {
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -89,7 +90,7 @@ namespace Novelity
 
         private void myRentalBtn_Click(object sender, EventArgs e)
         {
-            LoadForm(new MyRentals());
+            LoadForm(new Rentals());
         }
 
         private void profileBtn_Click(object sender, EventArgs e)
@@ -108,15 +109,14 @@ namespace Novelity
             LoadForm(new ManageBooks());
         }
 
+        private void requestsBtn_Click(object sender, EventArgs e)
+        {
+            LoadForm(new Requests());
+        }
+
         private void manageAccountsBtn_Click(object sender, EventArgs e)
         {
             LoadForm(new ManageAccounts());
-        }
-
-        // Handle form resize to maintain proper layout
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            SetAdminNavbarVisibility();
         }
 
         

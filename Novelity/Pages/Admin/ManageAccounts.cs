@@ -21,6 +21,13 @@ namespace Novelity.Pages.Admin
             SetDefaultFilters();
             this.Load += ManageAccounts_Load;
             SubscribeToFilterEvents();
+            accSearchbar.TextChanged += accSearchbar_TextChanged;
+        }
+
+        private void accSearchbar_TextChanged(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            LoadAccountCards();
         }
 
         private void SetDefaultFilters()
@@ -124,23 +131,33 @@ namespace Novelity.Pages.Admin
                     cachedAccounts = DatabaseHelper.ExecuteQuery(finalQuery);
                 }
 
+                string searchText = accSearchbar.Text.Trim().ToLower();
+                DataRow[] filteredRows = string.IsNullOrEmpty(searchText)
+                    ? cachedAccounts.Select()
+                    : cachedAccounts.Select($"Username LIKE '%{searchText}%' OR Email LIKE '%{searchText}%' OR FullName LIKE '%{searchText}%' OR RoleName LIKE '%{searchText}%' OR PlanName LIKE '%{searchText}%'");
+
+                DataTable filteredTable = filteredRows.Length > 0 ? filteredRows.CopyToDataTable() : cachedAccounts.Clone();
+
                 accountsPanel.Controls.Clear();
 
-                if (cachedAccounts.Rows.Count == 0)
+                if (filteredTable.Rows.Count == 0)
                 {
+                    totalPages = 1;
+                    prevBtn.Enabled = false;
+                    nextBtn.Enabled = false;
                     UpdateResultsCount(0);
                     return;
                 }
 
-                totalPages = (int)Math.Ceiling(cachedAccounts.Rows.Count / (double)pageSize);
+                totalPages = (int)Math.Ceiling(filteredTable.Rows.Count / (double)pageSize);
                 if (currentPage > totalPages) currentPage = totalPages;
 
                 int startIndex = (currentPage - 1) * pageSize;
-                int endIndex = Math.Min(startIndex + pageSize, cachedAccounts.Rows.Count);
+                int endIndex = Math.Min(startIndex + pageSize, filteredTable.Rows.Count);
 
                 for (int i = startIndex; i < endIndex; i++)
                 {
-                    DataRow row = cachedAccounts.Rows[i];
+                    DataRow row = filteredTable.Rows[i];
                     AccountCard card = new AccountCard();
 
                     card.UserID = Convert.ToInt32(row["UserID"]);
@@ -172,7 +189,7 @@ namespace Novelity.Pages.Admin
                 prevBtn.Enabled = currentPage > 1;
                 nextBtn.Enabled = currentPage < totalPages;
 
-                UpdateResultsCount(cachedAccounts.Rows.Count);
+                UpdateResultsCount(filteredTable.Rows.Count);
             }
             catch (Exception ex)
             {
@@ -271,7 +288,7 @@ namespace Novelity.Pages.Admin
 
         private void UpdateResultsCount(int count)
         {
-            // optional
+            // optional label update
         }
 
         private void EditAccount(int userId)

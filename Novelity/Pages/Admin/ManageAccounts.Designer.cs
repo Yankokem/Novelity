@@ -49,7 +49,16 @@
             label16 = new Label();
             nextBtn = new Button();
             prevBtn = new Button();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            label3 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            accSearchbar = new TextBox();
             filterPanel.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // filterPanel
@@ -130,7 +139,7 @@
             label7.ForeColor = Color.Transparent;
             label7.Location = new Point(16, 485);
             label7.Name = "label7";
-            label7.Size = new Size(60, 33);
+            label7.Size = new Size(60, 34);
             label7.TabIndex = 10;
             label7.Text = "Date";
             // 
@@ -177,7 +186,7 @@
             label6.ForeColor = Color.Transparent;
             label6.Location = new Point(16, 249);
             label6.Name = "label6";
-            label6.Size = new Size(75, 33);
+            label6.Size = new Size(75, 34);
             label6.TabIndex = 6;
             label6.Text = "Status";
             // 
@@ -236,7 +245,7 @@
             label5.ForeColor = Color.Transparent;
             label5.Location = new Point(16, 118);
             label5.Name = "label5";
-            label5.Size = new Size(181, 33);
+            label5.Size = new Size(181, 34);
             label5.TabIndex = 1;
             label5.Text = "Membership Plan";
             // 
@@ -285,7 +294,7 @@
             // 
             // nextBtn
             // 
-            nextBtn.Location = new Point(487, 874);
+            nextBtn.Location = new Point(530, 860);
             nextBtn.Name = "nextBtn";
             nextBtn.Size = new Size(84, 27);
             nextBtn.TabIndex = 38;
@@ -295,7 +304,7 @@
             // 
             // prevBtn
             // 
-            prevBtn.Location = new Point(487, 824);
+            prevBtn.Location = new Point(413, 860);
             prevBtn.Name = "prevBtn";
             prevBtn.Size = new Size(84, 27);
             prevBtn.TabIndex = 37;
@@ -303,12 +312,89 @@
             prevBtn.UseVisualStyleBackColor = true;
             prevBtn.Click += prevBtn_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.Control;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(accSearchbar);
+            panel1.Location = new Point(671, 35);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(756, 48);
+            panel1.TabIndex = 39;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.search;
+            pictureBox1.Location = new Point(8, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(38, 38);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 37;
+            pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.FromArgb(127, 23, 52);
+            label3.Dock = DockStyle.Top;
+            label3.Location = new Point(2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(752, 2);
+            label3.TabIndex = 35;
+            label3.Text = "OR";
+            // 
+            // label8
+            // 
+            label8.BackColor = Color.FromArgb(127, 23, 52);
+            label8.Dock = DockStyle.Bottom;
+            label8.Location = new Point(2, 46);
+            label8.Name = "label8";
+            label8.Size = new Size(752, 2);
+            label8.TabIndex = 36;
+            label8.Text = "OR";
+            // 
+            // label9
+            // 
+            label9.BackColor = Color.FromArgb(127, 23, 52);
+            label9.Dock = DockStyle.Right;
+            label9.Location = new Point(754, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(2, 48);
+            label9.TabIndex = 35;
+            label9.Text = "OR";
+            // 
+            // label10
+            // 
+            label10.BackColor = Color.FromArgb(127, 23, 52);
+            label10.Dock = DockStyle.Left;
+            label10.Location = new Point(0, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(2, 48);
+            label10.TabIndex = 34;
+            label10.Text = "OR";
+            // 
+            // accSearchbar
+            // 
+            accSearchbar.BackColor = SystemColors.Control;
+            accSearchbar.BorderStyle = BorderStyle.None;
+            accSearchbar.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            accSearchbar.Location = new Point(52, 11);
+            accSearchbar.Multiline = true;
+            accSearchbar.Name = "accSearchbar";
+            accSearchbar.PlaceholderText = "Enter book name...";
+            accSearchbar.Size = new Size(696, 26);
+            accSearchbar.TabIndex = 33;
+            // 
             // ManageAccounts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
             ControlBox = false;
+            Controls.Add(panel1);
             Controls.Add(nextBtn);
             Controls.Add(prevBtn);
             Controls.Add(accountsPanel);
@@ -320,6 +406,9 @@
             Text = "ManageAccounts";
             filterPanel.ResumeLayout(false);
             filterPanel.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -346,5 +435,12 @@
         private CheckBox bannedBox;
         private Button nextBtn;
         private Button prevBtn;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private Label label3;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private TextBox accSearchbar;
     }
 }

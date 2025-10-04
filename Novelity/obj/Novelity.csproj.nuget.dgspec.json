@@ -50,6 +50,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "FastReport.DataVisualization": {
+              "target": "Package",
+              "version": "[2025.2.12, )"
+            },
             "FontAwesome": {
               "target": "Package",
               "version": "[4.7.0, )"
@@ -69,6 +73,10 @@
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
               "version": "[9.0.9, )"
+            },
+            "WinForms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.10.0, )"
             }
           },
           "imports": [

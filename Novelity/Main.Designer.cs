@@ -42,20 +42,23 @@
             logoutBtn = new PictureBox();
             minimizeBtn = new PictureBox();
             closeBtn = new PictureBox();
-            flowLayoutPanel4 = new FlowLayoutPanel();
-            pictureBox3 = new PictureBox();
-            manageAccountsBtn = new Label();
-            adminNavbar = new Panel();
             panel1 = new Panel();
+            flowLayoutPanel6 = new FlowLayoutPanel();
+            pictureBox6 = new PictureBox();
+            requestsBtn = new Label();
             flowy = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             dashboardBtn = new Label();
+            flowLayoutPanel4 = new FlowLayoutPanel();
+            pictureBox3 = new PictureBox();
+            manageAccountsBtn = new Label();
             flowLayoutPanel5 = new FlowLayoutPanel();
             pictureBox4 = new PictureBox();
             reportsBtn = new Label();
             flowLayoutPanel3 = new FlowLayoutPanel();
             pictureBox2 = new PictureBox();
             manageBooksBtn = new Label();
+            adminNavbar = new Panel();
             panelContent = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             Navbar.SuspendLayout();
@@ -66,22 +69,24 @@
             ((System.ComponentModel.ISupportInitialize)logoutBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)minimizeBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
-            flowLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
+            flowLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             flowy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            flowLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            adminNavbar.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // Navbar
             // 
             Navbar.BackColor = Color.FromArgb(127, 23, 52);
-            Navbar.Controls.Add(panel1);
             Navbar.Controls.Add(accountGroupBtn);
             Navbar.Controls.Add(myRentalBtn);
             Navbar.Controls.Add(bookBtn);
@@ -239,61 +244,53 @@
             closeBtn.TabStop = false;
             closeBtn.Click += closeBtn_Click;
             // 
-            // flowLayoutPanel4
-            // 
-            flowLayoutPanel4.AutoSize = true;
-            flowLayoutPanel4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel4.Controls.Add(pictureBox3);
-            flowLayoutPanel4.Controls.Add(manageAccountsBtn);
-            flowLayoutPanel4.Location = new Point(584, 0);
-            flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(230, 35);
-            flowLayoutPanel4.TabIndex = 3;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.accounts;
-            pictureBox3.Location = new Point(0, 0);
-            pictureBox3.Margin = new Padding(0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(35, 35);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += manageAccountsBtn_Click;
-            // 
-            // manageAccountsBtn
-            // 
-            manageAccountsBtn.AutoSize = true;
-            manageAccountsBtn.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            manageAccountsBtn.ForeColor = Color.Transparent;
-            manageAccountsBtn.Location = new Point(38, 2);
-            manageAccountsBtn.Margin = new Padding(3, 2, 3, 0);
-            manageAccountsBtn.Name = "manageAccountsBtn";
-            manageAccountsBtn.Size = new Size(189, 33);
-            manageAccountsBtn.TabIndex = 1;
-            manageAccountsBtn.Text = "Manage Accounts";
-            manageAccountsBtn.Click += manageAccountsBtn_Click;
-            // 
-            // adminNavbar
-            // 
-            adminNavbar.BackColor = Color.FromArgb(188, 67, 100);
-            adminNavbar.Location = new Point(0, 0);
-            adminNavbar.Margin = new Padding(0);
-            adminNavbar.Name = "adminNavbar";
-            adminNavbar.Size = new Size(1920, 63);
-            adminNavbar.TabIndex = 0;
-            // 
             // panel1
             // 
+            panel1.Controls.Add(flowLayoutPanel6);
             panel1.Controls.Add(flowy);
             panel1.Controls.Add(flowLayoutPanel4);
             panel1.Controls.Add(flowLayoutPanel5);
             panel1.Controls.Add(flowLayoutPanel3);
-            panel1.Location = new Point(334, 51);
+            panel1.Location = new Point(317, 14);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1052, 35);
+            panel1.Size = new Size(1291, 35);
             panel1.TabIndex = 0;
+            // 
+            // flowLayoutPanel6
+            // 
+            flowLayoutPanel6.AutoSize = true;
+            flowLayoutPanel6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel6.Controls.Add(pictureBox6);
+            flowLayoutPanel6.Controls.Add(requestsBtn);
+            flowLayoutPanel6.Location = new Point(573, 0);
+            flowLayoutPanel6.Name = "flowLayoutPanel6";
+            flowLayoutPanel6.Size = new Size(138, 35);
+            flowLayoutPanel6.TabIndex = 5;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.request_v1;
+            pictureBox6.Location = new Point(0, 0);
+            pictureBox6.Margin = new Padding(0);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(29, 33);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 0;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += requestsBtn_Click;
+            // 
+            // requestsBtn
+            // 
+            requestsBtn.AutoSize = true;
+            requestsBtn.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            requestsBtn.ForeColor = Color.Transparent;
+            requestsBtn.Location = new Point(32, 2);
+            requestsBtn.Margin = new Padding(3, 2, 3, 0);
+            requestsBtn.Name = "requestsBtn";
+            requestsBtn.Size = new Size(103, 33);
+            requestsBtn.TabIndex = 1;
+            requestsBtn.Text = "Requests";
+            requestsBtn.Click += requestsBtn_Click;
             // 
             // flowy
             // 
@@ -332,13 +329,49 @@
             dashboardBtn.Text = "Dashboard";
             dashboardBtn.Click += dashboardBtn_Click;
             // 
+            // flowLayoutPanel4
+            // 
+            flowLayoutPanel4.AutoSize = true;
+            flowLayoutPanel4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel4.Controls.Add(pictureBox3);
+            flowLayoutPanel4.Controls.Add(manageAccountsBtn);
+            flowLayoutPanel4.Location = new Point(832, 0);
+            flowLayoutPanel4.Name = "flowLayoutPanel4";
+            flowLayoutPanel4.Size = new Size(230, 35);
+            flowLayoutPanel4.TabIndex = 3;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.accounts;
+            pictureBox3.Location = new Point(0, 0);
+            pictureBox3.Margin = new Padding(0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(35, 35);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 0;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += manageAccountsBtn_Click;
+            // 
+            // manageAccountsBtn
+            // 
+            manageAccountsBtn.AutoSize = true;
+            manageAccountsBtn.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            manageAccountsBtn.ForeColor = Color.Transparent;
+            manageAccountsBtn.Location = new Point(38, 2);
+            manageAccountsBtn.Margin = new Padding(3, 2, 3, 0);
+            manageAccountsBtn.Name = "manageAccountsBtn";
+            manageAccountsBtn.Size = new Size(189, 33);
+            manageAccountsBtn.TabIndex = 1;
+            manageAccountsBtn.Text = "Manage Accounts";
+            manageAccountsBtn.Click += manageAccountsBtn_Click;
+            // 
             // flowLayoutPanel5
             // 
             flowLayoutPanel5.AutoSize = true;
             flowLayoutPanel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel5.Controls.Add(pictureBox4);
             flowLayoutPanel5.Controls.Add(reportsBtn);
-            flowLayoutPanel5.Location = new Point(923, 0);
+            flowLayoutPanel5.Location = new Point(1159, 0);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
             flowLayoutPanel5.Size = new Size(129, 35);
             flowLayoutPanel5.TabIndex = 4;
@@ -402,6 +435,16 @@
             manageBooksBtn.Text = "Manage Books";
             manageBooksBtn.Click += manageBooksBtn_Click;
             // 
+            // adminNavbar
+            // 
+            adminNavbar.BackColor = Color.FromArgb(188, 67, 100);
+            adminNavbar.Controls.Add(panel1);
+            adminNavbar.Location = new Point(0, 0);
+            adminNavbar.Margin = new Padding(0);
+            adminNavbar.Name = "adminNavbar";
+            adminNavbar.Size = new Size(1920, 63);
+            adminNavbar.TabIndex = 0;
+            // 
             // panelContent
             // 
             panelContent.Location = new Point(0, 63);
@@ -441,20 +484,24 @@
             ((System.ComponentModel.ISupportInitialize)logoutBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)minimizeBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)closeBtn).EndInit();
-            flowLayoutPanel4.ResumeLayout(false);
-            flowLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            flowLayoutPanel6.ResumeLayout(false);
+            flowLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             flowy.ResumeLayout(false);
             flowy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            flowLayoutPanel4.ResumeLayout(false);
+            flowLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             flowLayoutPanel5.ResumeLayout(false);
             flowLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             flowLayoutPanel3.ResumeLayout(false);
             flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            adminNavbar.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -490,5 +537,8 @@
         private PictureBox pictureBox4;
         private Label reportsBtn;
         private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanel6;
+        private PictureBox pictureBox6;
+        private Label requestsBtn;
     }
 }
