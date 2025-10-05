@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             Book = new Panel();
-            label12 = new Label();
+            top = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             bookTitleLabel = new Label();
             bookAuthorLabel = new Label();
             bookGenreLabel = new Label();
-            label13 = new Label();
-            label11 = new Label();
-            label9 = new Label();
+            bottom = new Label();
+            left = new Label();
+            right = new Label();
             bookPictureBox = new PictureBox();
             Book.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -45,13 +45,12 @@
             // 
             // Book
             // 
-            Book.Controls.Add(label12);
+            Book.Controls.Add(top);
             Book.Controls.Add(flowLayoutPanel1);
-            Book.Controls.Add(label13);
-            Book.Controls.Add(label11);
-            Book.Controls.Add(label9);
+            Book.Controls.Add(bottom);
+            Book.Controls.Add(left);
+            Book.Controls.Add(right);
             Book.Controls.Add(bookPictureBox);
-            Book.Dock = DockStyle.Fill;
             Book.Location = new Point(0, 0);
             Book.Margin = new Padding(0);
             Book.Name = "Book";
@@ -59,15 +58,15 @@
             Book.TabIndex = 4;
             Book.Click += Book_Click;
             // 
-            // label12
+            // top
             // 
-            label12.BackColor = Color.FromArgb(127, 23, 52);
-            label12.Dock = DockStyle.Top;
-            label12.Location = new Point(2, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(311, 2);
-            label12.TabIndex = 40;
-            label12.Text = "OR";
+            top.BackColor = Color.FromArgb(127, 23, 52);
+            top.Dock = DockStyle.Top;
+            top.Location = new Point(2, 0);
+            top.Name = "top";
+            top.Size = new Size(311, 2);
+            top.TabIndex = 40;
+            top.Text = "OR";
             // 
             // flowLayoutPanel1
             // 
@@ -114,35 +113,36 @@
             bookGenreLabel.TabIndex = 13;
             bookGenreLabel.Text = "Genre";
             // 
-            // label13
+            // bottom
             // 
-            label13.BackColor = Color.FromArgb(127, 23, 52);
-            label13.Dock = DockStyle.Bottom;
-            label13.Location = new Point(2, 218);
-            label13.Name = "label13";
-            label13.Size = new Size(311, 2);
-            label13.TabIndex = 39;
-            label13.Text = "OR";
+            bottom.BackColor = Color.FromArgb(127, 23, 52);
+            bottom.Dock = DockStyle.Bottom;
+            bottom.Location = new Point(2, 218);
+            bottom.Name = "bottom";
+            bottom.Size = new Size(311, 2);
+            bottom.TabIndex = 39;
+            bottom.Text = "OR";
             // 
-            // label11
+            // left
             // 
-            label11.BackColor = Color.FromArgb(127, 23, 52);
-            label11.Dock = DockStyle.Left;
-            label11.Location = new Point(0, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(2, 220);
-            label11.TabIndex = 37;
-            label11.Text = "OR";
+            left.BackColor = Color.FromArgb(127, 23, 52);
+            left.Dock = DockStyle.Left;
+            left.Location = new Point(0, 0);
+            left.Name = "left";
+            left.Size = new Size(2, 220);
+            left.TabIndex = 37;
+            left.Text = "OR";
             // 
-            // label9
+            // right
             // 
-            label9.BackColor = Color.FromArgb(127, 23, 52);
-            label9.Dock = DockStyle.Right;
-            label9.Location = new Point(313, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(2, 220);
-            label9.TabIndex = 36;
-            label9.Text = "OR";
+            right.AccessibleDescription = "right";
+            right.BackColor = Color.FromArgb(127, 23, 52);
+            right.Dock = DockStyle.Right;
+            right.Location = new Point(313, 0);
+            right.Name = "right";
+            right.Size = new Size(2, 220);
+            right.TabIndex = 36;
+            right.Text = "OR";
             // 
             // bookPictureBox
             // 
@@ -173,10 +173,10 @@
         #endregion
 
         private Panel Book;
-        private Label label12;
-        private Label label13;
-        private Label label11;
-        private Label label9;
+        private Label top;
+        private Label bottom;
+        private Label left;
+        private Label right;
         private PictureBox bookPictureBox;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label bookTitleLabel;

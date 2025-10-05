@@ -139,7 +139,7 @@
             label7.ForeColor = Color.Transparent;
             label7.Location = new Point(16, 485);
             label7.Name = "label7";
-            label7.Size = new Size(60, 34);
+            label7.Size = new Size(60, 33);
             label7.TabIndex = 10;
             label7.Text = "Date";
             // 
@@ -186,7 +186,7 @@
             label6.ForeColor = Color.Transparent;
             label6.Location = new Point(16, 249);
             label6.Name = "label6";
-            label6.Size = new Size(75, 34);
+            label6.Size = new Size(75, 33);
             label6.TabIndex = 6;
             label6.Text = "Status";
             // 
@@ -245,7 +245,7 @@
             label5.ForeColor = Color.Transparent;
             label5.Location = new Point(16, 118);
             label5.Name = "label5";
-            label5.Size = new Size(181, 34);
+            label5.Size = new Size(181, 33);
             label5.TabIndex = 1;
             label5.Text = "Membership Plan";
             // 
@@ -280,12 +280,12 @@
             accountsPanel.FlowDirection = FlowDirection.TopDown;
             accountsPanel.Location = new Point(671, 108);
             accountsPanel.Name = "accountsPanel";
-            accountsPanel.Size = new Size(935, 883);
+            accountsPanel.Size = new Size(935, 707);
             accountsPanel.TabIndex = 33;
             // 
             // label16
             // 
-            label16.BackColor = Color.White;
+            label16.BackColor = Color.Transparent;
             label16.Location = new Point(1600, 0);
             label16.Name = "label16";
             label16.Size = new Size(3, 1500);
@@ -294,22 +294,30 @@
             // 
             // nextBtn
             // 
-            nextBtn.Location = new Point(530, 860);
+            nextBtn.BackColor = Color.FromArgb(127, 23, 52);
+            nextBtn.FlatStyle = FlatStyle.Flat;
+            nextBtn.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nextBtn.ForeColor = Color.White;
+            nextBtn.Location = new Point(1152, 848);
             nextBtn.Name = "nextBtn";
-            nextBtn.Size = new Size(84, 27);
+            nextBtn.Size = new Size(84, 39);
             nextBtn.TabIndex = 38;
             nextBtn.Text = "Next";
-            nextBtn.UseVisualStyleBackColor = true;
+            nextBtn.UseVisualStyleBackColor = false;
             nextBtn.Click += nextBtn_Click;
             // 
             // prevBtn
             // 
-            prevBtn.Location = new Point(413, 860);
+            prevBtn.BackColor = Color.FromArgb(127, 23, 52);
+            prevBtn.FlatStyle = FlatStyle.Flat;
+            prevBtn.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            prevBtn.ForeColor = Color.Transparent;
+            prevBtn.Location = new Point(1024, 848);
             prevBtn.Name = "prevBtn";
-            prevBtn.Size = new Size(84, 27);
+            prevBtn.Size = new Size(84, 39);
             prevBtn.TabIndex = 37;
             prevBtn.Text = "Prev";
-            prevBtn.UseVisualStyleBackColor = true;
+            prevBtn.UseVisualStyleBackColor = false;
             prevBtn.Click += prevBtn_Click;
             // 
             // panel1

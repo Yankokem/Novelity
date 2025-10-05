@@ -48,11 +48,11 @@
             editBookBtn = new Button();
             panel5 = new Panel();
             statusPanel = new Panel();
-            availableIcon = new PictureBox();
-            rentedIcon = new PictureBox();
-            archivedIcon = new PictureBox();
             overdueIcon = new PictureBox();
             label16 = new Label();
+            archivedIcon = new PictureBox();
+            availableIcon = new PictureBox();
+            rentedIcon = new PictureBox();
             borrowersPanel = new Panel();
             label5 = new Label();
             pictureBox2 = new PictureBox();
@@ -69,10 +69,10 @@
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             statusPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)overdueIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)archivedIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)availableIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rentedIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)archivedIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)overdueIcon).BeginInit();
             borrowersPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
@@ -81,10 +81,6 @@
             // 
             // accountProfile
             // 
-            accountProfile.Controls.Add(overdueIcon);
-            accountProfile.Controls.Add(archivedIcon);
-            accountProfile.Controls.Add(rentedIcon);
-            accountProfile.Controls.Add(availableIcon);
             accountProfile.Controls.Add(bookIdLabel);
             accountProfile.Controls.Add(dateAddedLabel);
             accountProfile.Controls.Add(panel2);
@@ -303,50 +299,21 @@
             // 
             // statusPanel
             // 
+            statusPanel.Controls.Add(overdueIcon);
             statusPanel.Controls.Add(label16);
+            statusPanel.Controls.Add(archivedIcon);
+            statusPanel.Controls.Add(availableIcon);
+            statusPanel.Controls.Add(rentedIcon);
             statusPanel.Location = new Point(9, 6);
             statusPanel.Name = "statusPanel";
             statusPanel.Size = new Size(154, 63);
             statusPanel.TabIndex = 48;
             // 
-            // availableIcon
-            // 
-            availableIcon.BackColor = Color.Transparent;
-            availableIcon.Image = Properties.Resources.available;
-            availableIcon.Location = new Point(490, 10);
-            availableIcon.Name = "availableIcon";
-            availableIcon.Size = new Size(92, 31);
-            availableIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            availableIcon.TabIndex = 48;
-            availableIcon.TabStop = false;
-            // 
-            // rentedIcon
-            // 
-            rentedIcon.BackColor = Color.Transparent;
-            rentedIcon.Image = Properties.Resources.rented;
-            rentedIcon.Location = new Point(392, 9);
-            rentedIcon.Name = "rentedIcon";
-            rentedIcon.Size = new Size(92, 31);
-            rentedIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            rentedIcon.TabIndex = 48;
-            rentedIcon.TabStop = false;
-            // 
-            // archivedIcon
-            // 
-            archivedIcon.BackColor = Color.Transparent;
-            archivedIcon.Image = Properties.Resources.archive;
-            archivedIcon.Location = new Point(294, 9);
-            archivedIcon.Name = "archivedIcon";
-            archivedIcon.Size = new Size(92, 31);
-            archivedIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            archivedIcon.TabIndex = 47;
-            archivedIcon.TabStop = false;
-            // 
             // overdueIcon
             // 
             overdueIcon.BackColor = Color.Transparent;
             overdueIcon.Image = Properties.Resources.overdue;
-            overdueIcon.Location = new Point(196, 10);
+            overdueIcon.Location = new Point(29, 25);
             overdueIcon.Name = "overdueIcon";
             overdueIcon.Size = new Size(92, 31);
             overdueIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -364,6 +331,39 @@
             label16.TabIndex = 4;
             label16.Text = "Status";
             label16.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // archivedIcon
+            // 
+            archivedIcon.BackColor = Color.Transparent;
+            archivedIcon.Image = Properties.Resources.archive;
+            archivedIcon.Location = new Point(29, 25);
+            archivedIcon.Name = "archivedIcon";
+            archivedIcon.Size = new Size(92, 31);
+            archivedIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            archivedIcon.TabIndex = 47;
+            archivedIcon.TabStop = false;
+            // 
+            // availableIcon
+            // 
+            availableIcon.BackColor = Color.Transparent;
+            availableIcon.Image = Properties.Resources.available;
+            availableIcon.Location = new Point(29, 25);
+            availableIcon.Name = "availableIcon";
+            availableIcon.Size = new Size(92, 31);
+            availableIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            availableIcon.TabIndex = 48;
+            availableIcon.TabStop = false;
+            // 
+            // rentedIcon
+            // 
+            rentedIcon.BackColor = Color.Transparent;
+            rentedIcon.Image = Properties.Resources.rented;
+            rentedIcon.Location = new Point(29, 25);
+            rentedIcon.Name = "rentedIcon";
+            rentedIcon.Size = new Size(92, 31);
+            rentedIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            rentedIcon.TabIndex = 48;
+            rentedIcon.TabStop = false;
             // 
             // borrowersPanel
             // 
@@ -488,10 +488,10 @@
             panel5.ResumeLayout(false);
             statusPanel.ResumeLayout(false);
             statusPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)overdueIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)archivedIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)availableIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)rentedIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)archivedIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)overdueIcon).EndInit();
             borrowersPanel.ResumeLayout(false);
             borrowersPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

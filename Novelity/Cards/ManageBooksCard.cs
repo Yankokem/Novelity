@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Configuration;
 using System.Drawing;
@@ -69,6 +70,7 @@ namespace Novelity.Cards
         {
             set
             {
+                // hide all icons first
                 availableIcon.Visible = rentedIcon.Visible = archivedIcon.Visible = overdueIcon.Visible = false;
                 borrowersPanel.Visible = true;
                 statusPanel.Visible = true;
@@ -91,6 +93,16 @@ namespace Novelity.Cards
                         break;
                     case "rented":
                         rentedIcon.Visible = true;
+                        break;
+                    case "pending":
+                        // pending == there are reservations — treat visually similar to rented
+                        rentedIcon.Visible = true;
+                        break;
+                    case "out of stock":
+                        // no available copies - show archived-style (grayed) icon
+                        archivedIcon.Visible = true;
+                        borrowersPanel.Visible = false;
+                        statusPanel.Location = new Point(9, 44);
                         break;
                     case "overdue":
                         overdueIcon.Visible = true;

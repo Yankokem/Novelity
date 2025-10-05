@@ -9,6 +9,11 @@ namespace Novelity
 {
     public partial class Rentals : Form
     {
+        private DataTable cachedRentals;
+        private int currentPage = 1;
+        private int pageSize = 4;
+        private int totalPages = 1;
+
         public Rentals()
         {
             InitializeComponent();
@@ -18,7 +23,6 @@ namespace Novelity
 
         private void ConfigurePanel()
         {
-            // Match ManageBooks panel behavior
             rentalBooksPanel.AutoScroll = true;
             rentalBooksPanel.WrapContents = true;
             rentalBooksPanel.FlowDirection = FlowDirection.LeftToRight;
@@ -31,28 +35,56 @@ namespace Novelity
             {
                 rentalBooksPanel.Controls.Clear();
 
-                string query = @"
-                    SELECT r.RentalID, r.RentalStatus, r.ExtensionType,
-                           b.Title, b.Author,
-                           STRING_AGG(g.GenreName, ', ') AS Genres,
-                           r.DateRented, r.DateDue, r.DateReturned
-                    FROM Rentals r
-                    INNER JOIN Books b ON r.BookID = b.BookID
-                    LEFT JOIN BookGenres bg ON b.BookID = bg.BookID
-                    LEFT JOIN Genres g ON bg.GenreID = g.GenreID
-                    WHERE r.UserID = @UserID AND r.IsDeleted = 0
-                    GROUP BY r.RentalID, r.RentalStatus, r.ExtensionType,
-                             b.Title, b.Author, r.DateRented, r.DateDue, r.DateReturned
-                    ORDER BY r.DateRented DESC;";
-
-                SqlParameter[] parameters = {
-                    new SqlParameter("@UserID", UserSession.UserID)
-                };
-
-                DataTable rentals = DatabaseHelper.ExecuteQuery(query, parameters);
-
-                foreach (DataRow row in rentals.Rows)
+                if (cachedRentals == null)
                 {
+                    string query = @"
+                        SELECT r.RentalID, r.RentalStatus, r.ExtensionType,
+                               b.Title, b.Author, b.CoverImageFileName,
+                               STRING_AGG(g.GenreName, ', ') AS Genres,
+                               r.DateRented, r.DateDue, r.DateReturned
+                        FROM Rentals r
+                        INNER JOIN Books b ON r.BookID = b.BookID
+                        LEFT JOIN BookGenres bg ON b.BookID = bg.BookID
+                        LEFT JOIN Genres g ON bg.GenreID = g.GenreID
+                        WHERE r.UserID = @UserID AND r.IsDeleted = 0
+                        GROUP BY r.RentalID, r.RentalStatus, r.ExtensionType,
+                                 b.Title, b.Author, b.CoverImageFileName,
+                                 r.DateRented, r.DateDue, r.DateReturned
+                        ORDER BY r.DateRented DESC;";
+
+                    SqlParameter[] parameters = {
+                        new SqlParameter("@UserID", UserSession.UserID)
+                    };
+
+                    cachedRentals = DatabaseHelper.ExecuteQuery(query, parameters);
+                }
+
+                if (cachedRentals.Rows.Count == 0)
+                {
+                    totalPages = 1;
+                    prevBtn.Enabled = false;
+                    nextBtn.Enabled = false;
+                    Label noData = new Label
+                    {
+                        Text = "No rentals found.",
+                        AutoSize = true,
+                        Font = new System.Drawing.Font("Poppins", 12),
+                        ForeColor = Color.Gray
+                    };
+                    rentalBooksPanel.Controls.Add(noData);
+                    return;
+                }
+
+                totalPages = (int)Math.Ceiling(cachedRentals.Rows.Count / (double)pageSize);
+                if (currentPage > totalPages) currentPage = totalPages;
+
+                int startIndex = (currentPage - 1) * pageSize;
+                int endIndex = Math.Min(startIndex + pageSize, cachedRentals.Rows.Count);
+
+                for (int i = startIndex; i < endIndex; i++)
+                {
+                    DataRow row = cachedRentals.Rows[i];
+
                     var card = new RentalCard
                     {
                         Title = row["Title"].ToString(),
@@ -60,7 +92,8 @@ namespace Novelity
                         Genre = row["Genres"]?.ToString() ?? "N/A",
                         RentalID = Convert.ToInt32(row["RentalID"]),
                         RentedDateLabel = Convert.ToDateTime(row["DateRented"]).ToString("MMM dd, yyyy"),
-                        DueDateLabel = Convert.ToDateTime(row["DateDue"]).ToString("MMM dd, yyyy")
+                        DueDateLabel = Convert.ToDateTime(row["DateDue"]).ToString("MMM dd, yyyy"),
+                        BookCoverFileName = row["CoverImageFileName"] == DBNull.Value ? null : row["CoverImageFileName"].ToString()
                     };
 
                     int daysRemaining = (Convert.ToDateTime(row["DateDue"]) - DateTime.Now).Days;
@@ -88,21 +121,30 @@ namespace Novelity
                     rentalBooksPanel.Controls.Add(card);
                 }
 
-                if (rentals.Rows.Count == 0)
-                {
-                    Label noData = new Label
-                    {
-                        Text = "No rentals found.",
-                        AutoSize = true,
-                        Font = new System.Drawing.Font("Poppins", 12),
-                        ForeColor = Color.Gray
-                    };
-                    rentalBooksPanel.Controls.Add(noData);
-                }
+                prevBtn.Enabled = currentPage > 1;
+                nextBtn.Enabled = currentPage < totalPages;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading rentals: " + ex.Message, "Error");
+            }
+        }
+
+        private void prevBtn_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadRentals();
+            }
+        }
+
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPages)
+            {
+                currentPage++;
+                LoadRentals();
             }
         }
     }

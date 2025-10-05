@@ -32,9 +32,19 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             titleReq = new Label();
             authorReq = new Label();
+            overdueIcon = new PictureBox();
             bookIDReq = new Label();
             bookPictureBox = new PictureBox();
             panel1 = new Panel();
+            extendedIcon = new PictureBox();
+            rentingIcon = new PictureBox();
+            returnedIcon = new PictureBox();
+            claimBookIcon = new PictureBox();
+            pendingIcon = new PictureBox();
+            label3 = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label11 = new Label();
             borrowersPanel = new Panel();
             pictureBox2 = new PictureBox();
             rentersUsernameReq = new Label();
@@ -47,32 +57,22 @@
             returnedBtn = new Button();
             claimedBtn = new Button();
             statusPanel = new Panel();
-            pendingIcon = new PictureBox();
-            returnedIcon = new PictureBox();
-            claimBookIcon = new PictureBox();
-            rentingIcon = new PictureBox();
-            overdueIcon = new PictureBox();
-            extendedIcon = new PictureBox();
             label16 = new Label();
-            label2 = new Label();
-            label11 = new Label();
-            label1 = new Label();
-            label3 = new Label();
             flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)overdueIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookPictureBox).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)extendedIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)rentingIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)returnedIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)claimBookIcon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pendingIcon).BeginInit();
             borrowersPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)check).BeginInit();
             ((System.ComponentModel.ISupportInitialize)closeBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             statusPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pendingIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)returnedIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)claimBookIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)rentingIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)overdueIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)extendedIcon).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -104,6 +104,17 @@
             authorReq.Size = new Size(78, 23);
             authorReq.TabIndex = 50;
             authorReq.Text = "authorReq";
+            // 
+            // overdueIcon
+            // 
+            overdueIcon.BackColor = Color.Transparent;
+            overdueIcon.Image = Properties.Resources.overdue;
+            overdueIcon.Location = new Point(21, 23);
+            overdueIcon.Name = "overdueIcon";
+            overdueIcon.Size = new Size(92, 31);
+            overdueIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            overdueIcon.TabIndex = 49;
+            overdueIcon.TabStop = false;
             // 
             // bookIDReq
             // 
@@ -143,6 +154,101 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(929, 160);
             panel1.TabIndex = 59;
+            // 
+            // extendedIcon
+            // 
+            extendedIcon.BackColor = Color.Transparent;
+            extendedIcon.Image = Properties.Resources.Extended__1_;
+            extendedIcon.Location = new Point(21, 23);
+            extendedIcon.Name = "extendedIcon";
+            extendedIcon.Size = new Size(92, 31);
+            extendedIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            extendedIcon.TabIndex = 54;
+            extendedIcon.TabStop = false;
+            // 
+            // rentingIcon
+            // 
+            rentingIcon.BackColor = Color.Transparent;
+            rentingIcon.Image = Properties.Resources.Renting1;
+            rentingIcon.Location = new Point(21, 23);
+            rentingIcon.Name = "rentingIcon";
+            rentingIcon.Size = new Size(92, 31);
+            rentingIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            rentingIcon.TabIndex = 50;
+            rentingIcon.TabStop = false;
+            // 
+            // returnedIcon
+            // 
+            returnedIcon.BackColor = Color.Transparent;
+            returnedIcon.Image = Properties.Resources.Returned;
+            returnedIcon.Location = new Point(21, 23);
+            returnedIcon.Name = "returnedIcon";
+            returnedIcon.Size = new Size(92, 31);
+            returnedIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            returnedIcon.TabIndex = 51;
+            returnedIcon.TabStop = false;
+            // 
+            // claimBookIcon
+            // 
+            claimBookIcon.BackColor = Color.Transparent;
+            claimBookIcon.Image = Properties.Resources.Claim_Book;
+            claimBookIcon.Location = new Point(21, 23);
+            claimBookIcon.Name = "claimBookIcon";
+            claimBookIcon.Size = new Size(92, 31);
+            claimBookIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            claimBookIcon.TabIndex = 53;
+            claimBookIcon.TabStop = false;
+            // 
+            // pendingIcon
+            // 
+            pendingIcon.BackColor = Color.Transparent;
+            pendingIcon.Image = Properties.Resources.Pending;
+            pendingIcon.Location = new Point(21, 23);
+            pendingIcon.Name = "pendingIcon";
+            pendingIcon.Size = new Size(92, 31);
+            pendingIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            pendingIcon.TabIndex = 55;
+            pendingIcon.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.FromArgb(127, 23, 52);
+            label3.Dock = DockStyle.Bottom;
+            label3.Location = new Point(2, 158);
+            label3.Name = "label3";
+            label3.Size = new Size(925, 2);
+            label3.TabIndex = 65;
+            label3.Text = "OR";
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.FromArgb(127, 23, 52);
+            label1.Dock = DockStyle.Left;
+            label1.Location = new Point(0, 2);
+            label1.Name = "label1";
+            label1.Size = new Size(2, 158);
+            label1.TabIndex = 64;
+            label1.Text = "OR";
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.FromArgb(127, 23, 52);
+            label2.Dock = DockStyle.Right;
+            label2.Location = new Point(927, 2);
+            label2.Name = "label2";
+            label2.Size = new Size(2, 158);
+            label2.TabIndex = 63;
+            label2.Text = "OR";
+            // 
+            // label11
+            // 
+            label11.BackColor = Color.FromArgb(127, 23, 52);
+            label11.Dock = DockStyle.Top;
+            label11.Location = new Point(0, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(929, 2);
+            label11.TabIndex = 62;
+            label11.Text = "OR";
             // 
             // borrowersPanel
             // 
@@ -275,8 +381,8 @@
             // 
             statusPanel.Controls.Add(pendingIcon);
             statusPanel.Controls.Add(returnedIcon);
-            statusPanel.Controls.Add(claimBookIcon);
             statusPanel.Controls.Add(rentingIcon);
+            statusPanel.Controls.Add(claimBookIcon);
             statusPanel.Controls.Add(overdueIcon);
             statusPanel.Controls.Add(extendedIcon);
             statusPanel.Controls.Add(label16);
@@ -284,72 +390,6 @@
             statusPanel.Name = "statusPanel";
             statusPanel.Size = new Size(139, 63);
             statusPanel.TabIndex = 51;
-            // 
-            // pendingIcon
-            // 
-            pendingIcon.BackColor = Color.Transparent;
-            pendingIcon.Image = Properties.Resources.Pending;
-            pendingIcon.Location = new Point(20, 25);
-            pendingIcon.Name = "pendingIcon";
-            pendingIcon.Size = new Size(92, 31);
-            pendingIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            pendingIcon.TabIndex = 55;
-            pendingIcon.TabStop = false;
-            // 
-            // returnedIcon
-            // 
-            returnedIcon.BackColor = Color.Transparent;
-            returnedIcon.Image = Properties.Resources.Returned;
-            returnedIcon.Location = new Point(20, 25);
-            returnedIcon.Name = "returnedIcon";
-            returnedIcon.Size = new Size(92, 31);
-            returnedIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            returnedIcon.TabIndex = 51;
-            returnedIcon.TabStop = false;
-            // 
-            // claimBookIcon
-            // 
-            claimBookIcon.BackColor = Color.Transparent;
-            claimBookIcon.Image = Properties.Resources.Claim_Book;
-            claimBookIcon.Location = new Point(20, 25);
-            claimBookIcon.Name = "claimBookIcon";
-            claimBookIcon.Size = new Size(92, 31);
-            claimBookIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            claimBookIcon.TabIndex = 53;
-            claimBookIcon.TabStop = false;
-            // 
-            // rentingIcon
-            // 
-            rentingIcon.BackColor = Color.Transparent;
-            rentingIcon.Image = Properties.Resources.Renting1;
-            rentingIcon.Location = new Point(20, 25);
-            rentingIcon.Name = "rentingIcon";
-            rentingIcon.Size = new Size(92, 31);
-            rentingIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            rentingIcon.TabIndex = 50;
-            rentingIcon.TabStop = false;
-            // 
-            // overdueIcon
-            // 
-            overdueIcon.BackColor = Color.Transparent;
-            overdueIcon.Image = Properties.Resources.overdue;
-            overdueIcon.Location = new Point(20, 26);
-            overdueIcon.Name = "overdueIcon";
-            overdueIcon.Size = new Size(92, 31);
-            overdueIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            overdueIcon.TabIndex = 49;
-            overdueIcon.TabStop = false;
-            // 
-            // extendedIcon
-            // 
-            extendedIcon.BackColor = Color.Transparent;
-            extendedIcon.Image = Properties.Resources.Extended__1_;
-            extendedIcon.Location = new Point(20, 25);
-            extendedIcon.Name = "extendedIcon";
-            extendedIcon.Size = new Size(92, 31);
-            extendedIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            extendedIcon.TabIndex = 54;
-            extendedIcon.TabStop = false;
             // 
             // label16
             // 
@@ -363,46 +403,6 @@
             label16.Text = "Status";
             label16.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            label2.BackColor = Color.FromArgb(127, 23, 52);
-            label2.Dock = DockStyle.Right;
-            label2.Location = new Point(927, 2);
-            label2.Name = "label2";
-            label2.Size = new Size(2, 158);
-            label2.TabIndex = 63;
-            label2.Text = "OR";
-            // 
-            // label11
-            // 
-            label11.BackColor = Color.FromArgb(127, 23, 52);
-            label11.Dock = DockStyle.Top;
-            label11.Location = new Point(0, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(929, 2);
-            label11.TabIndex = 62;
-            label11.Text = "OR";
-            // 
-            // label1
-            // 
-            label1.BackColor = Color.FromArgb(127, 23, 52);
-            label1.Dock = DockStyle.Left;
-            label1.Location = new Point(0, 2);
-            label1.Name = "label1";
-            label1.Size = new Size(2, 158);
-            label1.TabIndex = 64;
-            label1.Text = "OR";
-            // 
-            // label3
-            // 
-            label3.BackColor = Color.FromArgb(127, 23, 52);
-            label3.Dock = DockStyle.Bottom;
-            label3.Location = new Point(2, 158);
-            label3.Name = "label3";
-            label3.Size = new Size(925, 2);
-            label3.TabIndex = 65;
-            label3.Text = "OR";
-            // 
             // RequestCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -413,9 +413,15 @@
             Size = new Size(929, 160);
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)overdueIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)bookPictureBox).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)extendedIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)rentingIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)returnedIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)claimBookIcon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pendingIcon).EndInit();
             borrowersPanel.ResumeLayout(false);
             borrowersPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -424,12 +430,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             statusPanel.ResumeLayout(false);
             statusPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pendingIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)returnedIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)claimBookIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)rentingIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)overdueIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)extendedIcon).EndInit();
             ResumeLayout(false);
         }
 

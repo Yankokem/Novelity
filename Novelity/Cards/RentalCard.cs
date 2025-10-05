@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Configuration;
+using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Novelity.Cards
 {
     public partial class RentalCard : UserControl
     {
+        private string _coverFileName;
+
         public RentalCard()
         {
             InitializeComponent();
@@ -20,6 +26,47 @@ namespace Novelity.Cards
         public string RentedDateLabel { set => rentedDateLabel.Text = value; }
         public string DueDateLabel { set => dueDateLabel.Text = value; }
         public string DaysRemainingLabel { set => daysRemainingLabel.Text = value; }
+
+        // 🔴 New: cover file property
+        public string BookCoverFileName
+        {
+            get => _coverFileName;
+            set
+            {
+                _coverFileName = value;
+                LoadCoverImage();
+            }
+        }
+
+        private void LoadCoverImage()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(_coverFileName))
+                {
+                    string coversPath = ConfigurationManager.AppSettings["BookCoversPath"] ?? "";
+                    string fullPath = Path.Combine(coversPath, _coverFileName);
+
+                    if (File.Exists(fullPath))
+                    {
+                        bookPictureBox.Image = Image.FromFile(fullPath);
+                        bookPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    else
+                    {
+                        bookPictureBox.Image = null;
+                    }
+                }
+                else
+                {
+                    bookPictureBox.Image = null;
+                }
+            }
+            catch
+            {
+                bookPictureBox.Image = null;
+            }
+        }
 
         private string _status;
         public string Status

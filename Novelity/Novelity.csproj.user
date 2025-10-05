@@ -13,6 +13,9 @@
     <Compile Update="Cards\CategoriesCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Cards\HomeCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Cards\ManageBooksCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,7 +94,7 @@
     <Compile Update="Pages\Client\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\Client\Requests.cs">
+    <Compile Update="Pages\Admin\Requests.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

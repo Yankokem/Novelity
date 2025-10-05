@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Novelity.Helpers
+namespace Novelity
 {
     public static class SessionHelper
     {

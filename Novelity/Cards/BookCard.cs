@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Novelity; // for Form1
+using System;
 using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
-using Novelity; // for Form1
 
 namespace Novelity.Cards
 {
@@ -22,12 +23,9 @@ namespace Novelity.Cards
             {
                 ctrl.Click += Book_Click;
             }
-
-            // If there are nested child controls inside panels/containers, wire those too
             WireChildControlClicks(this);
         }
 
-        // Recursively wire click on nested children (helps if your design nests controls)
         private void WireChildControlClicks(Control parent)
         {
             foreach (Control c in parent.Controls)
@@ -38,35 +36,15 @@ namespace Novelity.Cards
             }
         }
 
-        // Properties
         public int BookID { get; set; }
-
-        public string Title
-        {
-            get => bookTitleLabel.Text;
-            set => bookTitleLabel.Text = value;
-        }
-
-        public string Author
-        {
-            get => bookAuthorLabel.Text;
-            set => bookAuthorLabel.Text = value;
-        }
-
-        public string Genres
-        {
-            get => bookGenreLabel.Text;
-            set => bookGenreLabel.Text = value;
-        }
+        public string Title { get => bookTitleLabel.Text; set => bookTitleLabel.Text = value; }
+        public string Author { get => bookAuthorLabel.Text; set => bookAuthorLabel.Text = value; }
+        public string Genres { get => bookGenreLabel.Text; set => bookGenreLabel.Text = value; }
 
         public string CoverFileName
         {
             get => _coverFileName;
-            set
-            {
-                _coverFileName = value;
-                LoadCoverImage();
-            }
+            set { _coverFileName = value; LoadCoverImage(); }
         }
 
         private void LoadCoverImage()
@@ -83,19 +61,33 @@ namespace Novelity.Cards
                         bookPictureBox.Image = Image.FromFile(fullPath);
                         bookPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
-                    else
-                    {
-                        bookPictureBox.Image = null;
-                    }
+                    else bookPictureBox.Image = null;
                 }
-                else
-                {
-                    bookPictureBox.Image = null;
-                }
+                else bookPictureBox.Image = null;
             }
-            catch
+            catch { bookPictureBox.Image = null; }
+        }
+
+        // 🔴 NEW: status-driven panel color
+        public string Status
+        {
+            set
             {
-                bookPictureBox.Image = null;
+                Color defaultColor = Color.FromArgb(127, 23, 52);
+                Color rentedColor = Color.FromArgb(245, 156, 13);
+
+                Color finalColor = defaultColor;
+                if (!string.IsNullOrEmpty(value) &&
+                    value.Trim().Equals("Rented", StringComparison.OrdinalIgnoreCase))
+                {
+                    finalColor = rentedColor;
+                }
+
+                // assume you have panels named leftPanel, rightPanel, topPanel, bottomPanel
+                left.BackColor = finalColor;
+                right.BackColor = finalColor;
+                top.BackColor = finalColor;
+                bottom.BackColor = finalColor;
             }
         }
 
@@ -103,15 +95,11 @@ namespace Novelity.Cards
         {
             try
             {
-                // Find the live Form1 instance in the application (works even when Books is hosted inside panelContent)
                 var mainForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
                 if (mainForm != null)
-                {
                     mainForm.LoadForm(new Novelity.Pages.Client.BookInfo(BookID));
-                }
                 else
                 {
-                    // fallback: try TopLevelControl (rare cases)
                     var top = this.TopLevelControl as Form1;
                     if (top != null)
                         top.LoadForm(new Novelity.Pages.Client.BookInfo(BookID));
@@ -123,10 +111,6 @@ namespace Novelity.Cards
             }
         }
 
-        // If designer wired a separate BookCard_Click event, keep it empty to avoid duplicates
-        private void BookCard_Click(object sender, EventArgs e)
-        {
-            // intentionally left blank - all clicks handled by Book_Click
-        }
+        private void BookCard_Click(object sender, EventArgs e) { }
     }
 }

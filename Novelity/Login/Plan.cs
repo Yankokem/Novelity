@@ -4,7 +4,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
-using Novelity.Helpers;
 
 namespace Novelity
 {

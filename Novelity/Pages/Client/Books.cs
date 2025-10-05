@@ -55,23 +55,23 @@ namespace Novelity
                 if (cachedBooks == null)
                 {
                     string query = @"
-                        SELECT 
-                            b.BookID,
-                            b.Title,
-                            b.Author,
-                            b.Publisher,
-                            b.ReleaseDate,
-                            b.TotalQuantity,
-                            b.AvailableQuantity,
-                            b.CoverImageFileName,
-                            STRING_AGG(g.GenreName, ', ') AS Genres
-                        FROM Books b
-                        LEFT JOIN BookGenres bg ON b.BookID = bg.BookID
-                        LEFT JOIN Genres g ON bg.GenreID = g.GenreID
-                        WHERE b.IsDeleted = 0
-                        GROUP BY b.BookID, b.Title, b.Author, b.Publisher, b.ReleaseDate, 
-                                 b.TotalQuantity, b.AvailableQuantity, b.CoverImageFileName
-                        ORDER BY b.BookID DESC;";
+                SELECT 
+                    b.BookID,
+                    b.Title,
+                    b.Author,
+                    b.Publisher,
+                    b.ReleaseDate,
+                    b.TotalQuantity,
+                    b.AvailableQuantity,
+                    b.CoverImageFileName,
+                    STRING_AGG(g.GenreName, ', ') AS Genres
+                FROM Books b
+                LEFT JOIN BookGenres bg ON b.BookID = bg.BookID
+                LEFT JOIN Genres g ON bg.GenreID = g.GenreID
+                WHERE b.IsDeleted = 0   -- exclude archives
+                GROUP BY b.BookID, b.Title, b.Author, b.Publisher, b.ReleaseDate, 
+                         b.TotalQuantity, b.AvailableQuantity, b.CoverImageFileName
+                ORDER BY b.BookID DESC;";
 
                     cachedBooks = DatabaseHelper.ExecuteQuery(query);
                 }
@@ -90,7 +90,10 @@ namespace Novelity
                         Title = row["Title"].ToString(),
                         Author = row["Author"].ToString(),
                         Genres = row["Genres"]?.ToString(),
-                        CoverFileName = row["CoverImageFileName"] == DBNull.Value ? null : row["CoverImageFileName"].ToString()
+                        CoverFileName = row["CoverImageFileName"] == DBNull.Value ? null : row["CoverImageFileName"].ToString(),
+                        Status = (Convert.ToInt32(row["AvailableQuantity"]) < Convert.ToInt32(row["TotalQuantity"]))
+                                 ? "Rented"
+                                 : "Available"
                     };
 
                     card.Margin = new Padding(0, 0, gap, gap);
@@ -98,12 +101,17 @@ namespace Novelity
                 }
 
                 booksPanel.ResumeLayout();
+
+                // 🔹 Update total count label (non-archived only)
+                int totalBooks = cachedBooks?.Rows.Count ?? 0;
+                totalBooksLabel.Text = $"{totalBooks}";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading books: " + ex.Message, "Error");
             }
         }
+
 
         private void ApplyFilters(ref DataTable filteredTable)
         {

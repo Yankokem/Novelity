@@ -51,20 +51,34 @@ namespace Novelity.Cards
                 return;
             }
 
+            // 🛑 Restrict admins
+            if (UserSession.IsAdmin)
+            {
+                MessageBox.Show("Admins are not allowed to rent books.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 🛑 Restrict Basic customers
+            if (string.Equals(UserSession.PlanName, "Basic", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Only Premium members can rent books. Please upgrade your plan.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 // Insert rental record
                 string insertQuery = @"
-            INSERT INTO Rentals (UserID, BookID, DateRented, DateDue, RentalStatus)
-            VALUES (@UserID, @BookID, @DateRented, @DateDue, 'Pending');";
+                    INSERT INTO Rentals (UserID, BookID, DateRented, DateDue, RentalStatus)
+                    VALUES (@UserID, @BookID, @DateRented, @DateDue, 'Pending');";
 
                 var parameters = new[]
                 {
-            new SqlParameter("@UserID", UserSession.UserID),
-            new SqlParameter("@BookID", _bookId),
-            new SqlParameter("@DateRented", DateTime.Now),
-            new SqlParameter("@DateDue", DateTime.Parse(returnDateRent.Text))
-        };
+                    new SqlParameter("@UserID", UserSession.UserID),
+                    new SqlParameter("@BookID", _bookId),
+                    new SqlParameter("@DateRented", DateTime.Now),
+                    new SqlParameter("@DateDue", DateTime.Parse(returnDateRent.Text))
+                };
 
                 int rows = DatabaseHelper.ExecuteNonQuery(insertQuery, parameters);
 
@@ -76,7 +90,12 @@ namespace Novelity.Cards
 
                     MessageBox.Show("Your rental request is pending. Please pick up your book at the store.", "Success");
 
-                    this.Parent.Controls.Remove(this); // Close panel after success
+                    // Refresh BookInfo page
+                    var parentForm = this.FindForm() as Novelity.Pages.Client.BookInfo;
+                    parentForm?.GetType().GetMethod("LoadBookInfo", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.Invoke(parentForm, null);
+
+                    // Hide rent card after success
+                    this.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -84,6 +103,5 @@ namespace Novelity.Cards
                 MessageBox.Show("Error renting book: " + ex.Message, "Error");
             }
         }
-
     }
 }

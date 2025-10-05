@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\adach\\source\\repos\\Novelity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\pages\\admin\\managebooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\pages\\admin\\managebooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\pages\\client\\rentals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\pages\\client\\rentals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\pages\\admin\\managebooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\pages\\admin\\managebooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|c:\\users\\adach\\source\\repos\\novelity\\novelity\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F21FA-787C-401E-B806-B5271083BA11}|Novelity\\Novelity.csproj|solutionrelative:novelity\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,26 +35,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ManageBooks.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageBooks.cs",
-              "RelativeDocumentMoniker": "Novelity\\Pages\\Admin\\ManageBooks.cs",
-              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageBooks.cs [Design]",
-              "RelativeToolTip": "Novelity\\Pages\\Admin\\ManageBooks.cs [Design]",
+              "Title": "Rentals.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Client\\Rentals.cs",
+              "RelativeDocumentMoniker": "Novelity\\Pages\\Client\\Rentals.cs",
+              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Client\\Rentals.cs [Design]*",
+              "RelativeToolTip": "Novelity\\Pages\\Client\\Rentals.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T12:01:06.805Z",
+              "WhenOpened": "2025-10-05T15:52:28.168Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ManageBooks.cs",
-              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageBooks.cs",
-              "RelativeDocumentMoniker": "Novelity\\Pages\\Admin\\ManageBooks.cs",
-              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Pages\\Admin\\ManageBooks.cs",
-              "RelativeToolTip": "Novelity\\Pages\\Admin\\ManageBooks.cs",
-              "ViewState": "AgIAADsBAAAAAAAAAAAMwE0BAAAQAAAAAAAAAA==",
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Main.cs",
+              "RelativeDocumentMoniker": "Novelity\\Main.cs",
+              "ToolTip": "C:\\Users\\adach\\source\\repos\\Novelity\\Novelity\\Main.cs",
+              "RelativeToolTip": "Novelity\\Main.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwDsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T12:00:52.265Z",
+              "WhenOpened": "2025-10-05T13:40:19.756Z",
               "EditorCaption": ""
             }
           ]

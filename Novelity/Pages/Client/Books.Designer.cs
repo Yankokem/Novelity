@@ -48,6 +48,7 @@
             label11 = new Label();
             booksSearchbar = new TextBox();
             panel2 = new Panel();
+            totalBooksLabel = new Label();
             label16 = new Label();
             label14 = new Label();
             label15 = new Label();
@@ -169,7 +170,7 @@
             label7.ForeColor = Color.Transparent;
             label7.Location = new Point(16, 75);
             label7.Name = "label7";
-            label7.Size = new Size(186, 34);
+            label7.Size = new Size(186, 33);
             label7.TabIndex = 59;
             label7.Text = "Availability Status";
             // 
@@ -191,7 +192,7 @@
             booksPanel.Location = new Point(614, 108);
             booksPanel.Margin = new Padding(0);
             booksPanel.Name = "booksPanel";
-            booksPanel.Size = new Size(1018, 14138);
+            booksPanel.Size = new Size(1018, 16658);
             booksPanel.TabIndex = 35;
             // 
             // panel1
@@ -205,7 +206,7 @@
             panel1.Controls.Add(booksSearchbar);
             panel1.Location = new Point(614, 36);
             panel1.Name = "panel1";
-            panel1.Size = new Size(704, 48);
+            panel1.Size = new Size(708, 48);
             panel1.TabIndex = 36;
             // 
             // pictureBox1
@@ -224,7 +225,7 @@
             label8.Dock = DockStyle.Top;
             label8.Location = new Point(2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(700, 2);
+            label8.Size = new Size(704, 2);
             label8.TabIndex = 35;
             label8.Text = "OR";
             // 
@@ -234,7 +235,7 @@
             label9.Dock = DockStyle.Bottom;
             label9.Location = new Point(2, 46);
             label9.Name = "label9";
-            label9.Size = new Size(700, 2);
+            label9.Size = new Size(704, 2);
             label9.TabIndex = 36;
             label9.Text = "OR";
             // 
@@ -242,7 +243,7 @@
             // 
             label10.BackColor = Color.FromArgb(127, 23, 52);
             label10.Dock = DockStyle.Right;
-            label10.Location = new Point(702, 0);
+            label10.Location = new Point(706, 0);
             label10.Name = "label10";
             label10.Size = new Size(2, 48);
             label10.TabIndex = 35;
@@ -267,12 +268,13 @@
             booksSearchbar.Multiline = true;
             booksSearchbar.Name = "booksSearchbar";
             booksSearchbar.PlaceholderText = "Enter book name...";
-            booksSearchbar.Size = new Size(644, 26);
+            booksSearchbar.Size = new Size(648, 26);
             booksSearchbar.TabIndex = 33;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(127, 23, 52);
+            panel2.Controls.Add(totalBooksLabel);
             panel2.Controls.Add(label16);
             panel2.Controls.Add(label14);
             panel2.Controls.Add(label15);
@@ -280,8 +282,20 @@
             panel2.Controls.Add(label12);
             panel2.Location = new Point(1335, 36);
             panel2.Name = "panel2";
-            panel2.Size = new Size(297, 48);
+            panel2.Size = new Size(263, 48);
             panel2.TabIndex = 38;
+            // 
+            // totalBooksLabel
+            // 
+            totalBooksLabel.AutoSize = true;
+            totalBooksLabel.BackColor = Color.Transparent;
+            totalBooksLabel.Font = new Font("Poppins", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalBooksLabel.ForeColor = Color.Transparent;
+            totalBooksLabel.Location = new Point(200, 6);
+            totalBooksLabel.Name = "totalBooksLabel";
+            totalBooksLabel.Size = new Size(35, 37);
+            totalBooksLabel.TabIndex = 56;
+            totalBooksLabel.Text = "#";
             // 
             // label16
             // 
@@ -622,5 +636,6 @@
         private CheckBox rentedBox;
         private CheckBox availableBox;
         private Label label7;
+        private Label totalBooksLabel;
     }
 }

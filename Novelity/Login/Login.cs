@@ -1,5 +1,4 @@
 ﻿using Microsoft.Data.SqlClient;
-using Novelity.Helpers;
 using System;
 using System.Data;
 using System.Security.Cryptography;
@@ -112,25 +111,7 @@ namespace Novelity
 
         public Form GetLoginForm() => this;
 
-        // Demo login buttons (optional - you can add these as hidden buttons for testing)
-        private void demoAdminBtn_Click(object sender, EventArgs e)
-        {
-            DemoLogin("Admin");
-        }
+        
 
-        private void demoCustomerBtn_Click(object sender, EventArgs e)
-        {
-            DemoLogin("Customer");
-        }
-
-        private void DemoLogin(string role = "Customer")
-        {
-            string planName = role == "Customer" ? "Premium" : null;
-            UserSession.CreateSession(999, "demo", "demo@example.com", "Demo", "User", role, planName);
-
-            Form1 mainForm = new Form1();
-            mainForm.Show();
-            this.Hide();
-        }
     }
 }

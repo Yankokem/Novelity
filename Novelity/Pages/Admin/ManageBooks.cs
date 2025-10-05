@@ -87,6 +87,7 @@ namespace Novelity.Pages.Admin
         {
             try
             {
+                // 1) Load basic book info (no rentals/users joined here)
                 if (cachedBooks == null)
                 {
                     string query = @"
@@ -101,24 +102,74 @@ namespace Novelity.Pages.Admin
                             b.AvailableQuantity,
                             b.CoverImageFileName,
                             b.CreatedAt,
-                            STRING_AGG(g.GenreName, ', ') AS Genres,
-                            u.UserStatus,
-                            rt.RentalStatus
+                            STRING_AGG(g.GenreName, ', ') AS Genres
                         FROM Books b
                         LEFT JOIN BookGenres bg ON b.BookID = bg.BookID
                         LEFT JOIN Genres g ON bg.GenreID = g.GenreID
-                        LEFT JOIN Rentals rt ON b.BookID = rt.BookID
-                        LEFT JOIN Users u ON rt.UserID = u.UserID
                         WHERE b.IsDeleted = 0
                         GROUP BY b.BookID, b.Title, b.Author, b.Publisher, b.ReleaseDate, 
                                  b.Description, b.TotalQuantity, b.AvailableQuantity, 
-                                 b.CoverImageFileName, b.CreatedAt,
-                                 u.UserStatus, rt.RentalStatus
+                                 b.CoverImageFileName, b.CreatedAt
                         ORDER BY b.BookID DESC;";
 
                     cachedBooks = DatabaseHelper.ExecuteQuery(query);
+
+                    // 2) Aggregate rental statuses per book (single query)
+                    string rentalCountQuery = @"
+                        SELECT BookID, RentalStatus, COUNT(*) AS Cnt
+                        FROM Rentals
+                        WHERE RentalStatus IN ('Pending','Rented','Extended','Overdue')
+                        GROUP BY BookID, RentalStatus;
+                    ";
+                    DataTable rentalCounts = DatabaseHelper.ExecuteQuery(rentalCountQuery);
+
+                    // Build map BookID -> (status -> count)
+                    var rentalMap = new Dictionary<int, Dictionary<string, int>>();
+                    foreach (DataRow r in rentalCounts.Rows)
+                    {
+                        int bid = Convert.ToInt32(r["BookID"]);
+                        string st = r["RentalStatus"]?.ToString() ?? "";
+                        int cnt = Convert.ToInt32(r["Cnt"]);
+
+                        if (!rentalMap.ContainsKey(bid))
+                            rentalMap[bid] = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+                        rentalMap[bid][st] = cnt;
+                    }
+
+                    // 3) Add ComputedStatus column and populate per book
+                    if (!cachedBooks.Columns.Contains("ComputedStatus"))
+                        cachedBooks.Columns.Add("ComputedStatus", typeof(string));
+
+                    foreach (DataRow row in cachedBooks.Rows)
+                    {
+                        int bid = Convert.ToInt32(row["BookID"]);
+                        int avail = row["AvailableQuantity"] == DBNull.Value ? 0 : Convert.ToInt32(row["AvailableQuantity"]);
+
+                        string computedStatus = "Available";
+
+                        if (rentalMap.TryGetValue(bid, out var statusDict))
+                        {
+                            // priority: Overdue > Rented > Pending > Available/Out of Stock
+                            if (statusDict.TryGetValue("Overdue", out int overdueCount) && overdueCount > 0)
+                                computedStatus = "Overdue";
+                            else if (statusDict.TryGetValue("Rented", out int rentedCount) && rentedCount > 0)
+                                computedStatus = "Rented";
+                            else if (statusDict.TryGetValue("Pending", out int pendingCount) && pendingCount > 0)
+                                computedStatus = "Pending";
+                            else
+                                computedStatus = avail > 0 ? "Available" : "Out of Stock";
+                        }
+                        else
+                        {
+                            computedStatus = avail > 0 ? "Available" : "Out of Stock";
+                        }
+
+                        row["ComputedStatus"] = computedStatus;
+                    }
                 }
 
+                // Work on a copy for filtering & pagination
                 DataTable filteredTable = cachedBooks.Copy();
                 ApplyFilters(ref filteredTable);
 
@@ -150,8 +201,8 @@ namespace Novelity.Pages.Admin
                         ReleaseDate = row["ReleaseDate"] == DBNull.Value ? "" : Convert.ToDateTime(row["ReleaseDate"]).ToString("MMMM dd, yyyy"),
                         Genres = row["Genres"]?.ToString(),
                         Quantity = $"{row["AvailableQuantity"]}/{row["TotalQuantity"]}",
-                        Status = (Convert.ToInt32(row["AvailableQuantity"]) > 0) ? "Available" : "Out of Stock",
-                        DateAdded = Convert.ToDateTime(row["CreatedAt"]).ToString("MMMM dd, yyyy"),
+                        Status = row["ComputedStatus"]?.ToString() ?? (Convert.ToInt32(row["AvailableQuantity"]) > 0 ? "Available" : "Out of Stock"),
+                        DateAdded = Convert.ToDateTime(row["CreatedAt"]).ToString("MM/dd/yyyy"),
                         CoverFileName = row["CoverImageFileName"] == DBNull.Value ? null : row["CoverImageFileName"].ToString()
                     };
 
@@ -196,23 +247,19 @@ namespace Novelity.Pages.Admin
                     rows = rows.OrderBy(r => Convert.ToDateTime(r["CreatedAt"]));
             }
 
-            // ✅ User Status
-            if (expiredBox.Checked)
-                rows = rows.Where(r => (r["UserStatus"]?.ToString() ?? "").Equals("Expired", StringComparison.OrdinalIgnoreCase));
-            if (activeBox.Checked)
-                rows = rows.Where(r => (r["UserStatus"]?.ToString() ?? "").Equals("Active", StringComparison.OrdinalIgnoreCase));
-            if (inactiveBox.Checked)
-                rows = rows.Where(r => (r["UserStatus"]?.ToString() ?? "").Equals("Inactive", StringComparison.OrdinalIgnoreCase));
+            // NOTE: previous user-status filtering referenced columns from joined Users/Rentals.
+            // We removed those joins — instead we use ComputedStatus for availability filters.
 
-            // 📖 Availability
+            // 📖 Availability filters using ComputedStatus
             if (availableBox.Checked)
-                rows = rows.Where(r => (r["RentalStatus"]?.ToString() ?? "").Equals("Available", StringComparison.OrdinalIgnoreCase));
+                rows = rows.Where(r => (r["ComputedStatus"]?.ToString() ?? "").Equals("Available", StringComparison.OrdinalIgnoreCase));
             if (rentedBox.Checked)
-                rows = rows.Where(r => (r["RentalStatus"]?.ToString() ?? "").Equals("Rented", StringComparison.OrdinalIgnoreCase));
+                rows = rows.Where(r => (r["ComputedStatus"]?.ToString() ?? "").Equals("Rented", StringComparison.OrdinalIgnoreCase));
             if (overdueBox.Checked)
-                rows = rows.Where(r => (r["RentalStatus"]?.ToString() ?? "").Equals("Overdue", StringComparison.OrdinalIgnoreCase));
+                rows = rows.Where(r => (r["ComputedStatus"]?.ToString() ?? "").Equals("Overdue", StringComparison.OrdinalIgnoreCase));
             if (archivedBox.Checked)
-                rows = rows.Where(r => (r["RentalStatus"]?.ToString() ?? "").Equals("Archived", StringComparison.OrdinalIgnoreCase));
+                rows = rows.Where(r => (r["ComputedStatus"]?.ToString() ?? "").Equals("Out of Stock", StringComparison.OrdinalIgnoreCase) // archived filter mapped to out-of-stock in absence of archive flag
+                                      || (r["ComputedStatus"]?.ToString() ?? "").Equals("Archived", StringComparison.OrdinalIgnoreCase));
 
             // 🎭 Genres
             if (selectedGenres.Any())

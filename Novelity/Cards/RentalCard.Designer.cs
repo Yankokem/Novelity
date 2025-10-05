@@ -91,6 +91,7 @@
             Rent_Card.Controls.Add(label9);
             Rent_Card.Controls.Add(bookPictureBox);
             Rent_Card.Location = new Point(0, 0);
+            Rent_Card.Margin = new Padding(0);
             Rent_Card.Name = "Rent_Card";
             Rent_Card.Size = new Size(929, 160);
             Rent_Card.TabIndex = 36;

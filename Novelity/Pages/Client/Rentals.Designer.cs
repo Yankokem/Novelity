@@ -55,6 +55,8 @@
             label10 = new Label();
             booksSearchbar = new TextBox();
             rentalBooksPanel = new FlowLayoutPanel();
+            nextBtn = new Button();
+            prevBtn = new Button();
             filterPanel.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -62,7 +64,7 @@
             // 
             // label14
             // 
-            label14.BackColor = Color.FromArgb(127, 23, 52);
+            label14.BackColor = Color.Transparent;
             label14.Location = new Point(960, 0);
             label14.Name = "label14";
             label14.Size = new Size(1, 2000);
@@ -71,7 +73,7 @@
             // 
             // label1
             // 
-            label1.BackColor = Color.FromArgb(127, 23, 52);
+            label1.BackColor = Color.Transparent;
             label1.Location = new Point(1600, 0);
             label1.Name = "label1";
             label1.Size = new Size(3, 2000);
@@ -80,7 +82,7 @@
             // 
             // label2
             // 
-            label2.BackColor = Color.FromArgb(127, 23, 52);
+            label2.BackColor = Color.Transparent;
             label2.Location = new Point(319, 0);
             label2.Name = "label2";
             label2.Size = new Size(1, 2000);
@@ -144,7 +146,7 @@
             label8.ForeColor = Color.Transparent;
             label8.Location = new Point(16, 416);
             label8.Name = "label8";
-            label8.Size = new Size(60, 34);
+            label8.Size = new Size(60, 33);
             label8.TabIndex = 10;
             label8.Text = "Date";
             // 
@@ -191,7 +193,7 @@
             label9.ForeColor = Color.Transparent;
             label9.Location = new Point(16, 249);
             label9.Name = "label9";
-            label9.Size = new Size(75, 34);
+            label9.Size = new Size(75, 33);
             label9.TabIndex = 6;
             label9.Text = "Status";
             // 
@@ -250,7 +252,7 @@
             label11.ForeColor = Color.Transparent;
             label11.Location = new Point(16, 118);
             label11.Name = "label11";
-            label11.Size = new Size(181, 34);
+            label11.Size = new Size(181, 33);
             label11.TabIndex = 1;
             label11.Text = "Membership Plan";
             // 
@@ -343,27 +345,58 @@
             // 
             // rentalBooksPanel
             // 
-            rentalBooksPanel.AutoSize = true;
+            rentalBooksPanel.BackColor = Color.Transparent;
             rentalBooksPanel.FlowDirection = FlowDirection.TopDown;
-            rentalBooksPanel.Location = new Point(671, 108);
+            rentalBooksPanel.Location = new Point(667, 108);
+            rentalBooksPanel.Margin = new Padding(0);
             rentalBooksPanel.Name = "rentalBooksPanel";
-            rentalBooksPanel.Size = new Size(935, 883);
+            rentalBooksPanel.Size = new Size(942, 717);
             rentalBooksPanel.TabIndex = 36;
             rentalBooksPanel.WrapContents = false;
+            // 
+            // nextBtn
+            // 
+            nextBtn.BackColor = Color.FromArgb(127, 23, 52);
+            nextBtn.FlatStyle = FlatStyle.Flat;
+            nextBtn.Font = new Font("Poppins", 11.25F);
+            nextBtn.ForeColor = Color.Transparent;
+            nextBtn.Location = new Point(1129, 872);
+            nextBtn.Name = "nextBtn";
+            nextBtn.Size = new Size(84, 39);
+            nextBtn.TabIndex = 42;
+            nextBtn.Text = "Next";
+            nextBtn.UseVisualStyleBackColor = false;
+            nextBtn.Click += nextBtn_Click;
+            // 
+            // prevBtn
+            // 
+            prevBtn.BackColor = Color.FromArgb(127, 23, 52);
+            prevBtn.FlatStyle = FlatStyle.Flat;
+            prevBtn.Font = new Font("Poppins", 11.25F);
+            prevBtn.ForeColor = Color.Transparent;
+            prevBtn.Location = new Point(1012, 872);
+            prevBtn.Name = "prevBtn";
+            prevBtn.Size = new Size(84, 39);
+            prevBtn.TabIndex = 41;
+            prevBtn.Text = "Prev";
+            prevBtn.UseVisualStyleBackColor = false;
+            prevBtn.Click += prevBtn_Click;
             // 
             // Rentals
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(1920, 1080);
             ControlBox = false;
-            Controls.Add(label1);
+            Controls.Add(nextBtn);
+            Controls.Add(prevBtn);
             Controls.Add(rentalBooksPanel);
             Controls.Add(panel1);
             Controls.Add(filterPanel);
             Controls.Add(label2);
             Controls.Add(label14);
+            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Rentals";
             Text = "MyRentals";
@@ -374,7 +407,6 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -405,5 +437,7 @@
         private Label label10;
         private TextBox booksSearchbar;
         private FlowLayoutPanel rentalBooksPanel;
+        private Button nextBtn;
+        private Button prevBtn;
     }
 }

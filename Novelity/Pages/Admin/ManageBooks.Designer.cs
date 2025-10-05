@@ -79,7 +79,7 @@
             // 
             // label14
             // 
-            label14.BackColor = Color.FromArgb(127, 23, 52);
+            label14.BackColor = Color.Transparent;
             label14.Location = new Point(960, -460);
             label14.Name = "label14";
             label14.Size = new Size(1, 1500);
@@ -88,7 +88,7 @@
             // 
             // label1
             // 
-            label1.BackColor = Color.FromArgb(127, 23, 52);
+            label1.BackColor = Color.Transparent;
             label1.Location = new Point(319, 0);
             label1.Name = "label1";
             label1.Size = new Size(1, 1500);
@@ -97,7 +97,7 @@
             // 
             // label2
             // 
-            label2.BackColor = Color.FromArgb(127, 23, 52);
+            label2.BackColor = Color.Transparent;
             label2.Location = new Point(1600, 0);
             label2.Name = "label2";
             label2.Size = new Size(1, 1500);
@@ -290,32 +290,40 @@
             // 
             // manageBooksPanel
             // 
-            manageBooksPanel.AutoSize = true;
+            manageBooksPanel.BackColor = SystemColors.Control;
             manageBooksPanel.FlowDirection = FlowDirection.TopDown;
             manageBooksPanel.Location = new Point(671, 108);
             manageBooksPanel.Name = "manageBooksPanel";
-            manageBooksPanel.Size = new Size(935, 883);
+            manageBooksPanel.Size = new Size(935, 707);
             manageBooksPanel.TabIndex = 34;
             manageBooksPanel.Paint += manageBooksPanel_Paint;
             // 
             // prevBtn
             // 
-            prevBtn.Location = new Point(372, 964);
+            prevBtn.BackColor = Color.FromArgb(127, 23, 52);
+            prevBtn.FlatStyle = FlatStyle.Flat;
+            prevBtn.Font = new Font("Poppins", 11.25F);
+            prevBtn.ForeColor = Color.White;
+            prevBtn.Location = new Point(1050, 844);
             prevBtn.Name = "prevBtn";
-            prevBtn.Size = new Size(84, 27);
+            prevBtn.Size = new Size(84, 39);
             prevBtn.TabIndex = 35;
             prevBtn.Text = "Prev";
-            prevBtn.UseVisualStyleBackColor = true;
+            prevBtn.UseVisualStyleBackColor = false;
             prevBtn.Click += prevBtn_Click;
             // 
             // nextBtn
             // 
-            nextBtn.Location = new Point(517, 964);
+            nextBtn.BackColor = Color.FromArgb(127, 23, 52);
+            nextBtn.FlatStyle = FlatStyle.Flat;
+            nextBtn.Font = new Font("Poppins", 11.25F);
+            nextBtn.ForeColor = Color.White;
+            nextBtn.Location = new Point(1195, 844);
             nextBtn.Name = "nextBtn";
-            nextBtn.Size = new Size(84, 27);
+            nextBtn.Size = new Size(84, 39);
             nextBtn.TabIndex = 36;
             nextBtn.Text = "Next";
-            nextBtn.UseVisualStyleBackColor = true;
+            nextBtn.UseVisualStyleBackColor = false;
             nextBtn.Click += nextBtn_Click;
             // 
             // panel1
@@ -636,7 +644,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             filterFlowLayout.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

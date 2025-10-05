@@ -60,6 +60,7 @@
             manageBooksBtn = new Label();
             adminNavbar = new Panel();
             panelContent = new Panel();
+            label2 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             Navbar.SuspendLayout();
             accountGroupBtn.SuspendLayout();
@@ -81,6 +82,7 @@
             flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             adminNavbar.SuspendLayout();
+            panelContent.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -447,11 +449,21 @@
             // 
             // panelContent
             // 
+            panelContent.Controls.Add(label2);
             panelContent.Location = new Point(0, 63);
             panelContent.Margin = new Padding(0);
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(1920, 933);
             panelContent.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.IndianRed;
+            label2.Location = new Point(1600, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(1, 1500);
+            label2.TabIndex = 32;
+            label2.Text = "OR";
             // 
             // flowLayoutPanel1
             // 
@@ -502,6 +514,7 @@
             flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             adminNavbar.ResumeLayout(false);
+            panelContent.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -540,5 +553,6 @@
         private FlowLayoutPanel flowLayoutPanel6;
         private PictureBox pictureBox6;
         private Label requestsBtn;
+        private Label label2;
     }
 }

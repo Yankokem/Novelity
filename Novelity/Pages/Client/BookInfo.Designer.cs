@@ -289,7 +289,7 @@
             copiesInfo.Location = new Point(345, 443);
             copiesInfo.Margin = new Padding(0);
             copiesInfo.Name = "copiesInfo";
-            copiesInfo.Size = new Size(114, 23);
+            copiesInfo.Size = new Size(112, 23);
             copiesInfo.TabIndex = 50;
             copiesInfo.Text = "1 copy available";
             // 
@@ -379,7 +379,7 @@
             // 
             // BookInfo
             // 
-            AutoScaleDimensions = new SizeF(7F, 22F);
+            AutoScaleDimensions = new SizeF(7F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1920, 1080);

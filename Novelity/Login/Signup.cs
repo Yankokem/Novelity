@@ -2,7 +2,6 @@
 using System.Data;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
-using Novelity.Helpers;
 
 namespace Novelity
 {
